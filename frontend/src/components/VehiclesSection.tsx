@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { Search } from "lucide-react";
+import VehicleGrid from "./VehicleGrid";
 
 interface Vehicle {
   id: number;
   brand: string;
   model: string;
   year: number;
-  price: number;
-  image: string;
+  images: string[];
   condition: "new" | "used";
   mileage?: number;
   fuel: string;
@@ -15,24 +15,13 @@ interface Vehicle {
 
 const vehicles: Vehicle[] = [
   {
-    id: 1,
-    brand: "Toyota",
-    model: "Corolla",
-    year: 2024,
-    price: 25000,
-    image:
-      "https://images.pexels.com/photos/116675/pexels-photo-116675.jpeg?auto=compress&cs=tinysrgb&w=800",
-    condition: "new",
-    fuel: "Gasolina",
-  },
-  {
     id: 2,
     brand: "Honda",
     model: "Civic",
     year: 2023,
-    price: 22000,
-    image:
-      "https://images.pexels.com/photos/544542/pexels-photo-544542.jpeg?auto=compress&cs=tinysrgb&w=800",
+    images: [
+      "https://images.pexels.com/photos/544542/pexels-photo-544542.jpeg?auto=compress&cs=tinysrgb&w=800"
+    ],
     condition: "new",
     fuel: "Gasolina",
   },
@@ -41,9 +30,9 @@ const vehicles: Vehicle[] = [
     brand: "Ford",
     model: "Focus",
     year: 2021,
-    price: 18500,
-    image:
-      "https://images.pexels.com/photos/1007410/pexels-photo-1007410.jpeg?auto=compress&cs=tinysrgb&w=800",
+    images: [
+      "https://images.pexels.com/photos/1007410/pexels-photo-1007410.jpeg?auto=compress&cs=tinysrgb&w=800"
+    ],
     condition: "used",
     mileage: 25000,
     fuel: "Gasolina",
@@ -53,9 +42,9 @@ const vehicles: Vehicle[] = [
     brand: "Chevrolet",
     model: "Onix",
     year: 2024,
-    price: 20000,
-    image:
-      "https://images.pexels.com/photos/708764/pexels-photo-708764.jpeg?auto=compress&cs=tinysrgb&w=800",
+    images: [
+      "https://images.pexels.com/photos/708764/pexels-photo-708764.jpeg?auto=compress&cs=tinysrgb&w=800"
+    ],
     condition: "new",
     fuel: "Flex",
   },
@@ -64,23 +53,41 @@ const vehicles: Vehicle[] = [
     brand: "Volkswagen",
     model: "Golf",
     year: 2022,
-    price: 24000,
-    image:
-      "https://images.pexels.com/photos/1545743/pexels-photo-1545743.jpeg?auto=compress&cs=tinysrgb&w=800",
+    images: [
+      "https://images.pexels.com/photos/1545743/pexels-photo-1545743.jpeg?auto=compress&cs=tinysrgb&w=800"
+    ],
     condition: "used",
     mileage: 15000,
     fuel: "Gasolina",
   },
   {
     id: 6,
-    brand: "Nissan",
-    model: "Sentra",
+    brand: "Ford",
+    model: "Maverik Lariat Híbrida ",
     year: 2024,
-    price: 23500,
-    image:
-      "https://images.pexels.com/photos/3802510/pexels-photo-3802510.jpeg?auto=compress&cs=tinysrgb&w=800",
+    images: [
+      "https://images.pexels.com/photos/3802510/pexels-photo-3802510.jpeg?auto=compress&cs=tinysrgb&w=800"
+    ],
     condition: "new",
     fuel: "Gasolina",
+  },
+  // Volkswagen T-cross Highline
+  {
+    id: 7,
+    brand: "Volkswagen",
+    model: "T-cross Highline",
+    year: 2020,
+    mileage: 70000,
+    images: [
+      "/t-cross/dalanteT-cross.jpg",
+      "/t-cross/costadoT-cross.jpg",
+      "/t-cross/atrasT-cross.jpg",
+      "/t-cross/interiorT-cross.jpg",
+      "/t-cross/costadotT-cross.jpg",
+      "/t-cross/interior2T-cross.jpg"
+    ],
+    condition: "used",
+    fuel: "Naftero",
   },
 ];
 
@@ -163,59 +170,7 @@ const VehiclesSection: React.FC = () => {
           </div>
         </div>
         {/* Vehicle Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredVehicles.map((vehicle) => (
-            <div
-              key={vehicle.id}
-              className="bg-gray-900 rounded-xl overflow-hidden shadow-2xl hover:shadow-red-600/20 transition-all duration-300 transform hover:-translate-y-2"
-            >
-              <div className="relative">
-                <img
-                  src={vehicle.image}
-                  alt={`${vehicle.brand} ${vehicle.model}`}
-                  className="w-full h-64 object-cover"
-                />
-                <div className="absolute top-4 left-4">
-                  <span
-                    className={`px-3 py-1 rounded-full text-sm font-semibold ${
-                      vehicle.condition === "new"
-                        ? "bg-green-600 text-white"
-                        : "bg-blue-600 text-white"
-                    }`}
-                  >
-                    {vehicle.condition === "new" ? "0 KM" : "Usado"}
-                  </span>
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-2xl font-bold mb-2">
-                  {vehicle.brand} {vehicle.model}
-                </h3>
-                <div className="flex justify-between items-center mb-4">
-                  <span className="text-gray-400">Año: {vehicle.year}</span>
-                  <span className="text-gray-400">
-                    Combustible: {vehicle.fuel}
-                  </span>
-                </div>
-                {vehicle.mileage && (
-                  <div className="mb-4">
-                    <span className="text-gray-400">
-                      Kilometraje: {vehicle.mileage.toLocaleString()} km
-                    </span>
-                  </div>
-                )}
-                <div className="flex justify-between items-center">
-                  <span className="text-3xl font-bold text-red-600">
-                    {formatPrice(vehicle.price)}
-                  </span>
-                  <button className="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-lg font-semibold transition-all duration-300">
-                    Ver Detalles
-                  </button>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+        <VehicleGrid vehicles={filteredVehicles} />
       </div>
     </section>
   );

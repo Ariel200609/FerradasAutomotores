@@ -25,6 +25,17 @@ El frontend corre por defecto en http://localhost:5173
 - El login y registro usan cookies para mantener la sesión.
 - El formulario de contacto requiere que el usuario esté autenticado.
 
+## Proximos cambios
+
+-Agregar un carrousel a la pantalla inicial,donde se pasen las fotos solas
+-Modificar las tarjetas de los autos 
+-terminar los carruseles de los autos 
+-Modificar Informacion de toda la pagina
+-agregar carrusel automatico sobre Nuestros Clientes y unidades Vendidas
+-sacar el envianos tu mensaje y rellenar con mas informacion para contactarnos
+-agregar animaciones al scroll 
+-agregar animaciones a la hora de entrar a la pagina.
+
 ---
 
 Para más detalles sobre la API y la base de datos, revisa el README en `../backend/`. 
