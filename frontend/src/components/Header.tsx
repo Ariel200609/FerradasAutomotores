@@ -10,14 +10,13 @@ const Header: React.FC = () => (
             alt="Ferradas Automotores Logo"
             className="h-8 w-auto mr-3"
           />
-          <span className="text-xl font-bold">FERRADAS AUTOMOTORES</span>
         </div>
         <div className="hidden md:flex space-x-8">
-          <a href="#inicio" className="hover:text-red-600 transition-colors duration-300">Inicio</a>
-          <a href="#vehiculos" className="hover:text-red-600 transition-colors duration-300">Vehículos</a>
-          <a href="#servicios" className="hover:text-red-600 transition-colors duration-300">Servicios</a>
-          <a href="#nosotros" className="hover:text-red-600 transition-colors duration-300">Nosotros</a>
-          <a href="#contacto" className="hover:text-red-600 transition-colors duration-300">Contacto</a>
+          <a href="#inicio" className="text-white hover:text-red-600 transition-colors duration-300">Inicio</a>
+          <a href="#vehiculos" className="text-white hover:text-red-600 transition-colors duration-300">Vehículos</a>
+          <a href="#servicios" className="text-white hover:text-red-600 transition-colors duration-300">Servicios</a>
+          <a href="#nosotros" className="text-white hover:text-red-600 transition-colors duration-300">Nosotros</a>
+          <a href="#contacto" className="text-white hover:text-red-600 transition-colors duration-300">Contacto</a>
         </div>
       </div>
     </div>

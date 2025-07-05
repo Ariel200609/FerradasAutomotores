@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface Vehicle {
   id: number;
@@ -11,89 +12,80 @@ interface Vehicle {
   fuel: string;
 }
 
-interface Props {
-  vehicles: Vehicle[];
-}
-
-const VehicleGrid: React.FC<Props> = ({ vehicles }) => (
-  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-    {vehicles.map((vehicle) => (
-      <VehicleCard key={vehicle.id} vehicle={vehicle} />
-    ))}
-  </div>
-);
-
-// Componente de tarjeta individual con carrusel
 const VehicleCard: React.FC<{ vehicle: Vehicle }> = ({ vehicle }) => {
-  const [current, setCurrent] = useState(0);
-  const total = vehicle.images.length;
+  const [hovered, setHovered] = useState(false);
+  const navigate = useNavigate();
+  const isTcross = vehicle.model.toLowerCase().includes("t-cross");
+  return (
+    <div
+      className={`min-w-[220px] max-w-[220px] bg-white border border-gray-200 rounded-xl overflow-visible shadow-sm mx-2 flex-shrink-0 transition-all duration-300 relative group ${hovered ? 'z-20' : ''}`}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{ minHeight: 260 }}
+    >
+      <div className={`relative w-full h-36 flex items-center justify-center bg-gray-50 transition-all duration-300 ${hovered ? 'scale-110 shadow-2xl' : ''}`}>
+        <img
+          src={vehicle.images[0]}
+          alt={`${vehicle.brand} ${vehicle.model}`}
+          className="object-contain h-32 w-full transition-all duration-300"
+        />
+      </div>
+      <div className="p-3 text-center">
+        <div className={`text-base font-semibold transition-all duration-300 ${hovered ? 'text-red-600' : 'text-gray-800'} truncate`}>{vehicle.brand} {vehicle.model}</div>
+        <div className="text-xs text-gray-500">Año: {vehicle.year}</div>
+        {hovered && (
+          <button
+            className="mt-3 px-4 py-1 border border-gray-400 rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-100 transition-all duration-200 shadow-md"
+            onClick={() => isTcross ? navigate('/vehiculo/t-cross') : alert('Próximamente detalle para este modelo')}
+          >
+            Ver modelo
+          </button>
+        )}
+      </div>
+    </div>
+  );
+};
 
-  const prev = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    setCurrent((c) => (c === 0 ? total - 1 : c - 1));
-  };
-  const next = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    setCurrent((c) => (c === total - 1 ? 0 : c + 1));
+const VehicleGrid: React.FC<{ vehicles: Vehicle[] }> = ({ vehicles }) => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: "left" | "right") => {
+    if (scrollRef.current) {
+      const { scrollLeft, clientWidth } = scrollRef.current;
+      const scrollAmount = clientWidth * 0.7;
+      scrollRef.current.scrollTo({
+        left: direction === "left" ? scrollLeft - scrollAmount : scrollLeft + scrollAmount,
+        behavior: "smooth",
+      });
+    }
   };
 
   return (
-    <div className="bg-gray-900 rounded-xl overflow-hidden shadow-2xl hover:shadow-red-600/20 transition-all duration-300 transform hover:-translate-y-2">
-      <div className="relative">
-        <img
-          src={vehicle.images[current]}
-          alt={`${vehicle.brand} ${vehicle.model}`}
-          className="w-full h-64 object-cover"
-        />
-        {total > 1 && (
-          <>
-            <button
-              onClick={prev}
-              className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/60 text-white rounded-full p-2 hover:bg-red-600 z-10"
-              aria-label="Anterior"
-            >
-              &#8592;
-            </button>
-            <button
-              onClick={next}
-              className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/60 text-white rounded-full p-2 hover:bg-red-600 z-10"
-              aria-label="Siguiente"
-            >
-              &#8594;
-            </button>
-          </>
-        )}
-        <div className="absolute top-4 left-4">
-          <span
-            className={`px-3 py-1 rounded-full text-sm font-semibold ${
-              vehicle.condition === "new"
-                ? "bg-green-600 text-white"
-                : "bg-blue-600 text-white"
-            }`}
-          >
-            {vehicle.condition === "new" ? "0 KM" : "Usado"}
-          </span>
-        </div>
+    <div className="relative flex items-center w-full">
+      <button
+        onClick={() => scroll("left")}
+        className="z-20 bg-transparent focus:outline-none text-gray-800 text-3xl font-bold flex items-center justify-center mr-2"
+        aria-label="Anterior"
+        style={{ width: 26, height: 26 }}
+      >
+        {'<'}
+      </button>
+      <div
+        ref={scrollRef}
+        className="flex overflow-x-auto gap-2 py-4 px-8 scrollbar-none" style={{ scrollBehavior: 'smooth', msOverflowStyle: 'none', scrollbarWidth: 'none' }}
+      >
+        {vehicles.map((vehicle) => (
+          <VehicleCard key={vehicle.id} vehicle={vehicle} />
+        ))}
       </div>
-      <div className="p-6">
-        <h3 className="text-2xl font-bold mb-2">
-          {vehicle.brand} {vehicle.model}
-        </h3>
-        <div className="flex justify-between items-center mb-4">
-          <span className="text-gray-400">Año: {vehicle.year}</span>
-          <span className="text-gray-400">
-            Combustible: {vehicle.fuel}
-          </span>
-        </div>
-        {vehicle.mileage && (
-          <div className="mb-4">
-            <span className="text-gray-400">
-              Kilometraje: {vehicle.mileage.toLocaleString()} km
-            </span>
-          </div>
-        )}
-        {/* Sin precio ni botón de detalles */}
-      </div>
+      <button
+        onClick={() => scroll("right")}
+        className="z-20 bg-transparent focus:outline-none text-gray-800 text-3xl font-bold flex items-center justify-center ml-2"
+        aria-label="Siguiente"
+        style={{ width: 36, height: 36 }}
+      >
+        {'>'}
+      </button>
     </div>
   );
 };

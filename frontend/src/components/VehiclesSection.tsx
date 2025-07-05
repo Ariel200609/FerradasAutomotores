@@ -113,13 +113,13 @@ const VehiclesSection: React.FC = () => {
   };
 
   return (
-    <section id="vehiculos" className="bg-gradient-to-r from-black via-gray-500 to-white backdrop-blur-sm z-50 border-b border-white-700">
+    <section id="vehiculos" className="bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 py-8">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
             Nuestros <span className="text-red-600">Vehículos</span>
           </h2>
-          <p className="text-xl text-black-700 max-w-3xl mx-auto">
+          <p className="text-xl text-black max-w-3xl mx-auto">
             Explora nuestra cuidadosa selección de vehículos nuevos y usados,
             todos inspeccionados y certificados para tu tranquilidad.
           </p>

@@ -1,10 +1,13 @@
 import React from "react";
+import { Routes, Route } from "react-router-dom";
 import HeroSection from "../components/HeroSection";
 import StatsSection from "../components/StatsSection";
 import VehiclesSection from "../components/VehiclesSection";
 import ServicesSection from "../components/ServicesSection";
 import AboutSection from "../components/AboutSection";
 import TestimonialsSection from "../components/TestimonialsSection";
+import ContactSection from "../components/ContactSection";
+import VehicleDetail from "../components/VehicleDetail";
 import { Star, CheckCircle } from "lucide-react";
 
 const testimonials = [
@@ -26,14 +29,23 @@ const testimonials = [
 ];
 
 const HomeView: React.FC = () => (
-  <>
-    <HeroSection />
-    <StatsSection />
-    <VehiclesSection />
-    <ServicesSection />
-    <AboutSection />
-    <TestimonialsSection />
-  </>
+  <Routes>
+    <Route
+      path="/"
+      element={
+        <>
+          <HeroSection />
+          <StatsSection />
+          <VehiclesSection />
+          <ServicesSection />
+          <AboutSection />
+          <TestimonialsSection />
+          <ContactSection />
+        </>
+      }
+    />
+    <Route path="/vehiculo/t-cross" element={<VehicleDetail />} />
+  </Routes>
 );
 
 export default HomeView; 
