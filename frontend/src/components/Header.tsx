@@ -6,7 +6,7 @@ const Header: React.FC = () => (
       <div className="flex justify-between items-center h-16">
         <div className="flex items-center">
           <img
-            src="../public/logoFerrades.jpg"
+            src="../public/LogoFerradas.jpg"
             alt="Ferradas Automotores Logo"
             className="h-8 w-auto mr-3"
           />
