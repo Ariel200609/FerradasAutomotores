@@ -16,14 +16,14 @@ interface Vehicle {
 const vehicles: Vehicle[] = [
   {
     id: 2,
-    brand: "Honda",
-    model: "Civic",
-    year: 2023,
+    brand: "Volkswagen",
+    model: "Amarok V6",
+    year: 2025,
     images: [
-      "https://images.pexels.com/photos/544542/pexels-photo-544542.jpeg?auto=compress&cs=tinysrgb&w=800"
+      "../public/AmarokV6.jpg"
     ],
     condition: "new",
-    fuel: "Gasolina",
+    fuel: "Diesel",
   },
   {
     id: 3,
@@ -43,7 +43,7 @@ const vehicles: Vehicle[] = [
     model: "Onix",
     year: 2024,
     images: [
-      "https://images.pexels.com/photos/708764/pexels-photo-708764.jpeg?auto=compress&cs=tinysrgb&w=800"
+      "../public/Onix-RS.jpg"
     ],
     condition: "new",
     fuel: "Flex",
@@ -115,14 +115,10 @@ const VehiclesSection: React.FC = () => {
   return (
     <section id="vehiculos" className="bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16 py-8">
+        <div className="text-center mb-1 py-8">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
             Nuestros <span className="text-red-600">Vehículos</span>
           </h2>
-          <p className="text-xl text-black max-w-3xl mx-auto">
-            Explora nuestra cuidadosa selección de vehículos nuevos y usados,
-            todos inspeccionados y certificados para tu tranquilidad.
-          </p>
         </div>
         {/* Search and Filter */}
         <div className="mb-12 flex flex-col md:flex-row gap-4 justify-center items-center">

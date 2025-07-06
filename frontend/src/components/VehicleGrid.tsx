@@ -18,29 +18,31 @@ const VehicleCard: React.FC<{ vehicle: Vehicle }> = ({ vehicle }) => {
   const isTcross = vehicle.model.toLowerCase().includes("t-cross");
   return (
     <div
-      className={`min-w-[220px] max-w-[220px] bg-white border border-gray-200 rounded-xl overflow-visible shadow-sm mx-2 flex-shrink-0 transition-all duration-300 relative group ${hovered ? 'z-20' : ''}`}
+      className={`min-w-[220px] max-w-[220px] bg-transparent mx-2 flex-shrink-0 transition-all duration-300 relative group ${hovered ? 'z-20' : ''}`}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      style={{ minHeight: 260 }}
+      style={{ minHeight: 220 }}
     >
-      <div className={`relative w-full h-36 flex items-center justify-center bg-gray-50 transition-all duration-300 ${hovered ? 'scale-110 shadow-2xl' : ''}`}>
+      <div className="relative w-full h-36 overflow-visible flex items-end justify-center">
         <img
           src={vehicle.images[0]}
           alt={`${vehicle.brand} ${vehicle.model}`}
-          className="object-contain h-32 w-full transition-all duration-300"
+          className={`object-contain w-full h-full transition-all duration-300 ${hovered ? 'scale-110 drop-shadow-2xl' : ''}`}
         />
       </div>
-      <div className="p-3 text-center">
-        <div className={`text-base font-semibold transition-all duration-300 ${hovered ? 'text-red-600' : 'text-gray-800'} truncate`}>{vehicle.brand} {vehicle.model}</div>
-        <div className="text-xs text-gray-500">Año: {vehicle.year}</div>
-        {hovered && (
+      {hovered && (
+        <div className="flex justify-center mt-2">
           <button
-            className="mt-3 px-4 py-1 border border-gray-400 rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-100 transition-all duration-200 shadow-md"
+            className="px-6 py-2 bg-white border border-gray-300 rounded-md text-sm font-semibold text-gray-800 shadow-lg transition-all duration-200"
             onClick={() => isTcross ? navigate('/vehiculo/t-cross') : alert('Próximamente detalle para este modelo')}
           >
             Ver modelo
           </button>
-        )}
+        </div>
+      )}
+      <div className="text-center mt-2">
+        <div className={`text-base font-semibold transition-all duration-300 ${hovered ? 'text-red-600' : 'text-gray-800'} truncate`}>{vehicle.brand} {vehicle.model}</div>
+        <div className="text-xs text-gray-500">Año: {vehicle.year}</div>
       </div>
     </div>
   );
