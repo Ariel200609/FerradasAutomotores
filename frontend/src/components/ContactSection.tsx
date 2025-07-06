@@ -34,7 +34,7 @@ const ContactSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="text-red-600">Contactanos</span>
+            <span className="text-red-600">Contacto</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Estamos aquí para ayudarte a encontrar tu vehículo ideal. Contáctanos y descubre por qué somos la mejor opción.
@@ -75,29 +75,6 @@ const ContactSection: React.FC = () => {
                 <p className="text-gray-300">Domingos: Cerrado</p>
               </div>
             </div>
-          </div>
-          {/* Formulario de mensaje */}
-          <div className="bg-gray-900 rounded-xl p-8">
-            <h3 className="text-2xl font-bold mb-6">Envíanos un Mensaje</h3>
-            <form className="space-y-6" onSubmit={handleSubmit}>
-              <div>
-                <input type="text" placeholder="Tu nombre completo" value={nombre} onChange={e => setNombre(e.target.value)} className="w-full px-4 py-3 bg-black border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-red-600" required />
-              </div>
-              <div>
-                <input type="email" placeholder="Tu email" value={email} onChange={e => setEmail(e.target.value)} className="w-full px-4 py-3 bg-black border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-red-600" required />
-              </div>
-              <div>
-                <input type="tel" placeholder="Tu teléfono" value={telefono} onChange={e => setTelefono(e.target.value)} className="w-full px-4 py-3 bg-black border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-red-600" />
-              </div>
-              <div>
-                <textarea rows={4} placeholder="¿En qué vehículo estás interesado?" value={mensaje} onChange={e => setMensaje(e.target.value)} className="w-full px-4 py-3 bg-black border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-red-600 resize-none" required></textarea>
-              </div>
-              <button type="submit" className="w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105" disabled={enviando}>
-                {enviando ? "Enviando..." : "Enviar Mensaje"}
-              </button>
-              {exito && <div className="text-green-500 text-center">{exito}</div>}
-              {error && <div className="text-red-500 text-center">{error}</div>}
-            </form>
           </div>
         </div>
       </div>

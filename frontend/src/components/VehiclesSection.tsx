@@ -20,7 +20,7 @@ const vehicles: Vehicle[] = [
     model: "Amarok V6",
     year: 2025,
     images: [
-      "../public/AmarokV6.jpg"
+      "/FerradasAutomotores/AmarokV6.jpg"
     ],
     condition: "new",
     fuel: "Diesel",
@@ -43,21 +43,20 @@ const vehicles: Vehicle[] = [
     model: "Onix",
     year: 2024,
     images: [
-      "../public/Onix-RS.jpg"
+      "/FerradasAutomotores/Onix-RS.jpg"
     ],
     condition: "new",
     fuel: "Flex",
   },
   {
     id: 5,
-    brand: "Volkswagen",
-    model: "Golf",
-    year: 2022,
+    brand: "Fiat",
+    model: "Fastback 270",
+    year: 2025,
     images: [
-      "https://images.pexels.com/photos/1545743/pexels-photo-1545743.jpeg?auto=compress&cs=tinysrgb&w=800"
+      "/FerradasAutomotores/Fastback/PortadaFiat.jpg"
     ],
-    condition: "used",
-    mileage: 15000,
+    condition: "new",
     fuel: "Gasolina",
   },
   {
@@ -65,11 +64,15 @@ const vehicles: Vehicle[] = [
     brand: "Ford",
     model: "Maverik Lariat Híbrida ",
     year: 2024,
+    mileage: 25000,
     images: [
-      "https://images.pexels.com/photos/3802510/pexels-photo-3802510.jpeg?auto=compress&cs=tinysrgb&w=800"
+      "/FerradasAutomotores/Maverik/PortadaMaverik.jpg",
+      "/FerradasAutomotores/Maverik/AtrasMaverik.jpg",
+      "/FerradasAutomotores/Maverik/DelanteMaverik.jpg",
+      "/FerradasAutomotores/Maverik/InteriorMaverik.jpg"  
     ],
-    condition: "new",
-    fuel: "Gasolina",
+    condition: "used",
+    fuel: "Naftera-Eléctrica",
   },
   // Volkswagen T-cross Highline
   {
@@ -79,12 +82,12 @@ const vehicles: Vehicle[] = [
     year: 2020,
     mileage: 70000,
     images: [
-      "/t-cross/dalanteT-cross.jpg",
-      "/t-cross/costadoT-cross.jpg",
-      "/t-cross/atrasT-cross.jpg",
-      "/t-cross/interiorT-cross.jpg",
-      "/t-cross/costadotT-cross.jpg",
-      "/t-cross/interior2T-cross.jpg"
+      "/FerradasAutomotores/t-cross/dalanteT-cross.jpg",
+      "/FerradasAutomotores/t-cross/costadoT-cross.jpg",
+      "/FerradasAutomotores/t-cross/atrasT-cross.jpg",
+      "/FerradasAutomotores/t-cross/interiorT-cross.jpg",
+      "/FerradasAutomotores/t-cross/costadotT-cross.jpg",
+      "/FerradasAutomotores/t-cross/interior2T-cross.jpg"
     ],
     condition: "used",
     fuel: "Naftero",

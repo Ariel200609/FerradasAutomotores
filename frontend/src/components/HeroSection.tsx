@@ -2,17 +2,17 @@ import React, { useEffect, useState } from "react";
 
 const carouselItems = [
   {
-    image: "../public/inicioPrincipal2.jpg",
+    image: "/FerradasAutomotores/InicioPrincipal1.jpg",
     slogan: true,
     text: "Descubre nuestra amplia selección de vehículos nuevos y usados. Calidad garantizada, precios competitivos y financiamiento personalizado."
   },
   {
-    image: "../public/inicioPrincipal1.jpg",
+    image: "/FerradasAutomotores/InicioPrincipal2.jpg",
     slogan: false,
     text: "Innovación y estilo para tu próxima aventura."
   },
   {
-    image: "../public/inicioPrincipal4.jpg",
+    image: "/FerradasAutomotores/InicioPrincipal4.jpg",
     slogan: false,
     text: "Confort y tecnología en cada detalle."
   }
@@ -52,17 +52,9 @@ const HeroSection: React.FC = () => {
     return () => clearTimeout(interval);
   }, [currentImage, imageCount]);
 
-  // Navegación manual
-  const goToPrev = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    setCurrentImage((prev) => (prev - 1 + imageCount) % imageCount);
-  };
-  const goToNext = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    setCurrentImage((prev) => (prev + 1) % imageCount);
-  };
-
   const currentItem = carouselItems[currentImage];
+
+  console.log("currentImage", currentImage);
 
   return (
     <section id="inicio" className="pt-16 relative overflow-hidden bg-white">
@@ -74,21 +66,6 @@ const HeroSection: React.FC = () => {
         />
         {/* Overlay gradiente sutil */}
         <div className="absolute inset-0 z-10 pointer-events-none bg-[linear-gradient(to_right,rgba(0,0,0,0.7)_0%,rgba(0,0,0,0.5)_50%,rgba(0,0,0,0)_80%)]"></div>
-        {/* Flechas de navegación */}
-        <button
-          onClick={goToPrev}
-          className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-black/70 text-white rounded-full p-2 focus:outline-none"
-          aria-label="Anterior"
-        >
-          &#8592;
-        </button>
-        <button
-          onClick={goToNext}
-          className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-black/70 text-white rounded-full p-2 focus:outline-none"
-          aria-label="Siguiente"
-        >
-          &#8594;
-        </button>
         {/* Contenido centrado verticalmente */}
         <div className={`relative z-30 flex flex-col h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ${currentItem.slogan ? 'justify-center items-start pl-4 md:pl-12' : 'justify-end items-start pb-12'}`}>
           <div className="max-w-3xl w-full">

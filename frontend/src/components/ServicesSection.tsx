@@ -6,8 +6,7 @@ const ServicesSection: React.FC = () => (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="text-center mb-2 py-16">
         <h2 className="text-4xl md:text-3xl font-bold mb-6 text-gray-900">
-          EXPERENCIA DE COMPRA COMPLETA,
-          <br/>
+          EXPERIENCIA DE COMPRA COMPLETA,<br/>
           CON SERVICIOS QUE VAN MÁS ALLÁ DE LA VENTA.
         </h2>
       </div>

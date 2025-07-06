@@ -16,6 +16,12 @@ const VehicleCard: React.FC<{ vehicle: Vehicle }> = ({ vehicle }) => {
   const [hovered, setHovered] = useState(false);
   const navigate = useNavigate();
   const isTcross = vehicle.model.toLowerCase().includes("t-cross");
+  const isMaverik = vehicle.model.toLowerCase().includes("maverik");
+  const isAmarok = vehicle.model.toLowerCase().includes("amarok");
+  const isFocus = vehicle.model.toLowerCase().includes("focus");
+  const isOnix = vehicle.model.toLowerCase().includes("onix");
+  const isGolf = vehicle.model.toLowerCase().includes("golf");
+  const isFastback = vehicle.model.toLowerCase().includes("fastback");
   return (
     <div
       className={`min-w-[220px] max-w-[220px] bg-transparent mx-2 flex-shrink-0 transition-all duration-300 relative group ${hovered ? 'z-20' : ''}`}
@@ -34,7 +40,16 @@ const VehicleCard: React.FC<{ vehicle: Vehicle }> = ({ vehicle }) => {
         <div className="flex justify-center mt-2">
           <button
             className="px-6 py-2 bg-white border border-gray-300 rounded-md text-sm font-semibold text-gray-800 shadow-lg transition-all duration-200"
-            onClick={() => isTcross ? navigate('/vehiculo/t-cross') : alert('Próximamente detalle para este modelo')}
+            onClick={() => {
+              if (isTcross) navigate('/vehiculo/t-cross');
+              else if (isMaverik) navigate('/vehiculo/maverik');
+              else if (isAmarok) navigate('/vehiculo/amarok');
+              else if (isFocus) navigate('/vehiculo/focus');
+              else if (isOnix) navigate('/vehiculo/onix');
+              else if (isGolf) navigate('/vehiculo/golf');
+              else if (isFastback) navigate('/vehiculo/fastback');
+              else alert('Próximamente detalle para este modelo');
+            }}
           >
             Ver modelo
           </button>
