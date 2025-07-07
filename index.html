@@ -12,5 +12,21 @@
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function (e) {
+            const targetId = this.getAttribute('href').slice(1);
+            const target = document.getElementById(targetId);
+            if (target) {
+              e.preventDefault();
+              target.scrollIntoView({
+                behavior: 'smooth'
+              });
+            }
+          });
+        });
+      });
+    </script>
   </body>
 </html>
