@@ -9,6 +9,7 @@ import TestimonialsSection from "../components/TestimonialsSection";
 import ContactSection from "../components/ContactSection";
 import VehicleDetail from "../components/VehicleDetail";
 import { Star, CheckCircle } from "lucide-react";
+import Footer from "../components/Footer";
 
 const testimonials = [
   {
