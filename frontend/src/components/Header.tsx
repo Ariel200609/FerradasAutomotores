@@ -1,15 +1,16 @@
 import React, { useState, useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Header: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
   const links = [
-    { href: "#inicio", label: "Inicio" },
-    { href: "#vehiculos", label: "Vehículos" },
-    { href: "#servicios", label: "Servicios" },
-    { href: "#nosotros", label: "Nosotros" },
-    { href: "#contacto", label: "Contacto" },
+    { href: "#HeroSection", label: "Home" },
+    { href: "#VehiclesSection", label: "Vehicles" },
+    { href: "#services", label: "Services" },
+    { href: "#about", label: "About Us" },
+    { href: "#contact", label: "Contact" },
   ];
 
   // Cerrar menú al hacer clic fuera
@@ -51,7 +52,7 @@ const Header: React.FC = () => {
             <button
               className="text-white text-3xl font-bold focus:outline-none"
               onClick={() => setMenuOpen(!menuOpen)}
-              aria-label="Abrir menú"
+              aria-label="Open menu"
             >
               <span className="text-white text-4xl font-bold">≡</span>
             </button>

@@ -12,7 +12,7 @@ const carouselItems = [
     text: "Innovación y estilo para tu próxima aventura."
   },
   {
-    image: "/FerradasAutomotores/InicioPrincipal4.jpg",
+    image: "/FerradasAutomotores/inicioPrincipal4.jpg",
     slogan: false,
     text: "Confort y tecnología en cada detalle."
   }
@@ -57,7 +57,7 @@ const HeroSection: React.FC = () => {
   console.log("currentImage", currentImage);
 
   return (
-    <section id="inicio" className="pt-16 relative overflow-hidden bg-white">
+    <section id="HeroSection" className="pt-16 relative overflow-hidden bg-white">
       <div className="relative w-full h-[500px] md:h-[600px]">
         <img
           src={currentItem.image}

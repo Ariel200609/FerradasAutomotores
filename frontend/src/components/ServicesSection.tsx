@@ -2,7 +2,7 @@ import React from "react";
 import { CheckCircle } from "lucide-react";
 
 const ServicesSection: React.FC = () => (
-  <section id="servicios" className="bg-gray-100">
+  <section id="services" className="bg-gray-100">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="text-center mb-2 py-16">
         <h2 className="text-4xl md:text-3xl font-bold mb-6 text-gray-900">

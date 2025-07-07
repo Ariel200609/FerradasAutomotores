@@ -1,16 +1,14 @@
 import React from "react";
-import Header from "./components/Header";
+import Layout from "./components/Layout";
 import HomeView from "./views/HomeView";
 import ContactView from "./views/ContactView";
-import Footer from "./components/Footer";
 
 function App() {
   return (
     <div className="min-h-screen bg-black text-white">
-      <Header />
-      <HomeView />
-      <ContactView />
-      <Footer />
+      <Layout>
+        <HomeView />
+      </Layout>
     </div>
   );
 }

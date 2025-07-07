@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import HomeView from "./views/HomeView";
 import VehicleDetail from "./components/VehicleDetail";
 import VehicleDetailMaverik from "./components/VehicleDetailMaverik";
@@ -19,6 +19,7 @@ const AppRoutes: React.FC = () => (
       <Route path="/vehiculo/focus" element={<VehicleDetailFocus />} />
       <Route path="/vehiculo/onix" element={<VehicleDetailOnix />} />
       <Route path="/vehiculo/fastback" element={<VehicleDetailFastback />} />
+      <Route path="*" element={<Navigate to="/" />} />
     </Routes>
   </Layout>
 );
