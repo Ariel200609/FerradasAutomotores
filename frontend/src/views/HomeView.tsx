@@ -1,50 +1,46 @@
-import React from "react";
+// HomeView.tsx
+// Vista principal de la landing page de Ferradas Automotores.
+// Utiliza React Router para definir rutas y React.lazy + Suspense para lazy loading de las secciones principales.
+// Cada sección se carga solo cuando entra en el DOM, mejorando el rendimiento.
+
+import React, { Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
-import HeroSection from "../components/HeroSection";
-import StatsSection from "../components/StatsSection";
-import VehiclesSection from "../components/VehiclesSection";
-import ServicesSection from "../components/ServicesSection";
-import AboutSection from "../components/AboutSection";
-import TestimonialsSection from "../components/TestimonialsSection";
-import ContactSection from "../components/ContactSection";
+
+// Lazy load de secciones principales (bloques grandes de la landing)
+const HeroSection = React.lazy(() => import("../components/HeroSection"));
+const StatsSection = React.lazy(() => import("../components/StatsSection"));
+const VehiclesSection = React.lazy(() => import("../components/VehiclesSection"));
+const ServicesSection = React.lazy(() => import("../components/ServicesSection"));
+const AboutSection = React.lazy(() => import("../components/AboutSection"));
+const TestimonialsSection = React.lazy(() => import("../components/TestimonialsSection"));
+const ContactSection = React.lazy(() => import("../components/ContactSection"));
+
+// [NO USADO] Estos imports no se usan en la vista principal, pero pueden ser útiles para futuras rutas o lógica:
 import VehicleDetail from "../components/VehicleDetail";
 import { Star, CheckCircle } from "lucide-react";
-import Footer from "../components/Footer";
 
-const testimonials = [
-  {
-    name: "Carlos Rodriguez",
-    text: "Excelente atención y gran variedad de vehículos. Encontré exactamente lo que buscaba.",
-    rating: 5,
-  },
-  {
-    name: "Maria Silva",
-    text: "Muy profesionales, me ayudaron con el financiamiento y todo el proceso fue muy fácil.",
-    rating: 5,
-  },
-  {
-    name: "João Santos",
-    text: "Recomiendo totalmente Ferradas Automotores. Calidad y confianza garantizada.",
-    rating: 5,
-  },
-];
+// Loader simple que se muestra mientras se carga cada sección
+const Loader = () => <div className="w-full text-center py-12 text-gray-400">Loading...</div>;
 
+// Definición de rutas de la landing page
 const HomeView: React.FC = () => (
   <Routes>
     <Route
       path="/"
       element={
         <>
-          <HeroSection />
-          <StatsSection />
-          <VehiclesSection />
-          <ServicesSection />
-          <AboutSection />
-          <TestimonialsSection />
-          <ContactSection />
+          {/* Cada sección se carga de forma diferida (lazy) y muestra un loader mientras se importa */}
+          <Suspense fallback={<Loader />}><HeroSection /></Suspense>
+          <Suspense fallback={<Loader />}><StatsSection /></Suspense>
+          <Suspense fallback={<Loader />}><VehiclesSection /></Suspense>
+          <Suspense fallback={<Loader />}><ServicesSection /></Suspense>
+          <Suspense fallback={<Loader />}><AboutSection /></Suspense>
+          <Suspense fallback={<Loader />}><TestimonialsSection /></Suspense>
+          <Suspense fallback={<Loader />}><ContactSection /></Suspense>
         </>
       }
     />
+    {/* [NO USADO] Ruta de ejemplo para detalle de vehículo, actualmente no enlazada desde el header ni la landing */}
     <Route path="/vehiculo/t-cross" element={<VehicleDetail />} />
   </Routes>
 );
