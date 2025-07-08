@@ -76,6 +76,40 @@ const ContactSection: React.FC = () => {
               </div>
             </div>
           </div>
+          {/* Bloque de sucursales */}
+          <div className="w-full bg-gray-900 rounded-xl shadow-lg p-6 mt-8 mb-8 flex flex-col items-center overflow-hidden">
+            <h3 className="text-2xl font-bold text-center text-red-500 tracking-wider uppercase mb-6">SUCURSALES DONDE NOS PODES VISITAR!</h3>
+            <div className="w-full flex flex-col md:flex-row gap-6 items-center justify-center">
+              {/* Bonifacio (Laguna Alsina) */}
+              <div className="flex-1 w-full h-80 max-w-xs md:max-w-full mb-6 md:mb-0">
+                <h3 className="text-lg font-semibold mb-2 text-center text-white">Bonifacio (Laguna Alsina)</h3>
+                <iframe
+                  title="Mapa Bonifacio Laguna Alsina"
+                  src="https://www.google.com/maps?q=-36.81375,-62.2423056&z=15&output=embed"
+                  width="100%"
+                  height="100%"
+                  className="rounded-lg border-2 border-gray-700 shadow-lg min-h-[250px]"
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+              {/* Salliqueló */}
+              <div className="flex-1 w-full h-80 max-w-xs md:max-w-full">
+                <h3 className="text-lg font-semibold mb-2 text-center text-white">Salliqueló</h3>
+                <iframe
+                  title="Mapa Salliqueló"
+                  src="https://www.google.com/maps?q=-36.7514444,-62.9590278&z=15&output=embed"
+                  width="100%"
+                  height="100%"
+                  className="rounded-lg border-2 border-gray-700 shadow-lg min-h-[250px]"
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
