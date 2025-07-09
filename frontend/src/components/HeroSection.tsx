@@ -3,7 +3,7 @@
 // Muestra un carrusel de imágenes con eslogan animado y texto destacado.
 // Utiliza hooks para animaciones y cambio automático de imagen.
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 // Array de imágenes y textos del carrusel principal
 const carouselItems = [
@@ -33,6 +33,66 @@ const HeroSection: React.FC = () => {
   // Estado para el índice de la imagen actual del carrusel
   const [currentImage, setCurrentImage] = useState(0);
   const imageCount = carouselItems.length;
+  const timeoutRef = useRef<number | null>(null);
+  const dragStartX = useRef<number | null>(null);
+  const dragDelta = useRef<number>(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // Swipe handlers
+  const handleTouchStart = (e: React.TouchEvent) => {
+    dragStartX.current = e.touches[0].clientX;
+    dragDelta.current = 0;
+    if (timeoutRef.current !== null) clearTimeout(timeoutRef.current);
+  };
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (dragStartX.current !== null) {
+      dragDelta.current = e.touches[0].clientX - dragStartX.current;
+      // Prevenir scroll horizontal nativo solo si se está arrastrando
+      if (Math.abs(dragDelta.current) > 10) {
+        e.preventDefault();
+      }
+    }
+  };
+  const handleTouchEnd = () => {
+    if (dragDelta.current > 50) {
+      setCurrentImage((prev) => (prev - 1 + imageCount) % imageCount);
+    } else if (dragDelta.current < -50) {
+      setCurrentImage((prev) => (prev + 1) % imageCount);
+    }
+    dragStartX.current = null;
+    dragDelta.current = 0;
+  };
+  // Mouse drag for desktop
+  const handleMouseDown = (e: React.MouseEvent) => {
+    dragStartX.current = e.clientX;
+    dragDelta.current = 0;
+    if (timeoutRef.current !== null) clearTimeout(timeoutRef.current);
+    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mouseup', handleMouseUp);
+  };
+  const handleMouseMove = (e: MouseEvent) => {
+    if (dragStartX.current !== null) {
+      dragDelta.current = e.clientX - dragStartX.current;
+    }
+  };
+  const handleMouseUp = () => {
+    if (dragDelta.current > 50) {
+      setCurrentImage((prev) => (prev - 1 + imageCount) % imageCount);
+    } else if (dragDelta.current < -50) {
+      setCurrentImage((prev) => (prev + 1) % imageCount);
+    }
+    dragStartX.current = null;
+    dragDelta.current = 0;
+    window.removeEventListener('mousemove', handleMouseMove);
+    window.removeEventListener('mouseup', handleMouseUp);
+  };
+
+  useEffect(() => {
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('mouseup', handleMouseUp);
+    };
+  }, []);
 
   // Animación del eslogan solo para la imagen principal
   useEffect(() => {
@@ -53,11 +113,14 @@ const HeroSection: React.FC = () => {
 
   // Carrusel automático con duración variable según la imagen
   useEffect(() => {
+    if (timeoutRef.current !== null) clearTimeout(timeoutRef.current);
     const duration = currentImage === 0 ? 7000 : 5000;
-    const interval = setTimeout(() => {
+    timeoutRef.current = window.setTimeout(() => {
       setCurrentImage((prev) => (prev + 1) % imageCount);
     }, duration);
-    return () => clearTimeout(interval);
+    return () => {
+      if (timeoutRef.current !== null) clearTimeout(timeoutRef.current);
+    };
   }, [currentImage, imageCount]);
 
   // Item actual del carrusel
@@ -68,7 +131,15 @@ const HeroSection: React.FC = () => {
 
   return (
     <section id="HeroSection" className="pt-16 relative overflow-hidden bg-white">
-      <div className="relative w-full h-[500px] md:h-[600px]">
+      <div
+        className="relative w-full h-[500px] md:h-[600px] select-none"
+        ref={containerRef}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+        onMouseDown={handleMouseDown}
+        style={{ cursor: 'grab' }}
+      >
         {/* Imagen de fondo del carrusel */}
         <img
           src={currentItem.image}
@@ -117,6 +188,18 @@ const HeroSection: React.FC = () => {
               </h2>
             )}
           </div>
+        </div>
+        {/* Puntitos indicadores minimalistas */}
+        <div className="absolute bottom-6 left-1/2 z-40 flex gap-2 -translate-x-1/2">
+          {carouselItems.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => setCurrentImage(idx)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 border border-white focus:outline-none ${currentImage === idx ? 'bg-white shadow-lg scale-125' : 'bg-white/40'}`}
+              aria-label={`Ir a la imagen ${idx + 1}`}
+              style={{ boxShadow: currentImage === idx ? '0 0 0 2px #e11d48' : undefined }}
+            />
+          ))}
         </div>
       </div>
     </section>
