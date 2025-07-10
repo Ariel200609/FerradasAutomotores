@@ -89,7 +89,8 @@ const VehicleGrid: React.FC<{ vehicles: Vehicle[] }> = ({ vehicles }) => {
       </button>
       <div
         ref={scrollRef}
-        className="flex overflow-x-auto gap-2 py-4 px-8 scrollbar-none" style={{ scrollBehavior: 'smooth', msOverflowStyle: 'none', scrollbarWidth: 'none' }}
+        className="flex overflow-x-auto gap-2 py-4 px-8 scrollbar-none" 
+        style={{ scrollBehavior: 'smooth', msOverflowStyle: 'none', scrollbarWidth: 'none' }}
       >
         {vehicles.map((vehicle) => (
           <VehicleCard key={vehicle.id} vehicle={vehicle} />
