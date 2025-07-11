@@ -62,8 +62,8 @@ const VehicleDetail: React.FC = () => {
           {'>'}
         </button>
         {/* Título superpuesto */}
-        <div className="absolute left-8 bottom-8 z-30 bg-white/80 px-8 py-4 rounded-xl shadow">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 drop-shadow-none">
+        <div className="absolute left-8 bottom-8 z-30 bg-white/80 px-4 py-2 rounded-xl shadow">
+          <h1 className="text-2xl md:text-3xl font-extrabold text-gray-900 drop-shadow-none">
             Volkswagen <span className="text-red-600">T-cross Highline</span>
           </h1>
         </div>

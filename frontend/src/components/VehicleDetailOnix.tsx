@@ -36,8 +36,8 @@ const VehicleDetailOnix: React.FC = () => {
         <img src={onixImages[current]} alt="Chevrolet Onix" className="object-contain h-full w-full rounded-2xl" loading="lazy" />
         <button onClick={next} className="absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-white hover:bg-red-600 hover:text-white text-4xl font-bold rounded-full w-12 h-12 flex items-center justify-center shadow transition" aria-label="Siguiente">{'>'}</button>
         {/* Título superpuesto */}
-        <div className="absolute left-8 bottom-8 z-30 bg-white/80 px-8 py-4 rounded-xl shadow">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 drop-shadow-none">Chevrolet <span className="text-red-600">Onix</span></h1>
+        <div className="absolute left-8 bottom-8 z-30 bg-white/80 px-4 py-2 rounded-xl shadow">
+          <h1 className="text-2xl md:text-3xl font-extrabold text-gray-900 drop-shadow-none">Chevrolet <span className="text-red-600">Onix</span></h1>
         </div>
       </div>
       {/* Especificaciones técnicas */}
