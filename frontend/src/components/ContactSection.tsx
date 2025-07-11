@@ -127,7 +127,7 @@ const ContactSection: React.FC = () => {
                 {!showMapSalliquelo ? (
                   <>
                     <img
-                      src="https://maps.googleapis.com/maps/api/staticmap?center=-36.7514444,-62.9590278&zoom=15&size=400x250&maptype=roadmap&markers=color:red%7C-36.7514444,-62.9590278&key=AIzaSyD..." // Reemplaza por tu API Key si tienes, o usa una imagen local
+                      src="https://maps.googleapis.com/maps/api/staticmap?center=-36.758389,-62.957278&zoom=15&size=400x250&maptype=roadmap&markers=color:red%7C-36.758389,-62.957278&key=AIzaSyD..." // Reemplaza por tu API Key si tienes, o usa una imagen local
                       alt="Mapa Salliqueló"
                       className="rounded-lg border-2 border-gray-700 shadow-lg min-h-[250px] w-full object-cover"
                       loading="lazy"
@@ -142,7 +142,7 @@ const ContactSection: React.FC = () => {
                 ) : (
                   <iframe
                     title="Mapa Salliqueló"
-                    src="https://www.google.com/maps?q=-36.7514444,-62.9590278&z=15&output=embed"
+                    src="https://www.google.com/maps?q=-36.758389,-62.957278&z=15&output=embed"
                     width="100%"
                     height="85%"
                     className="rounded-lg border-2 border-gray-700 shadow-lg min-h-[250px]"
