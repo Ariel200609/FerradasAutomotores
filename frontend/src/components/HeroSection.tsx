@@ -132,7 +132,7 @@ const HeroSection: React.FC = () => {
   return (
     <section id="HeroSection" className="pt-16 relative overflow-hidden bg-white">
       <div
-        className="relative w-full h-[500px] md:h-[600px] select-none"
+        className="relative w-full h-[500px] md:h-[600px] select-none touch-pan-y"
         ref={containerRef}
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}

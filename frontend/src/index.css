@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+html, body {
+  overflow-x: hidden;
+}
+
+.touch-pan-y {
+  touch-action: pan-y;
+}
+
 html {
   scroll-behavior: smooth;
 }
