@@ -1,50 +1,42 @@
-// Servicio para interactuar con la API del backend
+// apiService.ts
+// Servicio de utilidades para llamadas HTTP a la API backend de Ferradas Automotores.
+// Define funciones genéricas para login, registro y envío de mensajes de contacto.
+// [NO USADO] Actualmente no es utilizado directamente, ya que los controladores usan fetch inline.
 
-const API_URL = 'http://localhost:4000/api';
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3001";
 
-// Envía un mensaje de contacto al backend
-export const sendContactMessage = async ({ nombre, email, telefono, mensaje }: { nombre: string, email: string, telefono: string, mensaje: string }) => {
-  const res = await fetch(`${API_URL}/mensajes`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json',
-    },
-    body: JSON.stringify({ nombre, email, telefono, mensaje })
+export async function loginAPI({ email, password }: { email: string; password: string }) {
+  const response = await fetch(`${API_URL}/api/auth/login`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email, password }),
   });
-  if (!res.ok) throw new Error('Error al enviar el mensaje');
-  return res.json();
-};
+  if (!response.ok) {
+    throw new Error("Credenciales incorrectas o error de red");
+  }
+  return response.json();
+}
 
-// Login de usuario
-export const loginAPI = async ({ email, password }: { email: string, password: string }) => {
-  const res = await fetch(`${API_URL}/auth/login`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    credentials: 'include',
-    body: JSON.stringify({ email, password })
+export async function registerAPI({ username, email, password }: { username: string; email: string; password: string }) {
+  const response = await fetch(`${API_URL}/api/auth/register`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ username, email, password }),
   });
-  if (!res.ok) throw new Error('Error en el login');
-  return res.json();
-};
+  if (!response.ok) {
+    throw new Error("Error al registrar usuario");
+  }
+  return response.json();
+}
 
-// Registro de usuario
-export const registerAPI = async ({ username, email, password }: { username: string, email: string, password: string }) => {
-  const res = await fetch(`${API_URL}/auth/register`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    credentials: 'include',
-    body: JSON.stringify({ username, email, password })
+export async function sendContactMessage({ nombre, email, telefono, mensaje }: { nombre: string; email: string; telefono: string; mensaje: string }) {
+  const response = await fetch(`${API_URL}/api/messages`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ nombre, email, telefono, mensaje }),
   });
-  if (!res.ok) throw new Error('Error en el registro');
-  return res.json();
-};
-
-// Verifica si hay sesión activa
-export const getSession = async () => {
-  const res = await fetch(`${API_URL}/auth/session`, {
-    credentials: 'include',
-  });
-  if (!res.ok) return { authenticated: false };
-  return res.json();
-}; 
+  if (!response.ok) {
+    throw new Error("Error al enviar el mensaje");
+  }
+  return response.json();
+} 

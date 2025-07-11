@@ -38,6 +38,7 @@ const ClientCard: React.FC<{ client: typeof clients[0] }> = ({ client }) => {
           alt={client.name}
           className="object-cover w-full h-full"
           onError={e => (e.currentTarget.style.opacity = '0.3')}
+          loading="lazy"
         />
       </div>
     );
@@ -50,6 +51,7 @@ const ClientCard: React.FC<{ client: typeof clients[0] }> = ({ client }) => {
           alt={client.name}
           className="object-contain w-full h-full"
           onError={e => (e.currentTarget.style.opacity = '0.3')}
+          loading="lazy"
         />
       </div>
       <div className="font-semibold text-gray-900 text-lg mb-2 text-center w-full truncate">{client.name}</div>

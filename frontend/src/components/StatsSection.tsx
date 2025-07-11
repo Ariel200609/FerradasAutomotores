@@ -1,8 +1,14 @@
+// StatsSection.tsx
+// Sección de estadísticas destacadas de la landing page de Ferradas Automotores.
+// Muestra cifras clave: vehículos vendidos, años de experiencia, clientes satisfechos y marcas disponibles.
+// Utiliza un diseño de grilla responsivo para mostrar los datos de forma visual y atractiva.
+
 import React from "react";
 
 const StatsSection: React.FC = () => (
   <section className="py-8 bg-gray-300">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Grilla de estadísticas */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
         <div className="text-center">
           <div className="text-4xl font-bold text-red-600 mb-2">500+</div>

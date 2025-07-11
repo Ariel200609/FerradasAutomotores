@@ -1,3 +1,8 @@
+// Header.tsx
+// Barra de navegación principal de la landing page de Ferradas Automotores.
+// Incluye menú de navegación responsivo (desktop y mobile), enlaces a secciones y redes sociales.
+// Utiliza hooks para manejar el estado del menú hamburguesa y cerrar el menú al hacer clic fuera.
+
 import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 
@@ -5,6 +10,7 @@ const Header: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
+  // Enlaces de navegación principales
   const links = [
     { href: "#HeroSection", label: "Home" },
     { href: "#VehiclesSection", label: "Vehicles" },
@@ -13,7 +19,7 @@ const Header: React.FC = () => {
     { href: "#contact", label: "Contact" },
   ];
 
-  // Cerrar menú al hacer clic fuera
+  // Cerrar menú al hacer clic fuera del menú hamburguesa
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (menuRef.current && !menuRef.current.contains(event.target as Node)) {

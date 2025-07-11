@@ -1,3 +1,8 @@
+// VehicleDetail.tsx
+// Vista de detalle para el modelo Volkswagen T-cross Highline.
+// Muestra un slider de imágenes, especificaciones técnicas y botón para volver a la página principal.
+// Utiliza hooks para manejar el slider y navegación con React Router.
+
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -28,6 +33,7 @@ const VehicleDetail: React.FC = () => {
   const [current, setCurrent] = useState(0);
   const navigate = useNavigate();
 
+  // Funciones para navegar el slider de imágenes
   const prev = () => setCurrent((c) => (c === 0 ? tCrossImages.length - 1 : c - 1));
   const next = () => setCurrent((c) => (c === tCrossImages.length - 1 ? 0 : c + 1));
 
@@ -46,6 +52,7 @@ const VehicleDetail: React.FC = () => {
           src={tCrossImages[current]}
           alt="T-cross"
           className="object-contain h-full w-full rounded-2xl"
+          loading="lazy"
         />
         <button
           onClick={next}
@@ -61,7 +68,7 @@ const VehicleDetail: React.FC = () => {
           </h1>
         </div>
       </div>
-      {/* Especificaciones */}
+      {/* Especificaciones técnicas */}
       <div className="w-full max-w-5xl bg-white rounded-2xl mt-8 p-8 flex flex-col md:flex-row justify-between items-center gap-8 shadow-lg border border-gray-100">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 w-full">
           {tCrossSpecs.map((spec) => (

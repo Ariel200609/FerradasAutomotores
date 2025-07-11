@@ -1,3 +1,9 @@
+// VehiclesSection.tsx
+// Sección principal de vehículos de la landing page de Ferradas Automotores.
+// Permite buscar y filtrar vehículos por marca, modelo y condición (nuevo/usado).
+// Muestra un grid/carrusel de vehículos usando VehicleGrid y maneja el estado de búsqueda y filtro.
+// Incluye función de formateo de precio (actualmente no usada en el render).
+
 import React, { useState } from "react";
 import { Search } from "lucide-react";
 import VehicleGrid from "./VehicleGrid";
@@ -98,6 +104,7 @@ const VehiclesSection: React.FC = () => {
   const [filterCondition, setFilterCondition] = useState<"all" | "new" | "used">("all");
   const [searchTerm, setSearchTerm] = useState("");
 
+  // Filtrado de vehículos según búsqueda y condición
   const filteredVehicles = vehicles.filter((vehicle) => {
     const matchesCondition =
       filterCondition === "all" || vehicle.condition === filterCondition;
@@ -107,6 +114,7 @@ const VehiclesSection: React.FC = () => {
     return matchesCondition && matchesSearch;
   });
 
+  // [NO USADO] Función para formatear precio, no utilizada actualmente
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat("es-AR", {
       style: "currency",

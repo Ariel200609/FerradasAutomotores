@@ -1,3 +1,8 @@
+// AboutSection.tsx
+// Sección "Sobre Nosotros" de la landing page de Ferradas Automotores.
+// Muestra información institucional, valores y logros destacados de la concesionaria.
+// Utiliza íconos de lucide-react para resaltar características clave.
+
 import React from "react";
 import { CheckCircle } from "lucide-react";
 
@@ -16,6 +21,7 @@ const AboutSection: React.FC = () => (
           <p className="text-lg text-gray-700 mb-8 leading-relaxed">
             Nuestra misión es ofrecer vehículos de calidad superior, con un servicio personalizado que supere las expectativas de nuestros clientes. Cada vehículo en nuestro showroom pasa por rigurosos controles de calidad.
           </p>
+          {/* Lista de logros y valores destacados */}
           <div className="space-y-4">
             <div className="flex items-center">
               <CheckCircle className="h-6 w-6 text-red-600 mr-3" />
@@ -41,6 +47,7 @@ const AboutSection: React.FC = () => (
             alt="Ferradas Automotores Showroom"
             className="rounded-xl shadow-2xl"
           />
+          {/* Sello de años de experiencia */}
           <div className="absolute -bottom-6 -right-6 bg-red-600 rounded-xl p-6 shadow-2xl">
             <div className="text-center">
               <div className="text-3xl font-bold text-white">5+</div>

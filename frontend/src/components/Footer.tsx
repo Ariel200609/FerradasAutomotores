@@ -1,3 +1,8 @@
+// Footer.tsx
+// Pie de página de la landing page de Ferradas Automotores.
+// Incluye enlaces rápidos de navegación, servicios ofrecidos y derechos de autor.
+// Utiliza estilos responsivos y estructura en columnas para desktop y mobile.
+
 import React from "react";
 
 const Footer: React.FC = () => (
@@ -32,6 +37,7 @@ const Footer: React.FC = () => (
           </ul>
         </div>
       </div>
+      {/* Derechos de autor y leyenda final */}
       <div className="border-t border-gray-800 mt-8 pt-8 text-center">
         <p className="text-gray-400">© 2024 Ferradas Automotores. Todos los derechos reservados.</p>
       </div>

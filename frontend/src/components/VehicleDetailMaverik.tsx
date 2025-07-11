@@ -1,3 +1,8 @@
+// VehicleDetailMaverik.tsx
+// Vista de detalle para el modelo Ford Maverik Lariat Híbrida.
+// Muestra un slider de imágenes, especificaciones técnicas y botón para volver a la página principal.
+// Utiliza hooks para manejar el slider y navegación con React Router.
+
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -26,6 +31,7 @@ const VehicleDetailMaverik: React.FC = () => {
   const [current, setCurrent] = useState(0);
   const navigate = useNavigate();
 
+  // Funciones para navegar el slider de imágenes
   const prev = () => setCurrent((c) => (c === 0 ? maverikImages.length - 1 : c - 1));
   const next = () => setCurrent((c) => (c === maverikImages.length - 1 ? 0 : c + 1));
 
@@ -44,6 +50,7 @@ const VehicleDetailMaverik: React.FC = () => {
           src={maverikImages[current]}
           alt="Ford Maverik"
           className="object-contain h-full w-full rounded-2xl"
+          loading="lazy"
         />
         <button
           onClick={next}
@@ -59,7 +66,7 @@ const VehicleDetailMaverik: React.FC = () => {
           </h1>
         </div>
       </div>
-      {/* Especificaciones */}
+      {/* Especificaciones técnicas */}
       <div className="w-full max-w-5xl bg-white rounded-2xl mt-8 p-8 flex flex-col md:flex-row justify-between items-center gap-8 shadow-lg border border-gray-100">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 w-full">
           {maverikSpecs.map((spec) => (

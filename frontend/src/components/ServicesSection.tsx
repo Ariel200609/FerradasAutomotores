@@ -1,3 +1,8 @@
+// ServicesSection.tsx
+// Sección de servicios de la landing page de Ferradas Automotores.
+// Muestra los principales servicios ofrecidos: 0KM, usados, financiamiento, asesoramiento, garantía y toma de usado.
+// Utiliza íconos y estilos destacados para cada bloque de servicio.
+
 import React from "react";
 import { CheckCircle } from "lucide-react";
 
@@ -10,6 +15,7 @@ const ServicesSection: React.FC = () => (
           CON SERVICIOS QUE VAN MÁS ALLÁ DE LA VENTA.
         </h2>
       </div>
+      {/* Grid de servicios destacados */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div className="bg-black rounded-xl p-8 text-center hover:bg-gray-800 transition-all duration-300 border border-gray-800">
           <div className="h-16 w-16 mx-auto mb-6 bg-red-600 rounded-full flex items-center justify-center">

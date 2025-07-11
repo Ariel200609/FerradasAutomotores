@@ -1,3 +1,8 @@
+// VehicleGrid.tsx
+// Componente que muestra un carrusel horizontal de tarjetas de vehículos.
+// Permite navegar entre vehículos con botones de scroll y ver detalles de cada modelo.
+// Utiliza VehicleCard para cada vehículo y hooks para manejar el scroll horizontal.
+
 import React, { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -12,9 +17,11 @@ interface Vehicle {
   fuel: string;
 }
 
+// Tarjeta individual de vehículo
 const VehicleCard: React.FC<{ vehicle: Vehicle }> = ({ vehicle }) => {
   const [hovered, setHovered] = useState(false);
   const navigate = useNavigate();
+  // Flags para identificar el modelo y navegar a la ruta correspondiente
   const isTcross = vehicle.model.toLowerCase().includes("t-cross");
   const isMaverik = vehicle.model.toLowerCase().includes("maverik");
   const isAmarok = vehicle.model.toLowerCase().includes("amarok");
@@ -34,6 +41,7 @@ const VehicleCard: React.FC<{ vehicle: Vehicle }> = ({ vehicle }) => {
           src={vehicle.images[0]}
           alt={`${vehicle.brand} ${vehicle.model}`}
           className={`object-contain w-full h-full transition-all duration-300 ${hovered ? 'scale-110 drop-shadow-2xl' : ''}`}
+          loading="lazy"
         />
       </div>
       {hovered && (
@@ -63,9 +71,11 @@ const VehicleCard: React.FC<{ vehicle: Vehicle }> = ({ vehicle }) => {
   );
 };
 
+// Grid/carrusel horizontal de vehículos
 const VehicleGrid: React.FC<{ vehicles: Vehicle[] }> = ({ vehicles }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
 
+  // Función para hacer scroll horizontal
   const scroll = (direction: "left" | "right") => {
     if (scrollRef.current) {
       const { scrollLeft, clientWidth } = scrollRef.current;

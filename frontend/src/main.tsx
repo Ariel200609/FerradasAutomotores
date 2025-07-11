@@ -1,13 +1,15 @@
+// main.tsx
+// Punto de entrada principal de la aplicación Ferradas Automotores (frontend).
+// Renderiza el componente App en el elemento root del DOM.
+// Incluye import de estilos globales y configuración de React StrictMode.
+
 import React from "react";
 import ReactDOM from "react-dom/client";
-import AppRoutes from "./AppRoutes";
-import { HashRouter } from "react-router-dom";
+import App from "./App";
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <HashRouter>
-      <AppRoutes />
-    </HashRouter>
+    <App />
   </React.StrictMode>
 );

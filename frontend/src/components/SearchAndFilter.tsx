@@ -1,3 +1,8 @@
+// SearchAndFilter.tsx
+// Componente de búsqueda y filtrado para la sección de vehículos.
+// Permite buscar por marca o modelo y filtrar por condición (nuevo, usado, todos).
+// Recibe props controladas para el término de búsqueda y el filtro seleccionado.
+
 import React from "react";
 import { Search } from "lucide-react";
 
@@ -11,6 +16,7 @@ interface Props {
 const SearchAndFilter: React.FC<Props> = ({ searchTerm, setSearchTerm, filterCondition, setFilterCondition }) => (
   <div className="mb-12 flex flex-col md:flex-row gap-4 justify-center items-center">
     <div className="relative">
+      {/* Input de búsqueda con ícono */}
       <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
       <input
         type="text"
@@ -21,6 +27,7 @@ const SearchAndFilter: React.FC<Props> = ({ searchTerm, setSearchTerm, filterCon
       />
     </div>
     <div className="flex gap-2">
+      {/* Botones de filtro de condición */}
       <button
         onClick={() => setFilterCondition("all")}
         className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${filterCondition === "all" ? "bg-red-600 text-white" : "bg-gray-800 text-gray-300 hover:bg-gray-700"}`}

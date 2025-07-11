@@ -1,16 +1,18 @@
-import React from "react";
-import Layout from "./components/Layout";
-import HomeView from "./views/HomeView";
-import ContactView from "./views/ContactView";
+// App.tsx
+// Componente raíz de la aplicación Ferradas Automotores.
+// Configura el Router y renderiza las rutas principales usando AppRoutes.
+// Puede incluir lógica global de contexto, temas, etc. en el futuro.
 
-function App() {
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
+import AppRoutes from "./AppRoutes";
+
+const App: React.FC = () => {
   return (
-    <div className="min-h-screen bg-black text-white">
-      <Layout>
-        <HomeView />
-      </Layout>
-    </div>
+    <BrowserRouter>
+      <AppRoutes />
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
