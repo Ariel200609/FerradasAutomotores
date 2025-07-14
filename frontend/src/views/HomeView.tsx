@@ -8,7 +8,7 @@ import { Routes, Route } from "react-router-dom";
 
 // Lazy load de secciones principales (bloques grandes de la landing)
 const HeroSection = React.lazy(() => import("../components/HeroSection"));
-const StatsSection = React.lazy(() => import("../components/StatsSection"));
+const StatsSection = React.lazy(() => import("../components/BrandsSection"));
 const VehiclesSection = React.lazy(() => import("../components/VehiclesSection"));
 const ServicesSection = React.lazy(() => import("../components/ServicesSection"));
 const AboutSection = React.lazy(() => import("../components/AboutSection"));
@@ -18,6 +18,7 @@ const ContactSection = React.lazy(() => import("../components/ContactSection"));
 // [NO USADO] Estos imports no se usan en la vista principal, pero pueden ser útiles para futuras rutas o lógica:
 import VehicleDetail from "../components/VehicleDetail";
 import { Star, CheckCircle } from "lucide-react";
+import BrandsSection from "../components/BrandsSection";
 
 // Loader simple que se muestra mientras se carga cada sección
 const Loader = () => <div className="w-full text-center py-12 text-gray-400">Loading...</div>;
@@ -31,7 +32,7 @@ const HomeView: React.FC = () => (
         <>
           {/* Cada sección se carga de forma diferida (lazy) y muestra un loader mientras se importa */}
           <Suspense fallback={<Loader />}><HeroSection /></Suspense>
-          <Suspense fallback={<Loader />}><StatsSection /></Suspense>
+          <Suspense fallback={<Loader />}><BrandsSection /></Suspense>
           <Suspense fallback={<Loader />}><VehiclesSection /></Suspense>
           <Suspense fallback={<Loader />}><ServicesSection /></Suspense>
           <Suspense fallback={<Loader />}><AboutSection /></Suspense>
