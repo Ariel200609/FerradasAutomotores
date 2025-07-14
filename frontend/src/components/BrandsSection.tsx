@@ -40,7 +40,7 @@ const BrandsSection: React.FC = () => (
               key={brand.name + idx}
               src={brand.src}
               alt={brand.name}
-              className="h-16 w-auto grayscale hover:grayscale-0 transition duration-300 object-contain"
+              className="h-16 w-auto object-contain"
               draggable={false}
               style={{ maxHeight: 64, minWidth: 100 }}
             />
@@ -61,7 +61,7 @@ const BrandsSection: React.FC = () => (
               key={brand.name + "-b" + idx}
               src={brand.src}
               alt={brand.name}
-              className="h-16 w-auto grayscale hover:grayscale-0 transition duration-300 object-contain"
+              className="h-16 w-auto object-contain"
               draggable={false}
               style={{ maxHeight: 64, minWidth: 100 }}
             />
