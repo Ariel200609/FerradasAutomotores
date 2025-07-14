@@ -2,7 +2,7 @@ import React from "react";
 
 const brands = [
   { name: "Toyota", src: "/FerradasAutomotores/logos/toyota.png" },
-  { name: "Volkswagen", src: "/FerradasAutomotores/logos/volkswaven.png" },
+  { name: "Volkswagen", src: "/FerradasAutomotores/logos/volskwaven.png" },
   { name: "Ford", src: "/FerradasAutomotores/logos/ford.png" },
   { name: "Chevrolet", src: "/FerradasAutomotores/logos/chevrolet.png" },
   { name: "Fiat", src: "/FerradasAutomotores/logos/fiat.png" },
