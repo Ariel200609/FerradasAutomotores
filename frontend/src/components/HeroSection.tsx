@@ -32,6 +32,7 @@ const HeroSection: React.FC = () => {
   const [showParagraph, setShowParagraph] = useState(false);
   // Estado para el índice de la imagen actual del carrusel
   const [currentImage, setCurrentImage] = useState(0);
+  const [fade, setFade] = useState(true); // Para animación fade
   const imageCount = carouselItems.length;
   const timeoutRef = useRef<number | null>(null);
   const dragStartX = useRef<number | null>(null);
@@ -47,7 +48,6 @@ const HeroSection: React.FC = () => {
   const handleTouchMove = (e: React.TouchEvent) => {
     if (dragStartX.current !== null) {
       dragDelta.current = e.touches[0].clientX - dragStartX.current;
-      // Prevenir scroll horizontal nativo solo si se está arrastrando
       if (Math.abs(dragDelta.current) > 10) {
         e.preventDefault();
       }
@@ -55,9 +55,9 @@ const HeroSection: React.FC = () => {
   };
   const handleTouchEnd = () => {
     if (dragDelta.current > 50) {
-      setCurrentImage((prev) => (prev - 1 + imageCount) % imageCount);
+      triggerFade((prev) => (prev - 1 + imageCount) % imageCount);
     } else if (dragDelta.current < -50) {
-      setCurrentImage((prev) => (prev + 1) % imageCount);
+      triggerFade((prev) => (prev + 1) % imageCount);
     }
     dragStartX.current = null;
     dragDelta.current = 0;
@@ -77,9 +77,9 @@ const HeroSection: React.FC = () => {
   };
   const handleMouseUp = () => {
     if (dragDelta.current > 50) {
-      setCurrentImage((prev) => (prev - 1 + imageCount) % imageCount);
+      triggerFade((prev) => (prev - 1 + imageCount) % imageCount);
     } else if (dragDelta.current < -50) {
-      setCurrentImage((prev) => (prev + 1) % imageCount);
+      triggerFade((prev) => (prev + 1) % imageCount);
     }
     dragStartX.current = null;
     dragDelta.current = 0;
@@ -111,23 +111,29 @@ const HeroSection: React.FC = () => {
     }
   }, [currentImage]);
 
-  // Carrusel automático con duración variable según la imagen
+  // Carrusel automático con fade
   useEffect(() => {
     if (timeoutRef.current !== null) clearTimeout(timeoutRef.current);
     const duration = currentImage === 0 ? 7000 : 5000;
     timeoutRef.current = window.setTimeout(() => {
-      setCurrentImage((prev) => (prev + 1) % imageCount);
+      triggerFade((prev) => (prev + 1) % imageCount);
     }, duration);
     return () => {
       if (timeoutRef.current !== null) clearTimeout(timeoutRef.current);
     };
+    // eslint-disable-next-line
   }, [currentImage, imageCount]);
 
-  // Item actual del carrusel
-  const currentItem = carouselItems[currentImage];
+  // Función para animar el fade
+  const triggerFade = (getNextIndex: (prev: number) => number) => {
+    setFade(false);
+    setTimeout(() => {
+      setCurrentImage(getNextIndex);
+      setFade(true);
+    }, 350); // Duración del fade-out
+  };
 
-  // [NO USADO] Log para debug, se puede eliminar en producción
-  console.log("currentImage", currentImage);
+  const currentItem = carouselItems[currentImage];
 
   return (
     <section id="HeroSection" className="pt-16 relative overflow-hidden bg-white">
@@ -140,11 +146,11 @@ const HeroSection: React.FC = () => {
         onMouseDown={handleMouseDown}
         style={{ cursor: 'grab' }}
       >
-        {/* Imagen de fondo del carrusel */}
+        {/* Imagen de fondo del carrusel con fade */}
         <img
           src={currentItem.image}
           alt="Luxury Cars"
-          className="w-full h-full object-cover absolute inset-0"
+          className={`w-full h-full object-cover absolute inset-0 transition-opacity duration-500 ${fade ? 'opacity-100' : 'opacity-0'}`}
         />
         {/* Overlay gradiente sutil para mejorar contraste del texto */}
         <div className="absolute inset-0 z-10 pointer-events-none bg-[linear-gradient(to_right,rgba(0,0,0,0.7)_0%,rgba(0,0,0,0.5)_50%,rgba(0,0,0,0)_80%)]"></div>
@@ -194,7 +200,7 @@ const HeroSection: React.FC = () => {
           {carouselItems.map((_, idx) => (
             <button
               key={idx}
-              onClick={() => setCurrentImage(idx)}
+              onClick={() => triggerFade(() => idx)}
               className={`w-3 h-3 rounded-full transition-all duration-300 border border-white focus:outline-none ${currentImage === idx ? 'bg-white shadow-lg scale-125' : 'bg-white/40'}`}
               aria-label={`Ir a la imagen ${idx + 1}`}
               style={{ boxShadow: currentImage === idx ? '0 0 0 2px #e11d48' : undefined }}
