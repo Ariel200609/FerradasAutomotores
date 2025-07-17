@@ -1,5 +1,9 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import { Star } from "lucide-react";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { EffectCoverflow, FreeMode } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
 
 const clients = [
   {
@@ -26,36 +30,40 @@ const clients = [
     text: "Gracias por elegirnos. que disfruten de este hermoso Ford Focus 🥂👏",
     rating: 5,
   },
-  /*{
-    name: "Jorge y familia",
+  {
+    name: "Juan Carlos",
     image: `${import.meta.env.BASE_URL}clientes/cliente5.jpg`,
-    text: "Gracias por elegirnos. Que disfruten de este hermoso Toyota Corolla 🥂👏",
+    text: "Gracias por elegirnos que disfrutes de esta hermosa Amarok V6 0km 🥂👏 se va para la ciudad de Trenque Lauquen.",
     rating: 5,
   },
   {
-    name: "María y familia",
+    name: "Mariano y familia",
     image: `${import.meta.env.BASE_URL}clientes/cliente6.jpg`,
-    text: "Gracias por elegirnos. Que disfruten de este hermoso Toyota Corolla 🥂👏",
+    text: "Gracias por elegirnos que disfruten de este hermoso Toyota Corolla 🥂👏 se va para la ciudad de Salliqueló.",
+    rating: 5,
+  },
+  {
+    name: "Gonzalo y familia",
+    image: `${import.meta.env.BASE_URL}clientes/cliente7.jpg`,
+    text: "Gracias por elegirnos que disfruten de este hermoso Toyota Corolla 🥂👏 se va para la ciudad de Tres Lomas.",
+    rating: 5,
+  },
+  {
+    name: "Diego y familia",
+    image: `${import.meta.env.BASE_URL}clientes/cliente8.jpg`,
+    text: "Gracias por elegirnos que disfruten de este hermoso Toyota Corolla 🥂👏 se va para la ciudad de Tres Lomas.",
     rating: 5,
   },
   {
     name: "Sergio y familia",
-    image: `${import.meta.env.BASE_URL}clientes/cliente7.jpg`,
-    text: "Gracias por elegirnos. Que disfruten de esta hermosa Toyota Hilux 🥂👏",
+    image: `${import.meta.env.BASE_URL}clientes/cliente9.jpg`,
+    text: "Gracias por elegirnos que disfruten de este hermoso Toyota Corolla 🥂👏 se va para la ciudad de Tres Lomas.",
     rating: 5,
   },
-  {
-    name: "María y familia",
-    image: `${import.meta.env.BASE_URL}clientes/cliente8.jpg`,
-    text: "Gracias por elegirnos. Que disfruten de esta hermosa Toyota Hilux 🥂👏",
-    rating: 5,
-  },*/  
-
 ];
 
 const ClientCard: React.FC<{ client: typeof clients[0] }> = ({ client }) => {
   if (!client.text) {
-    // Solo imagen si no hay testimonio
     return (
       <div className="min-w-[300px] max-w-[300px] bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 flex items-center justify-center" style={{ minHeight: 320 }}>
         <img
@@ -92,51 +100,6 @@ const ClientCard: React.FC<{ client: typeof clients[0] }> = ({ client }) => {
   );
 };
 
-const ClientGrid: React.FC<{ clients: typeof clients }> = ({ clients }) => {
-  const scrollRef = useRef<HTMLDivElement>(null);
-
-  const scroll = (direction: "left" | "right") => {
-    if (scrollRef.current) {
-      const { scrollLeft, clientWidth } = scrollRef.current;
-      const scrollAmount = clientWidth * 0.7;
-      scrollRef.current.scrollTo({
-        left: direction === "left" ? scrollLeft - scrollAmount : scrollLeft + scrollAmount,
-        behavior: "smooth",
-      });
-    }
-  };
-
-  return (
-    <div className="relative flex items-center w-full">
-      <button
-        onClick={() => scroll("left")}
-        className="z-20 bg-transparent focus:outline-none text-gray-800 text-3xl font-bold flex items-center justify-center mr-2"
-        aria-label="Anterior"
-        style={{ width: 26, height: 26 }}
-      >
-        {'<'}
-      </button>
-      <div
-        ref={scrollRef}
-        className="flex overflow-x-auto gap-2 py-4 px-8 scrollbar-none"
-        style={{ scrollBehavior: 'smooth', msOverflowStyle: 'none', scrollbarWidth: 'none' }}
-      >
-        {clients.map((client, idx) => (
-          <ClientCard key={idx} client={client} />
-        ))}
-      </div>
-      <button
-        onClick={() => scroll("right")}
-        className="z-20 bg-transparent focus:outline-none text-gray-800 text-3xl font-bold flex items-center justify-center ml-2"
-        aria-label="Siguiente"
-        style={{ width: 36, height: 36 }}
-      >
-        {'>'}
-      </button>
-    </div>
-  );
-};
-
 const TestimonialsSection: React.FC = () => (
   <section className="py-16 bg-gray-50">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -148,7 +111,34 @@ const TestimonialsSection: React.FC = () => (
           La satisfacción de nuestros clientes es nuestra mayor recompensa.
         </p>
       </div>
-      <ClientGrid clients={clients} />
+      <Swiper
+        modules={[EffectCoverflow, FreeMode]}
+        effect="coverflow"
+        grabCursor={true}
+        centeredSlides={true}
+        freeMode={true}
+        slidesPerView={1}
+        coverflowEffect={{
+          rotate: 0,
+          stretch: 0,
+          depth: 200,
+          modifier: 2.5,
+          slideShadows: false,
+        }}
+        breakpoints={{
+          640: { slidesPerView: 1.3 }, // Mostrar bordes en móviles
+          768: { slidesPerView: 2.2 }, // Mostrar bordes en tablets
+          1024: { slidesPerView: 3 },
+        }}
+        className="w-full max-w-[95vw] px-2"
+        style={{ paddingLeft: '5vw', paddingRight: '5vw' }}
+      >
+        {clients.map((client, idx) => (
+          <SwiperSlide key={idx} className="flex justify-center">
+            <ClientCard client={client} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
   </section>
 );
