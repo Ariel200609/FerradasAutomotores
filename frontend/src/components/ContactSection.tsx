@@ -23,7 +23,7 @@ const ContactSection: React.FC = () => {
   const [showMapSalliquelo, setShowMapSalliquelo] = useState(false);
 
   // Manejar el envío del formulario de contacto
-  const handleSubmit = async (e: React.FormEvent) => {
+ /* const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setEnviando(true);
     setExito("");
@@ -37,7 +37,7 @@ const ContactSection: React.FC = () => {
     } finally {
       setEnviando(false);
     }
-  };
+  };*/
 
   return (
     <section id="contact" className="py-20 bg-black">
@@ -57,15 +57,14 @@ const ContactSection: React.FC = () => {
               <MapPin className="h-8 w-8 text-red-600 mr-4 flex-shrink-0" />
               <div>
                 <h3 className="text-xl  text-gray-300 font-semibold mb-2">Nuestra Ubicación</h3>
-                <p className="text-gray-300 leading-relaxed">Av. Principal 1234, Ciudad Automotriz<br />Zona Norte, Buenos Aires</p>
+                <p className="text-gray-300 leading-relaxed">415 Av. Libertad, Laguna Alsina<br />Rauch y Av. Stroeder Este, Salliqueló</p>
               </div>
             </div>
             <div className="flex items-center">
               <Phone className="h-8 w-8 text-red-600 mr-4 flex-shrink-0" />
               <div>
                 <h3 className="text-xl text-gray-300 font-semibold mb-2">Teléfono</h3>
-                <p className="text-gray-300">+54 11 1234-5678</p>
-                <p className="text-gray-300">+54 9 11 9876-5432 (WhatsApp)</p>
+                <p className="text-gray-300">+54 9 2923 695246</p>
               </div>
             </div>
             <div className="flex items-center">
@@ -73,15 +72,14 @@ const ContactSection: React.FC = () => {
               <div>
                 <h3 className="text-xl text-gray-300 font-semibold mb-2">Email</h3>
                 <p className="text-gray-300">info@ferradasautomotores.com</p>
-                <p className="text-gray-300">ventas@ferradasautomotores.com</p>
               </div>
             </div>
             <div className="flex items-center">
               <Clock className="h-8 w-8 text-red-600 mr-4 flex-shrink-0" />
               <div>
                 <h3 className="text-xl text-gray-300  font-semibold mb-2">Horarios de Atención</h3>
-                <p className="text-gray-300">Lunes a Viernes: 9:00 - 18:00</p>
-                <p className="text-gray-300">Sábados: 9:00 - 15:00</p>
+                <p className="text-gray-300">Lunes a Viernes: 8:00 - 20:00</p>
+                <p className="text-gray-300">Sábados: 8:00 - 15:00</p>
                 <p className="text-gray-300">Domingos: Cerrado</p>
               </div>
             </div>

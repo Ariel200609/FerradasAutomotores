@@ -9,7 +9,7 @@ const FloatingSocialButtons: React.FC = () => (
   <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-4 animate-fade-in">
     {/* Botón de WhatsApp */}
     <a
-      href="https://wa.me/5492923659973"
+      href="https://wa.me/5492923695246"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="WhatsApp Ferradas Automotores"
