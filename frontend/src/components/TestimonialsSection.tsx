@@ -3,29 +3,54 @@ import { Star } from "lucide-react";
 
 const clients = [
   {
-    name: "Carlos Rodriguez",
+    name: "Jorge Marzilio",
     image: `${import.meta.env.BASE_URL}clientes/cliente1.jpg`,
-    text: "Excelente atención y gran variedad de vehículos. Encontré exactamente lo que buscaba.",
+    text: "Gracias por elegirnos que disfrutes de esta hermosa amarok v6 Higline 0km 🚀🥂👏 V6 que se va para la ciudad de 25 de Mayo",
     rating: 5,
   },
   {
-    name: "Maria Silva",
+    name: "Julián Pollini",
     image: `${import.meta.env.BASE_URL}clientes/cliente2.jpg`,
-    text: "Muy profesionales, me ayudaron con el financiamiento y todo el proceso fue muy fácil.",
+    text: " Gracias por elegirnos nuevamente que disfrutes de este hermoso Toyota Yaris 0km 🥂👏 se va para BS AS",
     rating: 5,
   },
   {
-    name: "João Santos",
+    name: "María Alicia",
     image: `${import.meta.env.BASE_URL}clientes/cliente3.jpg`,
-    text: "Recomiendo totalmente Ferradas Automotores. Calidad y confianza garantizada.",
+    text: "gracias por confiar ahora a estrenar este hermoso Polo 0km 🥂👏 Salliquelo 📍.",
     rating: 5,
   },
   {
-    name: "Cliente sin testimonio",
+    name: "Cristian Gracia y familia",
     image: `${import.meta.env.BASE_URL}clientes/cliente4.jpg`,
-    text: "",
-    rating: 0,
+    text: "Gracias por elegirnos. que disfruten de este hermoso Ford Focus 🥂👏",
+    rating: 5,
   },
+  /*{
+    name: "Jorge y familia",
+    image: `${import.meta.env.BASE_URL}clientes/cliente5.jpg`,
+    text: "Gracias por elegirnos. Que disfruten de este hermoso Toyota Corolla 🥂👏",
+    rating: 5,
+  },
+  {
+    name: "María y familia",
+    image: `${import.meta.env.BASE_URL}clientes/cliente6.jpg`,
+    text: "Gracias por elegirnos. Que disfruten de este hermoso Toyota Corolla 🥂👏",
+    rating: 5,
+  },
+  {
+    name: "Sergio y familia",
+    image: `${import.meta.env.BASE_URL}clientes/cliente7.jpg`,
+    text: "Gracias por elegirnos. Que disfruten de esta hermosa Toyota Hilux 🥂👏",
+    rating: 5,
+  },
+  {
+    name: "María y familia",
+    image: `${import.meta.env.BASE_URL}clientes/cliente8.jpg`,
+    text: "Gracias por elegirnos. Que disfruten de esta hermosa Toyota Hilux 🥂👏",
+    rating: 5,
+  },*/  
+
 ];
 
 const ClientCard: React.FC<{ client: typeof clients[0] }> = ({ client }) => {
@@ -122,7 +147,6 @@ const TestimonialsSection: React.FC = () => (
         <p className="text-xl text-gray-700 max-w-3xl mx-auto mb-2">
           La satisfacción de nuestros clientes es nuestra mayor recompensa.
         </p>
-        <p className="text-lg text-red-500 font-semibold">Nosotros amamos a nuestros clientes</p>
       </div>
       <ClientGrid clients={clients} />
     </div>
