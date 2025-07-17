@@ -116,7 +116,6 @@ const TestimonialsSection: React.FC = () => (
         effect="coverflow"
         grabCursor={true}
         centeredSlides={true}
-        freeMode={true}
         slidesPerView={1}
         coverflowEffect={{
           rotate: 0,

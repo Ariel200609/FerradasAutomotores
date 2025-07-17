@@ -9,6 +9,8 @@ import { Link } from "react-router-dom";
 const Header: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
+  const [showHeader, setShowHeader] = useState(true);
+  const lastScrollY = useRef(window.scrollY);
 
   // Enlaces de navegación principales
   const links = [
@@ -36,8 +38,27 @@ const Header: React.FC = () => {
     };
   }, [menuOpen]);
 
+  // Ocultar header al hacer scroll hacia abajo y mostrarlo al subir
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY < 50) {
+        setShowHeader(true);
+        lastScrollY.current = window.scrollY;
+        return;
+      }
+      if (window.scrollY > lastScrollY.current) {
+        setShowHeader(false); // Scroll hacia abajo
+      } else {
+        setShowHeader(true); // Scroll hacia arriba
+      }
+      lastScrollY.current = window.scrollY;
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <nav className="fixed top-0 w-full bg-gradient-to-r from-black via-gray-900 to-gray-800 backdrop-blur-sm z-50 border-b border-gray-700">
+    <nav className={`fixed top-0 w-full bg-gradient-to-r from-black via-gray-900 to-gray-800 backdrop-blur-sm z-50 border-b border-gray-700 transition-transform duration-300 ${showHeader ? 'translate-y-0' : '-translate-y-full'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
