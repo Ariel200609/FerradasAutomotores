@@ -98,6 +98,19 @@ const vehicles: Vehicle[] = [
     condition: "used",
     fuel: "Naftero",
   },
+  // Toyota Hilux
+  {
+    id: 8,
+    brand: "Toyota",
+    model: "Hilux",
+    year: 2025,
+    images: [
+      "/FerradasAutomotores/ToyotaHilux/PortadaHilux.jpg",
+      "/FerradasAutomotores/ToyotaHilux/Imagen de WhatsApp 2025-07-18 a las 18.19.43_7226d7ca.jpg"
+    ],
+    condition: "new",
+    fuel: "Diesel",
+  },
 ];
 
 const VehiclesSection: React.FC = () => {

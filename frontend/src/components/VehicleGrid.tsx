@@ -29,6 +29,7 @@ const VehicleCard: React.FC<{ vehicle: Vehicle }> = ({ vehicle }) => {
   const isOnix = vehicle.model.toLowerCase().includes("onix");
   const isGolf = vehicle.model.toLowerCase().includes("golf");
   const isFastback = vehicle.model.toLowerCase().includes("fastback");
+  const isHilux = vehicle.model.toLowerCase().includes("hilux");
   return (
     <div
       className={`min-w-[220px] max-w-[220px] bg-transparent mx-2 flex-shrink-0 transition-all duration-300 relative group ${hovered ? 'z-20' : ''}`}
@@ -56,6 +57,7 @@ const VehicleCard: React.FC<{ vehicle: Vehicle }> = ({ vehicle }) => {
               else if (isOnix) navigate('/vehiculo/onix');
               else if (isGolf) navigate('/vehiculo/golf');
               else if (isFastback) navigate('/vehiculo/fastback');
+              else if (isHilux) navigate('/vehiculo/hilux');
               else alert('Próximamente detalle para este modelo');
             }}
           >

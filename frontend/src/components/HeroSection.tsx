@@ -13,14 +13,14 @@ const carouselItems = [
     text: "Descubre nuestra amplia selección de vehículos nuevos y usados. Calidad garantizada, precios competitivos y financiamiento personalizado."
   },
   {
-    image: "/FerradasAutomotores/InicioPrincipal2.jpg",
+    image: "/FerradasAutomotores/imagenprincipal3.jpg",
     slogan: false,
     text: "Innovación y estilo para tu próxima aventura."
   },
   {
-    image: "/FerradasAutomotores/inicioPrincipal4.jpg",
+    image: "/FerradasAutomotores/imagenprincipal4.jpg",
     slogan: false,
-    text: "Confort y tecnología en cada detalle."
+    text: "Brindamos comodidad al cliente"
   }
 ];
 

@@ -19,6 +19,7 @@ import VehicleDetailAmarok from "./components/VehicleDetailAmarok";
 import VehicleDetailFocus from "./components/VehicleDetailFocus";
 import VehicleDetailOnix from "./components/VehicleDetailOnix";
 import VehicleDetailFastback from "./components/VehicleDetailFastback";
+import VehicleDetailHilux from "./components/VehicleDetailHilux";
 
 // Loader simple para fallback
 const Loader = () => <div className="w-full text-center py-12 text-gray-400">Cargando...</div>;
@@ -37,6 +38,7 @@ const AppRoutes: React.FC = () => (
         <Route path="/vehiculo/focus" element={<VehicleDetailFocus />} />
         <Route path="/vehiculo/onix" element={<VehicleDetailOnix />} />
         <Route path="/vehiculo/fastback" element={<VehicleDetailFastback />} />
+        <Route path="/vehiculo/hilux" element={<VehicleDetailHilux />} />
         {/* Ruta catch-all para 404: redirige a Home */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
