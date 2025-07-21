@@ -16,7 +16,7 @@ const clients = testimonios.map(t => ({
 const ClientCard: React.FC<{ client: typeof clients[0] }> = ({ client }) => {
   if (!client.text) {
     return (
-      <div className="min-w-[300px] max-w-[300px] bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 flex items-center justify-center" style={{ minHeight: 320 }}>
+      <div className="w-full min-w-0 max-w-full md:min-w-[300px] md:max-w-[300px] bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 flex items-center justify-center mx-auto" style={{ minHeight: 320 }}>
         <img
           src={client.image}
           alt={client.name}
@@ -28,7 +28,7 @@ const ClientCard: React.FC<{ client: typeof clients[0] }> = ({ client }) => {
     );
   }
   return (
-    <div className="min-w-[300px] max-w-[300px] bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 flex flex-col items-center p-6" style={{ minHeight: 320 }}>
+    <div className="w-full min-w-0 max-w-full md:min-w-[300px] md:max-w-[300px] bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 flex flex-col items-center p-6 mx-auto" style={{ minHeight: 320 }}>
       <div className="relative w-full h-40 flex items-end justify-center mb-3">
         <img
           src={client.image}
@@ -65,38 +65,35 @@ const TestimonialsSection: React.FC = () => {
             La satisfacción de nuestros clientes es nuestra mayor recompensa.
           </p>
         </div>
-        {/* Flechas de navegación solo en desktop */}
+        {/* Flechas de navegación SIEMPRE visibles */}
         <div className="relative">
-          {isDesktop && (
-            <>
-              <div className="swiper-button-prev !text-black !left-0" />
-              <div className="swiper-button-next !text-black !right-0" />
-            </>
-          )}
+          <div className="swiper-button-prev !text-black !left-0" />
+          <div className="swiper-button-next !text-black !right-0" />
           <Swiper
             modules={[EffectCoverflow, FreeMode, Navigation]}
-            navigation={isDesktop ? {
+            navigation={{
               nextEl: '.swiper-button-next',
               prevEl: '.swiper-button-prev',
-            } : false}
-            effect="coverflow"
-            grabCursor={true}
-            centeredSlides={true}
-            slidesPerView={1}
-            coverflowEffect={{
-              rotate: 0,
-              stretch: 0,
-              depth: 200,
-              modifier: 2.5,
-              slideShadows: false,
             }}
+            effect={isDesktop ? "coverflow" : "slide"}
+            grabCursor={true}
+            centeredSlides={isDesktop}
+            slidesPerView={1}
+            coverflowEffect={isDesktop ? {
+              rotate: 30,
+              stretch: 0,
+              depth: 400,
+              modifier: 2.5,
+              slideShadows: true,
+            } : {}}
             breakpoints={{
-              640: { slidesPerView: 1.3 }, // Mostrar bordes en móviles
-              768: { slidesPerView: 2.2 }, // Mostrar bordes en tablets
-              1024: { slidesPerView: 3 },
+              0: { slidesPerView: 1 }, // Móvil chico: solo 1 slide
+              640: { slidesPerView: 1.3 }, // Móvil grande: bordes
+              768: { slidesPerView: 2.2 }, // Tablet
+              1024: { slidesPerView: 3 }, // Desktop: 3 slides visibles
             }}
             className="w-full max-w-[95vw] px-2"
-            style={{ paddingLeft: '5vw', paddingRight: '5vw' }}
+            style={window.innerWidth < 640 ? { paddingLeft: 0, paddingRight: 0 } : { paddingLeft: '5vw', paddingRight: '5vw' }}
           >
             {clients.map((client, idx) => (
               <SwiperSlide key={idx} className="flex justify-center">

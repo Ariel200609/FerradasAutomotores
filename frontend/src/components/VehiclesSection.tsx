@@ -270,16 +270,6 @@ const vehicles: Vehicle[] = [
     year: 2025,
     images: [
       "/FerradasAutomotores/higline black style G2/IMG-20250720-WA0057.jpg",
-      "/FerradasAutomotores/higline black style G2/IMG-20250720-WA0058.jpg",
-      "/FerradasAutomotores/higline black style G2/IMG-20250720-WA0059.jpg",
-      "/FerradasAutomotores/higline black style G2/IMG-20250720-WA0060.jpg",
-      "/FerradasAutomotores/higline black style G2/IMG-20250720-WA0061.jpg",
-      "/FerradasAutomotores/higline black style G2/IMG-20250720-WA0062.jpg",
-      "/FerradasAutomotores/higline black style G2/IMG-20250720-WA0063.jpg",
-      "/FerradasAutomotores/higline black style G2/IMG-20250720-WA0064.jpg",
-      "/FerradasAutomotores/higline black style G2/IMG-20250720-WA0065.jpg",
-      "/FerradasAutomotores/higline black style G2/IMG-20250720-WA0066.jpg",
-      "/FerradasAutomotores/higline black style G2/IMG-20250720-WA0067.jpg"
     ],
     condition: "new",
     mileage: 0,
@@ -293,14 +283,7 @@ const vehicles: Vehicle[] = [
     year: 2025,
     images: [
       "/FerradasAutomotores/comfortline G2/IMG-20250720-WA0068.jpg",
-      "/FerradasAutomotores/comfortline G2/IMG-20250720-WA0069.jpg",
-      "/FerradasAutomotores/comfortline G2/IMG-20250720-WA0070.jpg",
-      "/FerradasAutomotores/comfortline G2/IMG-20250720-WA0071.jpg",
-      "/FerradasAutomotores/comfortline G2/IMG-20250720-WA0072.jpg",
-      "/FerradasAutomotores/comfortline G2/IMG-20250720-WA0073.jpg",
-      "/FerradasAutomotores/comfortline G2/IMG-20250720-WA0074.jpg",
-      "/FerradasAutomotores/comfortline G2/IMG-20250720-WA0075.jpg",
-      "/FerradasAutomotores/comfortline G2/IMG-20250720-WA0076.jpg"
+     
     ],
     condition: "new",
     mileage: 0,
@@ -314,15 +297,7 @@ const vehicles: Vehicle[] = [
     year: 2025,
     images: [
       "/FerradasAutomotores/t-cross bitono/IMG-20250720-WA0078.jpg",
-      "/FerradasAutomotores/t-cross bitono/IMG-20250720-WA0079.jpg",
-      "/FerradasAutomotores/t-cross bitono/IMG-20250720-WA0080.jpg",
-      "/FerradasAutomotores/t-cross bitono/IMG-20250720-WA0081.jpg",
-      "/FerradasAutomotores/t-cross bitono/IMG-20250720-WA0082.jpg",
-      "/FerradasAutomotores/t-cross bitono/IMG-20250720-WA0083.jpg",
-      "/FerradasAutomotores/t-cross bitono/IMG-20250720-WA0084.jpg",
-      "/FerradasAutomotores/t-cross bitono/IMG-20250720-WA0085.jpg",
-      "/FerradasAutomotores/t-cross bitono/IMG-20250720-WA0086.jpg",
-      "/FerradasAutomotores/t-cross bitono/IMG-20250720-WA0087.jpg"
+      
     ],
     condition: "new",
     mileage: 0,
@@ -336,15 +311,7 @@ const vehicles: Vehicle[] = [
     year: 2025,
     images: [
       "/FerradasAutomotores/taos/IMG-20250720-WA0088.jpg",
-      "/FerradasAutomotores/taos/IMG-20250720-WA0089.jpg",
-      "/FerradasAutomotores/taos/IMG-20250720-WA0090.jpg",
-      "/FerradasAutomotores/taos/IMG-20250720-WA0091.jpg",
-      "/FerradasAutomotores/taos/IMG-20250720-WA0092.jpg",
-      "/FerradasAutomotores/taos/IMG-20250720-WA0093.jpg",
-      "/FerradasAutomotores/taos/IMG-20250720-WA0094.jpg",
-      "/FerradasAutomotores/taos/IMG-20250720-WA0095.jpg",
-      "/FerradasAutomotores/taos/IMG-20250720-WA0096.jpg",
-      "/FerradasAutomotores/taos/IMG-20250720-WA0097.jpg"
+      
     ],
     condition: "new",
     mileage: 0,
@@ -358,14 +325,7 @@ const vehicles: Vehicle[] = [
     year: 2025,
     images: [
       "/FerradasAutomotores/polo track/IMG-20250720-WA0098.jpg",
-      "/FerradasAutomotores/polo track/IMG-20250720-WA0099.jpg",
-      "/FerradasAutomotores/polo track/IMG-20250720-WA0100.jpg",
-      "/FerradasAutomotores/polo track/IMG-20250720-WA0101.jpg",
-      "/FerradasAutomotores/polo track/IMG-20250720-WA0102.jpg",
-      "/FerradasAutomotores/polo track/IMG-20250720-WA0103.jpg",
-      "/FerradasAutomotores/polo track/IMG-20250720-WA0104.jpg",
-      "/FerradasAutomotores/polo track/IMG-20250720-WA0105.jpg",
-      "/FerradasAutomotores/polo track/IMG-20250720-WA0106.jpg"
+      
     ],
     condition: "new",
     mileage: 0,
