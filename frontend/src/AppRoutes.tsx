@@ -31,6 +31,12 @@ import VehicleDetailHiluxSRXGris from "./components/VehicleDetailHiluxSRXGris";
 import VehicleDetailOroch from "./components/VehicleDetailOroch";
 import VehicleDetail307 from "./components/VehicleDetail307";
 import VehicleDetailMustang from "./components/VehicleDetailMustang";
+import VehicleDetailAmarokHighlineG2 from "./components/VehicleDetailAmarokHighlineG2";
+import VehicleDetailAmarokBlackStyleG2 from "./components/VehicleDetailAmarokBlackStyleG2";
+import VehicleDetailAmarokComfortlineG2 from "./components/VehicleDetailAmarokComfortlineG2";
+import VehicleDetailTCrossBitono from "./components/VehicleDetailTCrossBitono";
+import VehicleDetailTaos from "./components/VehicleDetailTaos";
+import VehicleDetailPoloTrack from "./components/VehicleDetailPoloTrack";
 
 // Loader simple para fallback
 const Loader = () => <div className="w-full text-center py-12 text-gray-400">Cargando...</div>;
@@ -47,6 +53,9 @@ const AppRoutes: React.FC = () => (
         <Route path="/vehiculo/maverik" element={<VehicleDetailMaverik />} />
         <Route path="/vehiculo/amarok" element={<VehicleDetailAmarok />} />
         <Route path="/vehiculo/amarok-highline" element={<VehicleDetailAmarokHighline />} />
+        <Route path="/vehiculo/amarok-highline-g2" element={<VehicleDetailAmarokHighlineG2 />} />
+        <Route path="/vehiculo/amarok-black-style-g2" element={<VehicleDetailAmarokBlackStyleG2 />} />
+        <Route path="/vehiculo/amarok-comfortline-g2" element={<VehicleDetailAmarokComfortlineG2 />} />
         <Route path="/vehiculo/focus" element={<VehicleDetailFocus />} />
         <Route path="/vehiculo/onix" element={<VehicleDetailOnix />} />
         <Route path="/vehiculo/fastback" element={<VehicleDetailFastback />} />
@@ -61,6 +70,9 @@ const AppRoutes: React.FC = () => (
         <Route path="/vehiculo/oroch" element={<VehicleDetailOroch />} />
         <Route path="/vehiculo/307" element={<VehicleDetail307 />} />
         <Route path="/vehiculo/mustang" element={<VehicleDetailMustang />} />
+        <Route path="/vehiculo/t-cross-bitono" element={<VehicleDetailTCrossBitono />} />
+        <Route path="/vehiculo/taos" element={<VehicleDetailTaos />} />
+        <Route path="/vehiculo/polo-track" element={<VehicleDetailPoloTrack />} />
         {/* Ruta catch-all para 404: redirige a Home */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

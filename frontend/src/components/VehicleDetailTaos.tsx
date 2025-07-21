@@ -1,0 +1,65 @@
+// VehicleDetailTaos.tsx
+// Vista de detalle para Volkswagen Taos (2025)
+// Muestra un slider de imágenes, especificaciones técnicas y botón para volver a la página principal.
+
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
+const taosImages = [
+  "/FerradasAutomotores/taos/IMG-20250720-WA0088.jpg",
+  "/FerradasAutomotores/taos/IMG-20250720-WA0089.jpg",
+  "/FerradasAutomotores/taos/IMG-20250720-WA0090.jpg",
+  "/FerradasAutomotores/taos/IMG-20250720-WA0091.jpg",
+  "/FerradasAutomotores/taos/IMG-20250720-WA0092.jpg",
+  "/FerradasAutomotores/taos/IMG-20250720-WA0093.jpg",
+  "/FerradasAutomotores/taos/IMG-20250720-WA0094.jpg",
+  "/FerradasAutomotores/taos/IMG-20250720-WA0095.jpg",
+  "/FerradasAutomotores/taos/IMG-20250720-WA0096.jpg",
+  "/FerradasAutomotores/taos/IMG-20250720-WA0097.jpg"
+];
+
+const taosSpecs = [
+  { label: "Año", value: "2025" },
+  { label: "Motor", value: "1.0 Turbo" },
+  { label: "Transmisión", value: "Automática" },
+  { label: "Potencia", value: "136 CV" },
+  { label: "Color", value: "Blanca Puro" },
+  { label: "Puertas", value: "5" },
+  { label: "Tracción", value: "Delantera" },
+  { label: "Kilometraje", value: "0 km" },
+];
+
+const VehicleDetailTaos: React.FC = () => {
+  useEffect(() => { window.scrollTo(0, 0); }, []);
+  const [current, setCurrent] = useState(0);
+  const navigate = useNavigate();
+  const prev = () => setCurrent((c) => (c === 0 ? taosImages.length - 1 : c - 1));
+  const next = () => setCurrent((c) => (c === taosImages.length - 1 ? 0 : c + 1));
+  return (
+    <section className="relative min-h-screen w-full bg-white flex flex-col justify-center items-center overflow-x-hidden">
+      <div className="relative w-full max-w-5xl h-[420px] md:h-[520px] flex items-center justify-center mx-auto mt-20 bg-gray-100 rounded-2xl shadow-lg">
+        <button onClick={prev} className="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-white hover:bg-red-600 hover:text-white text-4xl font-bold rounded-full w-12 h-12 flex items-center justify-center shadow transition" aria-label="Anterior">{'<'}</button>
+        <img src={taosImages[current]} alt="Volkswagen Taos" className="object-contain h-full w-full rounded-2xl" loading="lazy" />
+        <button onClick={next} className="absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-white hover:bg-red-600 hover:text-white text-4xl font-bold rounded-full w-12 h-12 flex items-center justify-center shadow transition" aria-label="Siguiente">{'>'}</button>
+        {/* Título superpuesto */}
+        <div className="absolute left-8 bottom-8 z-30 bg-white/80 px-4 py-2 rounded-xl shadow">
+          <h1 className="text-2xl md:text-3xl font-extrabold text-gray-900 drop-shadow-none">Volkswagen <span className="text-red-600">Taos</span></h1>
+        </div>
+      </div>
+      {/* Especificaciones técnicas */}
+      <div className="w-full max-w-5xl bg-white rounded-2xl mt-8 p-8 flex flex-col md:flex-row justify-between items-center gap-8 shadow-lg border border-gray-100">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 w-full">
+          {taosSpecs.map((spec) => (
+            <div key={spec.label} className="flex flex-col items-center">
+              <span className="text-gray-500 text-sm">{spec.label}</span>
+              <span className="text-lg font-bold text-gray-900">{spec.value}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+      <button className="mt-8 px-8 py-3 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-lg font-semibold text-lg shadow transition-all" onClick={() => navigate("/")}>← Volver a la página principal</button>
+    </section>
+  );
+};
+
+export default VehicleDetailTaos; 

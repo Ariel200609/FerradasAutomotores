@@ -41,6 +41,12 @@ const VehicleCard: React.FC<{ vehicle: Vehicle }> = ({ vehicle }) => {
   const isOroch = vehicle.model.toLowerCase().includes("oroch");
   const is307 = vehicle.model.toLowerCase().includes("307");
   const isMustang = vehicle.model.toLowerCase().includes("mustang");
+  const isAmarokHighlineG2 = vehicle.model.toLowerCase().includes("amarok highline g2");
+  const isAmarokBlackStyleG2 = vehicle.model.toLowerCase().includes("black style g2");
+  const isAmarokComfortlineG2 = vehicle.model.toLowerCase().includes("comfortline g2");
+  const isTCrossBitono = vehicle.model.toLowerCase().includes("t-cross bitono");
+  const isTaos = vehicle.model.toLowerCase().includes("taos");
+  const isPoloTrack = vehicle.model.toLowerCase().includes("polo track");
   return (
     <div
       className={`min-w-[220px] max-w-[220px] bg-transparent mx-2 flex-shrink-0 transition-all duration-300 relative group ${hovered ? 'z-20' : ''}`}
@@ -61,9 +67,13 @@ const VehicleCard: React.FC<{ vehicle: Vehicle }> = ({ vehicle }) => {
           <button
             className="px-6 py-2 bg-white border border-gray-300 rounded-md text-sm font-semibold text-gray-800 shadow-lg transition-all duration-200"
             onClick={() => {
-              if (isTcross) navigate('/vehiculo/t-cross');
+              if (isTCrossBitono) navigate('/vehiculo/t-cross-bitono');
+              else if (isTcross) navigate('/vehiculo/t-cross');
               else if (isMaverik) navigate('/vehiculo/maverik');
               else if (isAmarokV6) navigate('/vehiculo/amarokv6');
+              else if (isAmarokComfortlineG2) navigate('/vehiculo/amarok-comfortline-g2');
+              else if (isAmarokBlackStyleG2) navigate('/vehiculo/amarok-black-style-g2');
+              else if (isAmarokHighlineG2) navigate('/vehiculo/amarok-highline-g2');
               else if (isAmarokHighline) navigate('/vehiculo/amarok-highline');
               else if (isAmarok) navigate('/vehiculo/amarok');
               else if (isFocus) navigate('/vehiculo/focus');
@@ -80,6 +90,8 @@ const VehicleCard: React.FC<{ vehicle: Vehicle }> = ({ vehicle }) => {
               else if (isOroch) navigate('/vehiculo/oroch');
               else if (is307) navigate('/vehiculo/307');
               else if (isMustang) navigate('/vehiculo/mustang');
+              else if (isTaos) navigate('/vehiculo/taos');
+              else if (isPoloTrack) navigate('/vehiculo/polo-track');
               else alert('Próximamente detalle para este modelo');
             }}
           >
