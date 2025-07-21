@@ -49,59 +49,60 @@ const VehicleCard: React.FC<{ vehicle: Vehicle }> = ({ vehicle }) => {
   const isPoloTrack = vehicle.model.toLowerCase().includes("polo track");
   return (
     <div
-      className={`min-w-[220px] max-w-[220px] bg-transparent mx-2 flex-shrink-0 transition-all duration-300 relative group ${hovered ? 'z-20' : ''}`}
+      className={`min-w-[90vw] max-w-[90vw] mx-auto bg-white flex-shrink-0 transition-all duration-300 relative group shadow-md border border-gray-100 rounded-2xl
+      sm:min-w-[320px] sm:max-w-[320px] sm:mx-4 ${hovered ? 'shadow-2xl scale-105 z-20' : ''}`}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      style={{ minHeight: 220 }}
+      style={{ minHeight: 340 }}
     >
-      <div className="relative w-full h-36 overflow-visible flex items-end justify-center">
+      <div className="relative w-full h-48 overflow-hidden flex items-center justify-center rounded-t-2xl">
         <img
           src={vehicle.images[0]}
           alt={`${vehicle.brand} ${vehicle.model}`}
-          className={`object-contain w-full h-full transition-all duration-300 ${hovered ? 'scale-110 drop-shadow-2xl' : ''}`}
+          className={`object-cover w-full h-full transition-all duration-300 ${hovered ? 'scale-110' : ''}`}
           loading="lazy"
         />
+        {/* Badge de condición */}
+        <span className={`absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-bold shadow ${vehicle.condition === 'new' ? 'bg-red-600 text-white' : 'bg-gray-800 text-white'}`}>{vehicle.condition === 'new' ? '0 KM' : 'Usado'}</span>
       </div>
-      {hovered && (
-        <div className="flex justify-center mt-2">
-          <button
-            className="px-6 py-2 bg-white border border-gray-300 rounded-md text-sm font-semibold text-gray-800 shadow-lg transition-all duration-200"
-            onClick={() => {
-              if (isTCrossBitono) navigate('/vehiculo/t-cross-bitono');
-              else if (isTcross) navigate('/vehiculo/t-cross');
-              else if (isMaverik) navigate('/vehiculo/maverik');
-              else if (isAmarokV6) navigate('/vehiculo/amarokv6');
-              else if (isAmarokComfortlineG2) navigate('/vehiculo/amarok-comfortline-g2');
-              else if (isAmarokBlackStyleG2) navigate('/vehiculo/amarok-black-style-g2');
-              else if (isAmarokHighlineG2) navigate('/vehiculo/amarok-highline-g2');
-              else if (isAmarokHighline) navigate('/vehiculo/amarok-highline');
-              else if (isAmarok) navigate('/vehiculo/amarok');
-              else if (isFocus) navigate('/vehiculo/focus');
-              else if (isOnix) navigate('/vehiculo/onix');
-              else if (isGolf) navigate('/vehiculo/golf');
-              else if (isFastback) navigate('/vehiculo/fastback');
-              else if (isHiluxSRXGris) navigate('/vehiculo/hilux-srx-gris');
-              else if (isHiluxSRV) navigate('/vehiculo/hiluxsrv');
-              else if (isHilux) navigate('/vehiculo/hilux');
-              else if (isRaptor) navigate('/vehiculo/raptor');
-              else if (isEcosport) navigate('/vehiculo/ecosport');
-              else if (isUp) navigate('/vehiculo/up');
-              else if (isFrontier) navigate('/vehiculo/frontier');
-              else if (isOroch) navigate('/vehiculo/oroch');
-              else if (is307) navigate('/vehiculo/307');
-              else if (isMustang) navigate('/vehiculo/mustang');
-              else if (isTaos) navigate('/vehiculo/taos');
-              else if (isPoloTrack) navigate('/vehiculo/polo-track');
-              else alert('Próximamente detalle para este modelo');
-            }}
-          >
-            Ver modelo
-          </button>
+      <div className="flex flex-col items-center justify-between p-5">
+        <div className="text-center mb-2">
+          <div className="text-xl font-bold text-gray-900 mb-1 truncate">{vehicle.brand} {vehicle.model}</div>
+          <div className="text-sm text-gray-500">Año: {vehicle.year}</div>
         </div>
-      )}
-      <div className="text-center mt-2">
-        <div className={`text-base font-semibold transition-all duration-300 ${hovered ? 'text-red-600' : 'text-gray-800'} truncate`}>{vehicle.brand} {vehicle.model}</div>
-        <div className="text-xs text-gray-500">Año: {vehicle.year}</div>
+        <button
+          className={`mt-2 px-6 py-2 rounded-lg font-semibold transition-all duration-200 shadow-md border-2 border-red-600 bg-white text-red-600 hover:bg-red-600 hover:text-white`}
+          onClick={() => {
+            if (isTCrossBitono) navigate('/vehiculo/t-cross-bitono');
+            else if (isTcross) navigate('/vehiculo/t-cross');
+            else if (isMaverik) navigate('/vehiculo/maverik');
+            else if (isAmarokV6) navigate('/vehiculo/amarokv6');
+            else if (isAmarokComfortlineG2) navigate('/vehiculo/amarok-comfortline-g2');
+            else if (isAmarokBlackStyleG2) navigate('/vehiculo/amarok-black-style-g2');
+            else if (isAmarokHighlineG2) navigate('/vehiculo/amarok-highline-g2');
+            else if (isAmarokHighline) navigate('/vehiculo/amarok-highline');
+            else if (isAmarok) navigate('/vehiculo/amarok');
+            else if (isFocus) navigate('/vehiculo/focus');
+            else if (isOnix) navigate('/vehiculo/onix');
+            else if (isGolf) navigate('/vehiculo/golf');
+            else if (isFastback) navigate('/vehiculo/fastback');
+            else if (isHiluxSRXGris) navigate('/vehiculo/hilux-srx-gris');
+            else if (isHiluxSRV) navigate('/vehiculo/hiluxsrv');
+            else if (isHilux) navigate('/vehiculo/hilux');
+            else if (isRaptor) navigate('/vehiculo/raptor');
+            else if (isEcosport) navigate('/vehiculo/ecosport');
+            else if (isUp) navigate('/vehiculo/up');
+            else if (isFrontier) navigate('/vehiculo/frontier');
+            else if (isOroch) navigate('/vehiculo/oroch');
+            else if (is307) navigate('/vehiculo/307');
+            else if (isMustang) navigate('/vehiculo/mustang');
+            else if (isTaos) navigate('/vehiculo/taos');
+            else if (isPoloTrack) navigate('/vehiculo/polo-track');
+            else alert('Próximamente detalle para este modelo');
+          }}
+        >
+          Ver modelo
+        </button>
       </div>
     </div>
   );
@@ -135,7 +136,7 @@ const VehicleGrid: React.FC<{ vehicles: Vehicle[] }> = ({ vehicles }) => {
       </button>
       <div
         ref={scrollRef}
-        className="flex overflow-x-auto gap-2 py-4 px-8 scrollbar-none" 
+        className="flex overflow-x-auto gap-8 py-8 px-8 scrollbar-none" 
         style={{ scrollBehavior: 'smooth', msOverflowStyle: 'none', scrollbarWidth: 'none' }}
       >
         {vehicles.map((vehicle) => (
