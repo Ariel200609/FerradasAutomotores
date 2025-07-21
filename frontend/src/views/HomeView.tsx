@@ -16,7 +16,6 @@ const TestimonialsSection = React.lazy(() => import("../components/TestimonialsS
 const ContactSection = React.lazy(() => import("../components/ContactSection"));
 
 // [NO USADO] Estos imports no se usan en la vista principal, pero pueden ser útiles para futuras rutas o lógica:
-import VehicleDetail from "../components/VehicleDetail";
 import { Star, CheckCircle } from "lucide-react";
 import BrandsSection from "../components/BrandsSection";
 
@@ -41,8 +40,6 @@ const HomeView: React.FC = () => (
         </>
       }
     />
-    {/* [NO USADO] Ruta de ejemplo para detalle de vehículo, actualmente no enlazada desde el header ni la landing */}
-    <Route path="/vehiculo/t-cross" element={<VehicleDetail />} />
   </Routes>
 );
 

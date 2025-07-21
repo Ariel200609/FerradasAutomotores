@@ -13,7 +13,7 @@ const ContactView = React.lazy(() => import("./views/ContactView"));
 const AuthView = React.lazy(() => import("./views/AuthView"));
 
 // Import de componentes de detalle de vehículos
-import VehicleDetail from "./components/VehicleDetail";
+import VehicleDetailTCross from "./components/VehicleDetailTCross";
 import VehicleDetailMaverik from "./components/VehicleDetailMaverik";
 import VehicleDetailAmarok from "./components/VehicleDetailAmarok";
 import VehicleDetailFocus from "./components/VehicleDetailFocus";
@@ -49,7 +49,7 @@ const AppRoutes: React.FC = () => (
         <Route path="/contact" element={<ContactView />} />
         <Route path="/auth" element={<AuthView />} />
         {/* Rutas individuales para cada modelo de vehículo */}
-        <Route path="/vehiculo/t-cross" element={<VehicleDetail />} />
+        <Route path="/vehiculo/t-cross" element={<VehicleDetailTCross />} />
         <Route path="/vehiculo/maverik" element={<VehicleDetailMaverik />} />
         <Route path="/vehiculo/amarok" element={<VehicleDetailAmarok />} />
         <Route path="/vehiculo/amarok-highline" element={<VehicleDetailAmarokHighline />} />
