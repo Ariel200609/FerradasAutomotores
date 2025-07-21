@@ -20,6 +20,17 @@ import VehicleDetailFocus from "./components/VehicleDetailFocus";
 import VehicleDetailOnix from "./components/VehicleDetailOnix";
 import VehicleDetailFastback from "./components/VehicleDetailFastback";
 import VehicleDetailHilux from "./components/VehicleDetailHilux";
+import VehicleDetailAmarokHighline from "./components/VehicleDetailAmarokHighline";
+import VehicleDetailHiluxSRV from "./components/VehicleDetailHiluxSRV";
+import VehicleDetailRaptor from "./components/VehicleDetailRaptor";
+import VehicleDetailEcosport from "./components/VehicleDetailEcosport";
+import VehicleDetailUp from "./components/VehicleDetailUp";
+import VehicleDetailAmarokV6 from "./components/VehicleDetailAmarokV6";
+import VehicleDetailFrontier from "./components/VehicleDetailFrontier";
+import VehicleDetailHiluxSRXGris from "./components/VehicleDetailHiluxSRXGris";
+import VehicleDetailOroch from "./components/VehicleDetailOroch";
+import VehicleDetail307 from "./components/VehicleDetail307";
+import VehicleDetailMustang from "./components/VehicleDetailMustang";
 
 // Loader simple para fallback
 const Loader = () => <div className="w-full text-center py-12 text-gray-400">Cargando...</div>;
@@ -35,10 +46,21 @@ const AppRoutes: React.FC = () => (
         <Route path="/vehiculo/t-cross" element={<VehicleDetail />} />
         <Route path="/vehiculo/maverik" element={<VehicleDetailMaverik />} />
         <Route path="/vehiculo/amarok" element={<VehicleDetailAmarok />} />
+        <Route path="/vehiculo/amarok-highline" element={<VehicleDetailAmarokHighline />} />
         <Route path="/vehiculo/focus" element={<VehicleDetailFocus />} />
         <Route path="/vehiculo/onix" element={<VehicleDetailOnix />} />
         <Route path="/vehiculo/fastback" element={<VehicleDetailFastback />} />
         <Route path="/vehiculo/hilux" element={<VehicleDetailHilux />} />
+        <Route path="/vehiculo/hiluxsrv" element={<VehicleDetailHiluxSRV />} />
+        <Route path="/vehiculo/raptor" element={<VehicleDetailRaptor />} />
+        <Route path="/vehiculo/ecosport" element={<VehicleDetailEcosport />} />
+        <Route path="/vehiculo/up" element={<VehicleDetailUp />} />
+        <Route path="/vehiculo/amarokv6" element={<VehicleDetailAmarokV6 />} />
+        <Route path="/vehiculo/frontier" element={<VehicleDetailFrontier />} />
+        <Route path="/vehiculo/hilux-srx-gris" element={<VehicleDetailHiluxSRXGris />} />
+        <Route path="/vehiculo/oroch" element={<VehicleDetailOroch />} />
+        <Route path="/vehiculo/307" element={<VehicleDetail307 />} />
+        <Route path="/vehiculo/mustang" element={<VehicleDetailMustang />} />
         {/* Ruta catch-all para 404: redirige a Home */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

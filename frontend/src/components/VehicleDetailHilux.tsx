@@ -7,19 +7,29 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const hiluxImages = [
-  "/FerradasAutomotores/ToyotaHilux/PortadaHilux.jpg",
-  "/FerradasAutomotores/ToyotaHilux/Imagen de WhatsApp 2025-07-18 a las 18.19.43_7226d7ca.jpg"
+  "/FerradasAutomotores/HiluxBlack/Hilux(1).jpg",
+  "/FerradasAutomotores/HiluxBlack/Hilux(2).jpg",
+  "/FerradasAutomotores/HiluxBlack/Hilux(3).jpg",
+  "/FerradasAutomotores/HiluxBlack/Hilux(4).jpg",
+  "/FerradasAutomotores/HiluxBlack/Hilux(5).jpg",
+  "/FerradasAutomotores/HiluxBlack/Hilux(6).jpg",
+  "/FerradasAutomotores/HiluxBlack/Hilux(7).jpg",
+  "/FerradasAutomotores/HiluxBlack/Hilux(8).jpg",
+  "/FerradasAutomotores/HiluxBlack/Hilux(9).jpg",
+  "/FerradasAutomotores/HiluxBlack/Hilux(10).jpg",
+  "/FerradasAutomotores/HiluxBlack/Hilux(11).jpg",
+  "/FerradasAutomotores/HiluxBlack/Hilux(12).jpg",
 ];
 
 const hiluxSpecs = [
-  { label: "Año", value: "2025" },
-  { label: "Motor", value: "2.8L Turbo Diesel" },
+  { label: "Año", value: "2019" },
+  { label: "Motor", value: "2.8  Diesel" },
   { label: "Transmisión", value: "Automática" },
-  { label: "Potencia", value: "204 CV" },
-  { label: "Color", value: "A elección" },
+  { label: "Potencia", value: "177 CV" },
+  { label: "Color", value: "Negro Perlado" },
   { label: "Puertas", value: "4" },
   { label: "Tracción", value: "4x4" },
-  { label: "Kilometraje", value: "0 km" },
+  { label: "Kilometraje", value: "130.000" },
 ];
 
 const VehicleDetailHilux: React.FC = () => {
@@ -33,11 +43,11 @@ const VehicleDetailHilux: React.FC = () => {
     <section className="relative min-h-screen w-full bg-white flex flex-col justify-center items-center overflow-x-hidden">
       <div className="relative w-full max-w-5xl h-[420px] md:h-[520px] flex items-center justify-center mx-auto mt-20 bg-gray-100 rounded-2xl shadow-lg">
         <button onClick={prev} className="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-white hover:bg-red-600 hover:text-white text-4xl font-bold rounded-full w-12 h-12 flex items-center justify-center shadow transition" aria-label="Anterior">{'<'}</button>
-        <img src={hiluxImages[current]} alt="Toyota Hilux" className="object-contain h-full w-full rounded-2xl" loading="lazy" />
+        <img src={hiluxImages[current]} alt="Toyota Hilux SRX" className="object-contain h-full w-full rounded-2xl" loading="lazy" />
         <button onClick={next} className="absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-white hover:bg-red-600 hover:text-white text-4xl font-bold rounded-full w-12 h-12 flex items-center justify-center shadow transition" aria-label="Siguiente">{'>'}</button>
         {/* Título superpuesto */}
         <div className="absolute left-8 bottom-8 z-30 bg-white/80 px-4 py-2 rounded-xl shadow">
-          <h1 className="text-2xl md:text-3xl font-extrabold text-gray-900 drop-shadow-none">Toyota <span className="text-red-600">Hilux</span></h1>
+          <h1 className="text-2xl md:text-3xl font-extrabold text-gray-900 drop-shadow-none">Toyota Hilux <span className="text-red-600">SRX</span></h1>
         </div>
       </div>
       {/* Especificaciones técnicas */}

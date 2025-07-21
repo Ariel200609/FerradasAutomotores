@@ -31,17 +31,18 @@ const vehicles: Vehicle[] = [
     condition: "new",
     fuel: "Diesel",
   },
+  // Ford Focus Guia
   {
     id: 3,
     brand: "Ford",
-    model: "Focus",
-    year: 2021,
+    model: "Focus Guia",
+    year: 2013,
     images: [
-      "https://images.pexels.com/photos/1007410/pexels-photo-1007410.jpeg?auto=compress&cs=tinysrgb&w=800"
+      "/FerradasAutomotores/focus/IMG-20250718-WA0113.jpg",
     ],
     condition: "used",
-    mileage: 25000,
-    fuel: "Gasolina",
+    mileage: 200000,
+    fuel: "Nafta",
   },
   {
     id: 4,
@@ -72,10 +73,7 @@ const vehicles: Vehicle[] = [
     year: 2024,
     mileage: 25000,
     images: [
-      "/FerradasAutomotores/Maverik/PortadaMaverik.jpg",
-      "/FerradasAutomotores/Maverik/AtrasMaverik.jpg",
-      "/FerradasAutomotores/Maverik/DelanteMaverik.jpg",
-      "/FerradasAutomotores/Maverik/InteriorMaverik.jpg"  
+      "/FerradasAutomotores/Maverik/PortadaMaverik.jpg", 
     ],
     condition: "used",
     fuel: "Naftera-Eléctrica",
@@ -89,11 +87,6 @@ const vehicles: Vehicle[] = [
     mileage: 70000,
     images: [
       "/FerradasAutomotores/t-cross/dalanteT-cross.jpg",
-      "/FerradasAutomotores/t-cross/costadoT-cross.jpg",
-      "/FerradasAutomotores/t-cross/atrasT-cross.jpg",
-      "/FerradasAutomotores/t-cross/interiorT-cross.jpg",
-      "/FerradasAutomotores/t-cross/costadotT-cross.jpg",
-      "/FerradasAutomotores/t-cross/interior2T-cross.jpg"
     ],
     condition: "used",
     fuel: "Naftero",
@@ -102,14 +95,159 @@ const vehicles: Vehicle[] = [
   {
     id: 8,
     brand: "Toyota",
-    model: "Hilux",
-    year: 2025,
+    model: "Hilux SRX",
+    year: 2019,
     images: [
-      "/FerradasAutomotores/ToyotaHilux/PortadaHilux.jpg",
-      "/FerradasAutomotores/ToyotaHilux/Imagen de WhatsApp 2025-07-18 a las 18.19.43_7226d7ca.jpg"
+      "/FerradasAutomotores/HiluxBlack/Hilux(1).jpg",
     ],
-    condition: "new",
+    condition: "used",
+    mileage: 130000,
     fuel: "Diesel",
+  },
+  // Volkswagen Amarok Highline Gris
+  {
+    id: 9,
+    brand: "Volkswagen",
+    model: "Amarok Highline",
+    year: 2021,
+    images: [
+      "/FerradasAutomotores/AmarokGris/Amarok(2).jpg",
+    ],
+    condition: "used",
+    mileage: 100000,
+    fuel: "Diesel",
+  },
+  // Toyota Hilux SRV
+  {
+    id: 10,
+    brand: "Toyota",
+    model: "Hilux SRV",
+    year: 2021,
+    images: [
+      "/FerradasAutomotores/HiluxSRV/srv(7).jpg",
+    ],
+    condition: "used",
+    mileage: 180000,
+    fuel: "Diesel",
+  },
+  // Ford Ranger Raptor
+  {
+    id: 11,
+    brand: "Ford",
+    model: "Ranger Raptor",
+    year: 2024,
+    images: [
+      "/FerradasAutomotores/Raptor/raptor(1).jpg",
+    ],
+    condition: "used",
+    mileage: 25000,
+    fuel: "Nafta",
+  },
+  // Ford Ecosport XLS
+  {
+    id: 12,
+    brand: "Ford",
+    model: "Ecosport XLS",
+    year: 2010,
+    images: [
+      "/FerradasAutomotores/ecosport/ecosport(1).jpg",
+    ],
+    condition: "used",
+    mileage: 200000,
+    fuel: "Nafta",
+  },
+  // Volkswagen UP
+  {
+    id: 13,
+    brand: "Volkswagen",
+    model: "UP",
+    year: 2017,
+    images: [
+      "/FerradasAutomotores/up/up(1).jpg",
+    ],
+    condition: "used",
+    mileage: 100,
+    fuel: "Nafta",
+  },
+  // Volkswagen Amarok V6
+  {
+    id: 14,
+    brand: "Volkswagen",
+    model: "Amarok V6",
+    year: 2022,
+    images: [
+      "/FerradasAutomotores/amarokv6/IMG-20250719-WA0002.jpg",
+    ],
+    condition: "used",
+    mileage: 90000,
+    fuel: "Diesel",
+  },
+  // Nissan Frontier S
+  {
+    id: 15,
+    brand: "Nissan",
+    model: "Frontier",
+    year: 2021,
+    images: [
+      "/FerradasAutomotores/frontier/IMG-20250719-WA0020.jpg",
+    ],
+    condition: "used",
+    mileage: 180000,
+    fuel: "Diesel",
+  },
+  // Toyota Hilux SRX Gris
+  {
+    id: 16,
+    brand: "Toyota",
+    model: "Hilux SRX Gris",
+    year: 2017,
+    images: [
+      "/FerradasAutomotores/srxgris/IMG-20250719-WA0025.jpg",
+    ],
+    condition: "used",
+    mileage: 230000,
+    fuel: "Diesel",
+  },
+  // Renault Duster Oroch Outsider
+  {
+    id: 17,
+    brand: "Renault",
+    model: "Duster Oroch Outsider",
+    year: 2017,
+    images: [
+      "/FerradasAutomotores/oroch/IMG-20250719-WA0039.jpg",
+
+    ],
+    condition: "used",
+    mileage: 230000,
+    fuel: "Nafta",
+  },
+  // Peugeot 307 XS Cuero
+  {
+    id: 18,
+    brand: "Peugeot",
+    model: "307 XS Cuero",
+    year: 2011,
+    images: [
+      "/FerradasAutomotores/307/IMG-20250719-WA0049.jpg",
+
+    ],
+    condition: "used",
+    mileage: 125000,
+    fuel: "Nafta",
+  },
+  // Ford Mustang GT
+  {
+    id: 19,
+    brand: "Ford",
+    model: "Mustang GT",
+    year: 2023,
+    images: [
+      "/FerradasAutomotores/mustang/IMG-20250719-WA0073.jpg",
+    ],
+    condition: "used",
+    mileage: 15000,
+    fuel: "Nafta",
   },
 ];
 
@@ -117,8 +255,23 @@ const VehiclesSection: React.FC = () => {
   const [filterCondition, setFilterCondition] = useState<"all" | "new" | "used">("all");
   const [searchTerm, setSearchTerm] = useState("");
 
+  // Ordenar para que Mustang y Raptor estén primero en el grid
+  const orderedVehicles = [
+    vehicles.find(v => v && v.model.toLowerCase().includes("mustang")),
+    vehicles.find(v => v && v.model.toLowerCase().includes("raptor")),
+    ...vehicles.filter(v =>
+      v && !v.model.toLowerCase().includes("mustang") &&
+      !v.model.toLowerCase().includes("raptor")
+    )
+  ].filter(Boolean);
+
+  // Filtrar para que el Onix no se muestre
+  const visibleVehicles = orderedVehicles.filter(
+    (vehicle): vehicle is Vehicle => !!vehicle && !vehicle.model.toLowerCase().includes("onix")
+  );
+
   // Filtrado de vehículos según búsqueda y condición
-  const filteredVehicles = vehicles.filter((vehicle) => {
+  const filteredVehicles = visibleVehicles.filter((vehicle) => {
     const matchesCondition =
       filterCondition === "all" || vehicle.condition === filterCondition;
     const matchesSearch =

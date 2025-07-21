@@ -30,6 +30,17 @@ const VehicleCard: React.FC<{ vehicle: Vehicle }> = ({ vehicle }) => {
   const isGolf = vehicle.model.toLowerCase().includes("golf");
   const isFastback = vehicle.model.toLowerCase().includes("fastback");
   const isHilux = vehicle.model.toLowerCase().includes("hilux");
+  const isAmarokHighline = vehicle.model.toLowerCase().includes("amarok highline");
+  const isHiluxSRV = vehicle.model.toLowerCase().includes("hilux srv");
+  const isRaptor = vehicle.model.toLowerCase().includes("raptor");
+  const isEcosport = vehicle.model.toLowerCase().includes("ecosport");
+  const isUp = vehicle.model.toLowerCase().includes("up");
+  const isAmarokV6 = vehicle.model.toLowerCase().includes("amarok v6");
+  const isFrontier = vehicle.model.toLowerCase().includes("frontier");
+  const isHiluxSRXGris = vehicle.model.toLowerCase().includes("hilux srx gris");
+  const isOroch = vehicle.model.toLowerCase().includes("oroch");
+  const is307 = vehicle.model.toLowerCase().includes("307");
+  const isMustang = vehicle.model.toLowerCase().includes("mustang");
   return (
     <div
       className={`min-w-[220px] max-w-[220px] bg-transparent mx-2 flex-shrink-0 transition-all duration-300 relative group ${hovered ? 'z-20' : ''}`}
@@ -52,12 +63,23 @@ const VehicleCard: React.FC<{ vehicle: Vehicle }> = ({ vehicle }) => {
             onClick={() => {
               if (isTcross) navigate('/vehiculo/t-cross');
               else if (isMaverik) navigate('/vehiculo/maverik');
+              else if (isAmarokV6) navigate('/vehiculo/amarokv6');
+              else if (isAmarokHighline) navigate('/vehiculo/amarok-highline');
               else if (isAmarok) navigate('/vehiculo/amarok');
               else if (isFocus) navigate('/vehiculo/focus');
               else if (isOnix) navigate('/vehiculo/onix');
               else if (isGolf) navigate('/vehiculo/golf');
               else if (isFastback) navigate('/vehiculo/fastback');
+              else if (isHiluxSRXGris) navigate('/vehiculo/hilux-srx-gris');
+              else if (isHiluxSRV) navigate('/vehiculo/hiluxsrv');
               else if (isHilux) navigate('/vehiculo/hilux');
+              else if (isRaptor) navigate('/vehiculo/raptor');
+              else if (isEcosport) navigate('/vehiculo/ecosport');
+              else if (isUp) navigate('/vehiculo/up');
+              else if (isFrontier) navigate('/vehiculo/frontier');
+              else if (isOroch) navigate('/vehiculo/oroch');
+              else if (is307) navigate('/vehiculo/307');
+              else if (isMustang) navigate('/vehiculo/mustang');
               else alert('Próximamente detalle para este modelo');
             }}
           >
