@@ -4,9 +4,10 @@
 // Muestra un grid/carrusel de vehículos usando VehicleGrid y maneja el estado de búsqueda y filtro.
 // Incluye función de formateo de precio (actualmente no usada en el render).
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Search } from "lucide-react";
 import VehicleGrid from "./VehicleGrid";
+import SearchAndFilter from "./SearchAndFilter";
 
 interface Vehicle {
   id: number;
@@ -334,8 +335,21 @@ const vehicles: Vehicle[] = [
 ];
 
 const VehiclesSection: React.FC = () => {
-  const [filterCondition, setFilterCondition] = useState<"all" | "new" | "used">("all");
-  const [searchTerm, setSearchTerm] = useState("");
+  // Leer estado inicial de localStorage
+  const [filterCondition, setFilterCondition] = useState<"all" | "new" | "used">(() => {
+    return (localStorage.getItem("filterCondition") as "all" | "new" | "used") || "all";
+  });
+  const [searchTerm, setSearchTerm] = useState(() => {
+    return localStorage.getItem("searchTerm") || "";
+  });
+
+  // Guardar en localStorage cuando cambian
+  useEffect(() => {
+    localStorage.setItem("filterCondition", filterCondition);
+  }, [filterCondition]);
+  useEffect(() => {
+    localStorage.setItem("searchTerm", searchTerm);
+  }, [searchTerm]);
 
   // Ordenar para que Mustang y Raptor estén primero en el grid
   const orderedVehicles = [
@@ -379,51 +393,13 @@ const VehiclesSection: React.FC = () => {
             Nuestros <span className="text-red-600">Vehículos</span>
           </h2>
         </div>
-        {/* Search and Filter */}
-        <div className="mb-12 flex flex-col md:flex-row gap-4 justify-center items-center">
-          <div className="relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
-            <input
-              type="text"
-              placeholder="Buscar marca o modelo..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="pl-10 pr-4 py-3 bg-gray-700 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-red-400 w-full md:w-80"
-            />
-          </div>
-          <div className="flex gap-2">
-            <button
-              onClick={() => setFilterCondition("all")}
-              className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
-                filterCondition === "all"
-                  ? "bg-red-600 text-white"
-                  : "bg-gray-800 text-gray-300 hover:bg-gray-700"
-              }`}
-            >
-              Todos
-            </button>
-            <button
-              onClick={() => setFilterCondition("new")}
-              className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
-                filterCondition === "new"
-                  ? "bg-red-600 text-white"
-                  : "bg-gray-700 text-gray-300 hover:bg-gray-700"
-              }`}
-            >
-              0 KM
-            </button>
-            <button
-              onClick={() => setFilterCondition("used")}
-              className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
-                filterCondition === "used"
-                  ? "bg-red-600 text-white"
-                  : "bg-gray-700 text-gray-300 hover:bg-gray-700"
-              }`}
-            >
-              Usados
-            </button>
-          </div>
-        </div>
+        {/* Search and Filter mejorado */}
+        <SearchAndFilter
+          searchTerm={searchTerm}
+          setSearchTerm={setSearchTerm}
+          filterCondition={filterCondition}
+          setFilterCondition={setFilterCondition}
+        />
         {/* Vehicle Grid */}
         <VehicleGrid vehicles={filteredVehicles} />
       </div>
