@@ -332,6 +332,45 @@ const vehicles: Vehicle[] = [
     mileage: 0,
     fuel: "Nafta",
   },
+  // Hilux srx 4x4 AT
+  {
+    id: 26,
+    brand: "Toyota",
+    model: "Hilux SRX 4x4 AT",
+    year: 2025,
+    images: [
+      "/FerradasAutomotores/ToyotaHiluxsrx4x4AT/t(2).jpg",
+    ],
+    condition: "new",
+    mileage: 0,
+    fuel: "Diesel",
+  },
+  // Hilux SRV Red
+  {
+    id: 27,
+    brand: "Toyota",
+    model: "Hilux SRV Roja",
+    year: 2025,
+    images: [
+      "/FerradasAutomotores/hiluxsrvred/red(1).jpg",
+    ],
+    condition: "new",
+    mileage: 0,
+    fuel: "Diesel",
+  },
+  // hilux sr 4x4 mt
+  {
+    id: 28,
+    brand: "Toyota",
+    model: "hilux sr 4x4 mt",
+    year: 2025,
+    images: [
+      "/FerradasAutomotores/ToyotaHiluxSr4x4MT/b(1).jpg",
+    ],
+    condition: "new",
+    mileage: 0,
+    fuel: "Diesel",
+  }
 ];
 
 const VehiclesSection: React.FC = () => {

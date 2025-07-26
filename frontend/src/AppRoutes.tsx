@@ -37,6 +37,9 @@ import VehicleDetailAmarokComfortlineG2 from "./components/VehicleDetailAmarokCo
 import VehicleDetailTCrossBitono from "./components/VehicleDetailTCrossBitono";
 import VehicleDetailTaos from "./components/VehicleDetailTaos";
 import VehicleDetailPoloTrack from "./components/VehicleDetailPoloTrack";
+import VehicleDetailHilux4x4AT from "./components/VehicleDetailHilux4x4AT";
+import VehicleDetailHiluxRed from "./components/VehicleDetailHiluxRed";
+import VehicleDetailHiluxSR4x4MT from "./components/VehicleDetailHiluxSr4x4MT";
 
 // Loader simple para fallback
 const Loader = () => <div className="w-full text-center py-12 text-gray-400">Cargando...</div>;
@@ -73,6 +76,10 @@ const AppRoutes: React.FC = () => (
         <Route path="/vehiculo/t-cross-bitono" element={<VehicleDetailTCrossBitono />} />
         <Route path="/vehiculo/taos" element={<VehicleDetailTaos />} />
         <Route path="/vehiculo/polo-track" element={<VehicleDetailPoloTrack />} />
+        <Route path="/vehiculo/hilux-4x4-at" element={<VehicleDetailHilux4x4AT />} />
+        <Route path="/vehiculo/hilux-srv-roja" element={<VehicleDetailHiluxRed />} />
+        <Route path="/vehiculo/hilux-sr-4x4-mt" element={<VehicleDetailHiluxSR4x4MT />} />
+        {/* Ruta catch-all para redirigir a Home */}
         {/* Ruta catch-all para 404: redirige a Home */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

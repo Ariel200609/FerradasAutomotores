@@ -11,7 +11,7 @@ interface Vehicle {
   brand: string;
   model: string;
   year: number;
-  images: string[];
+  images: string[]; 
   condition: "new" | "used";
   mileage?: number;
   fuel: string;
@@ -47,6 +47,9 @@ const VehicleCard: React.FC<{ vehicle: Vehicle }> = ({ vehicle }) => {
   const isTCrossBitono = vehicle.model.toLowerCase().includes("t-cross bitono");
   const isTaos = vehicle.model.toLowerCase().includes("taos");
   const isPoloTrack = vehicle.model.toLowerCase().includes("polo track");
+  const isHiLux4x4AT = vehicle.model.toLowerCase().includes("hilux srx 4x4 at");
+  const isHiluxRed = vehicle.model.toLowerCase().includes("hilux srv roja");
+  const isHiluxSr4x4MT = vehicle.model.toLowerCase().includes("hilux sr 4x4 mt");
   return (
     <div
       className={`min-w-[90vw] max-w-[90vw] mx-auto bg-white flex-shrink-0 transition-all duration-300 relative group shadow-md border border-gray-100 rounded-2xl
@@ -73,32 +76,35 @@ const VehicleCard: React.FC<{ vehicle: Vehicle }> = ({ vehicle }) => {
         <button
           className={`mt-2 px-6 py-2 rounded-lg font-semibold transition-all duration-200 shadow-md border-2 border-red-600 bg-white text-red-600 hover:bg-red-600 hover:text-white`}
           onClick={() => {
-            if (isTCrossBitono) navigate('/vehiculo/t-cross-bitono');
-            else if (isTcross) navigate('/vehiculo/t-cross');
-            else if (isMaverik) navigate('/vehiculo/maverik');
-            else if (isAmarokV6) navigate('/vehiculo/amarokv6');
-            else if (isAmarokComfortlineG2) navigate('/vehiculo/amarok-comfortline-g2');
-            else if (isAmarokBlackStyleG2) navigate('/vehiculo/amarok-black-style-g2');
-            else if (isAmarokHighlineG2) navigate('/vehiculo/amarok-highline-g2');
-            else if (isAmarokHighline) navigate('/vehiculo/amarok-highline');
-            else if (isAmarok) navigate('/vehiculo/amarok');
-            else if (isFocus) navigate('/vehiculo/focus');
-            else if (isOnix) navigate('/vehiculo/onix');
-            else if (isGolf) navigate('/vehiculo/golf');
-            else if (isFastback) navigate('/vehiculo/fastback');
-            else if (isHiluxSRXGris) navigate('/vehiculo/hilux-srx-gris');
-            else if (isHiluxSRV) navigate('/vehiculo/hiluxsrv');
-            else if (isHilux) navigate('/vehiculo/hilux');
-            else if (isRaptor) navigate('/vehiculo/raptor');
-            else if (isEcosport) navigate('/vehiculo/ecosport');
-            else if (isUp) navigate('/vehiculo/up');
-            else if (isFrontier) navigate('/vehiculo/frontier');
-            else if (isOroch) navigate('/vehiculo/oroch');
-            else if (is307) navigate('/vehiculo/307');
-            else if (isMustang) navigate('/vehiculo/mustang');
-            else if (isTaos) navigate('/vehiculo/taos');
-            else if (isPoloTrack) navigate('/vehiculo/polo-track');
-            else alert('Próximamente detalle para este modelo');
+                      if (isHiLux4x4AT) navigate('/vehiculo/hilux-4x4-at');
+              else if (isHiluxSr4x4MT) navigate('/vehiculo/hilux-sr-4x4-mt');
+              else if (isHiluxRed) navigate('/vehiculo/hilux-srv-roja');
+              else if (isHiluxSRXGris) navigate('/vehiculo/hilux-srx-gris');
+              else if (isHiluxSRV) navigate('/vehiculo/hiluxsrv');
+              else if (isHilux) navigate('/vehiculo/hilux');
+              else if (isTCrossBitono) navigate('/vehiculo/t-cross-bitono');
+              else if (isTcross) navigate('/vehiculo/t-cross');
+              else if (isMaverik) navigate('/vehiculo/maverik');
+              else if (isAmarokV6) navigate('/vehiculo/amarokv6');
+              else if (isAmarokComfortlineG2) navigate('/vehiculo/amarok-comfortline-g2');
+              else if (isAmarokBlackStyleG2) navigate('/vehiculo/amarok-black-style-g2');
+              else if (isAmarokHighlineG2) navigate('/vehiculo/amarok-highline-g2');
+              else if (isAmarokHighline) navigate('/vehiculo/amarok-highline');
+              else if (isAmarok) navigate('/vehiculo/amarok');
+              else if (isFocus) navigate('/vehiculo/focus');
+              else if (isOnix) navigate('/vehiculo/onix');
+              else if (isGolf) navigate('/vehiculo/golf');
+              else if (isFastback) navigate('/vehiculo/fastback');
+              else if (isRaptor) navigate('/vehiculo/raptor');
+              else if (isEcosport) navigate('/vehiculo/ecosport');
+              else if (isUp) navigate('/vehiculo/up');
+              else if (isFrontier) navigate('/vehiculo/frontier');
+              else if (isOroch) navigate('/vehiculo/oroch');
+              else if (is307) navigate('/vehiculo/307');
+              else if (isMustang) navigate('/vehiculo/mustang');
+              else if (isTaos) navigate('/vehiculo/taos');
+              else if (isPoloTrack) navigate('/vehiculo/polo-track');
+              else alert('Próximamente detalle para este modelo');
           }}
         >
           Ver modelo
