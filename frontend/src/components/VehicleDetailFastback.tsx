@@ -7,7 +7,15 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const fastbackImages = [
-  "/FerradasAutomotores/Fastback/PortadaFiat.jpg"
+  "/FerradasAutomotores/FiatFasback/f(1).jpg",
+  "/FerradasAutomotores/FiatFasback/f(2).jpg",
+  "/FerradasAutomotores/FiatFasback/f(3).jpg",
+  "/FerradasAutomotores/FiatFasback/f(4).jpg",
+  "/FerradasAutomotores/FiatFasback/f(5).jpg",
+  "/FerradasAutomotores/FiatFasback/f(6).jpg",
+  "/FerradasAutomotores/FiatFasback/f(7).jpg",
+  "/FerradasAutomotores/FiatFasback/f(8).jpg",
+  "/FerradasAutomotores/FiatFasback/f(9).jpg",
   // Agrega más imágenes si tienes
 ];
 
