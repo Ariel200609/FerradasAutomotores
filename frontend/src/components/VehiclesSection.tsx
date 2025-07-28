@@ -370,7 +370,124 @@ const vehicles: Vehicle[] = [
     condition: "new",
     mileage: 0,
     fuel: "Diesel",
-  }
+  },
+  //Toyota Hilux DX
+  {
+    id: 29,
+    brand: "Toyota",
+    model: "Hilux DX",
+    year: 2025,
+    images: [
+      "/FerradasAutomotores/ToyotaHiluxDX/d(1).jpg",
+    ],
+    condition: "new",
+    mileage: 0,
+    fuel: "Diesel",
+  },
+  // Toyota Hilux CS
+  {
+    id: 30,
+    brand: "Toyota",
+    model: "hilux dx cs",
+    year: 2025,
+    images: [
+      "/FerradasAutomotores/ToyotaHiluxDXcs/c(1).jpg",
+    ],
+    condition: "new",
+    mileage: 0,
+    fuel: "Diesel",
+  },
+  //HiluxSrx0km
+  {
+    id: 31,
+    brand: "Toyota",
+    model: "hilux srx 0km",
+    year: 2025,
+    images: [
+      "/FerradasAutomotores/ToyotaHiluxSRX0km/g(1).jpg",
+    ],
+    condition: "new",
+    mileage: 0,
+    fuel: "Diesel",
+  },
+  //Ford Bronco 
+  {
+    id: 32,
+    brand: "Ford",
+    model: "bronco",
+    year: 2025,
+    images: [
+      "/FerradasAutomotores/FordBronco/f(1).jpg",
+    ],
+    condition: "new",
+    mileage: 0,
+    fuel: "Nafta",
+  },
+  // ford ranger xs
+  {
+    id: 33,
+    brand: "Ford",
+    model: "ranger xs",
+    year: 2025,
+    images: [
+      "/FerradasAutomotores/FordRangerXS/r(1).jpg",
+    ],
+    condition: "new",
+    mileage: 0,
+    fuel: "Diesel",
+  },
+  // ford ranger black edition
+  {
+    id: 34,
+    brand: "Ford",
+    model: "ranger black edition",
+    year: 2025,
+    images: [
+      "/FerradasAutomotores/FordRangerBlackEdition/b(1).jpg",
+    ],
+    condition: "new",
+    mileage: 0,
+    fuel: "Diesel",
+  },
+  //Ford ranger limited v6
+  {
+    id: 35,
+    brand: "Ford",
+    model: "ranger limited v6",
+    year: 2025,
+    images: [
+      "/FerradasAutomotores/FordRangerLimitedV6/l(3).jpg",
+    ],
+    condition: "new",
+    mileage: 0,
+    fuel: "Diesel",
+  },
+  //Fiat toro 270 vulcano
+  {
+    id: 36,
+    brand: "Fiat",
+    model: "toro 270 vulcano",
+    year: 2025,
+    images: [
+      "/FerradasAutomotores/FiatToro270Vulcano/t(3).jpg",
+    ],
+    condition: "new",
+    mileage: 0,
+    fuel: "Gasolina",
+  },
+  //Dodge Ram Rampage
+  {
+    id: 37,
+    brand: "Dodge",
+    model: "ram rampage",
+    year: 2025,
+    images: [
+      "/FerradasAutomotores/DodgeRamRampage/r(5).jpg",
+    ],
+    condition: "new",
+    mileage: 0,
+    fuel: "Nafta",
+  },
 ];
 
 const VehiclesSection: React.FC = () => {

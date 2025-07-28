@@ -40,6 +40,15 @@ import VehicleDetailPoloTrack from "./components/VehicleDetailPoloTrack";
 import VehicleDetailHilux4x4AT from "./components/VehicleDetailHilux4x4AT";
 import VehicleDetailHiluxRed from "./components/VehicleDetailHiluxRed";
 import VehicleDetailHiluxSR4x4MT from "./components/VehicleDetailHiluxSr4x4MT";
+import VehicleDetailToyotaHiluxDx from "./components/VehicleDetailToyotaHiluxDx";
+import VehicleDetailToyotaHiluxcs from "./components/VehicleDetailToyotaHiluxcs";
+import VehicleDetailHiluxSrx0km from "./components/VehicleDetailToyotaHiluxSrx0km";
+import VehicleDetailFordBronco from "./components/VehicleDetailFordBronco";
+import VehicleDetailFordRangerXs from "./components/VehicleDetailFordRangerXs";
+import VehicleDetailFordRangerBlackEdition from "./components/VehicleDetailFordRangerBlackEdition";
+import VehicleDetailFordRangerLimitedV6 from "./components/VehicleDetailFordRangerLimitedV6";
+import VehicleDetailFiatToro270Vulcano from "./components/VehicleDetailFiatToro270Vulcano";
+import VehicleDetailDodgeRamRampage from "./components/VehicleDetailDodgeRamRampge";
 
 // Loader simple para fallback
 const Loader = () => <div className="w-full text-center py-12 text-gray-400">Cargando...</div>;
@@ -79,10 +88,19 @@ const AppRoutes: React.FC = () => (
         <Route path="/vehiculo/hilux-4x4-at" element={<VehicleDetailHilux4x4AT />} />
         <Route path="/vehiculo/hilux-srv-roja" element={<VehicleDetailHiluxRed />} />
         <Route path="/vehiculo/hilux-sr-4x4-mt" element={<VehicleDetailHiluxSR4x4MT />} />
+        <Route path="/vehiculo/hilux-DX" element={<VehicleDetailToyotaHiluxDx />} />
+        <Route path="/vehiculo/hilux-dx-cs" element={<VehicleDetailToyotaHiluxcs />} />
+        <Route path="/vehiculo/hilux-srx-0km" element={<VehicleDetailHiluxSrx0km />} />
+        <Route path="/vehiculo/bronco" element={<VehicleDetailFordBronco />} />
+        <Route path="/vehiculo/ranger-xs" element={<VehicleDetailFordRangerXs />} />
+        <Route path="/vehiculo/ranger-black-edition" element={<VehicleDetailFordRangerBlackEdition />} />
+        <Route path="/vehiculo/ranger-limited-v6" element={<VehicleDetailFordRangerLimitedV6 />} />
+        <Route path="/vehiculo/toro-270-vulcano" element={<VehicleDetailFiatToro270Vulcano />} />   
+        <Route path="/vehiculo/ram-rampage" element={<VehicleDetailDodgeRamRampage />} />
         {/* Ruta catch-all para redirigir a Home */}
         {/* Ruta catch-all para 404: redirige a Home */}
         <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
+      </Routes> 
     </Suspense>
   </Layout>
 );

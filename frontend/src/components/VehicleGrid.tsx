@@ -50,6 +50,16 @@ const VehicleCard: React.FC<{ vehicle: Vehicle }> = ({ vehicle }) => {
   const isHiLux4x4AT = vehicle.model.toLowerCase().includes("hilux srx 4x4 at");
   const isHiluxRed = vehicle.model.toLowerCase().includes("hilux srv roja");
   const isHiluxSr4x4MT = vehicle.model.toLowerCase().includes("hilux sr 4x4 mt");
+  const isHiluxDx = vehicle.model.toLowerCase().includes("hilux dx");
+  const isHiluxDXcs = vehicle.model.toLowerCase().includes("hilux dx cs");
+  const isHiluxsrx = vehicle.model.toLowerCase().includes("hilux srx 0km");
+  const isBronco = vehicle.model.toLowerCase().includes("bronco");
+  const isRanger = vehicle.model.toLowerCase().includes("ranger xs");
+  const isRangerBlackEdition = vehicle.model.toLowerCase().includes("ranger black edition");
+  const isRangerLimitedV6 = vehicle.model.toLowerCase().includes("ranger limited v6");
+  const isToro270vulcano = vehicle.model.toLowerCase().includes("toro 270 vulcano");
+  const isRamRampage = vehicle.model.toLowerCase().includes("ram rampage");
+
   return (
     <div
       className={`min-w-[90vw] max-w-[90vw] mx-auto bg-white flex-shrink-0 transition-all duration-300 relative group shadow-md border border-gray-100 rounded-2xl
@@ -76,7 +86,17 @@ const VehicleCard: React.FC<{ vehicle: Vehicle }> = ({ vehicle }) => {
         <button
           className={`mt-2 px-6 py-2 rounded-lg font-semibold transition-all duration-200 shadow-md border-2 border-red-600 bg-white text-red-600 hover:bg-red-600 hover:text-white`}
           onClick={() => {
-                      if (isHiLux4x4AT) navigate('/vehiculo/hilux-4x4-at');
+              if (isHiluxsrx) navigate('/vehiculo/hilux-srx-0km');
+              else if (isRamRampage) navigate('/vehiculo/ram-rampage');
+              else if (isRangerLimitedV6) navigate('/vehiculo/ranger-limited-v6');
+              else if (isToro270vulcano) navigate('/vehiculo/toro-270-vulcano');
+              else if (isRangerLimitedV6) navigate('/vehiculo/ranger-limited-v6');
+              else if (isRangerBlackEdition) navigate('/vehiculo/ranger-black-edition');
+              else if (isRanger) navigate('/vehiculo/ranger-xs');
+              else if (isBronco) navigate('/vehiculo/bronco');
+              else if (isHiluxDXcs) navigate('/vehiculo/hilux-dx-cs');
+              else if (isHiluxDx) navigate('/vehiculo/hilux-dx');
+              else if (isHiLux4x4AT) navigate('/vehiculo/hilux-4x4-at') ;
               else if (isHiluxSr4x4MT) navigate('/vehiculo/hilux-sr-4x4-mt');
               else if (isHiluxRed) navigate('/vehiculo/hilux-srv-roja');
               else if (isHiluxSRXGris) navigate('/vehiculo/hilux-srx-gris');

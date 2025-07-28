@@ -7,29 +7,28 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const fastbackImages = [
-  "/FerradasAutomotores/FiatFasback/f(1).jpg",
-  "/FerradasAutomotores/FiatFasback/f(2).jpg",
-  "/FerradasAutomotores/FiatFasback/f(3).jpg",
-  "/FerradasAutomotores/FiatFasback/f(4).jpg",
-  "/FerradasAutomotores/FiatFasback/f(5).jpg",
-  "/FerradasAutomotores/FiatFasback/f(6).jpg",
-  "/FerradasAutomotores/FiatFasback/f(7).jpg",
-  "/FerradasAutomotores/FiatFasback/f(8).jpg",
-  "/FerradasAutomotores/FiatFasback/f(9).jpg",
+  "/FerradasAutomotores/FiatToro270Vulcano/t(1).jpg",
+  "/FerradasAutomotores/FiatToro270Vulcano/t(2).jpg",
+  "/FerradasAutomotores/FiatToro270Vulcano/t(3).jpg",
+  "/FerradasAutomotores/FiatToro270Vulcano/t(4).jpg",
+  "/FerradasAutomotores/FiatToro270Vulcano/t(5).jpg",
+  "/FerradasAutomotores/FiatToro270Vulcano/t(6).jpg",
+  "/FerradasAutomotores/FiatToro270Vulcano/t(7).jpg",
+  "/FerradasAutomotores/FiatToro270Vulcano/t(8).jpg",
   // Agrega más imágenes si tienes
 ];
 
 const fastbackSpecs = [
   { label: "Año", value: "2025" },
-  { label: "Motor", value: "1.3 Turbo" },
-  { label: "Transmisión", value: "Automática" },
-  { label: "Color", value: "Gris Oscuro" },
+  { label: "Motor", value: "Diesel" },
+  { label: "Transmisión", value: "Manual" },
+  { label: "Color", value: "Gris" },
   { label: "Puertas", value: "5" },
-  { label: "Tracción", value: "Delantera" },
+  { label: "Tracción", value: "4x4" },
   { label: "Kilometraje", value: "0 km" },
 ];
 
-const VehicleDetailFastback: React.FC = () => {
+const VehicleDetailFiatToro270Vulcano: React.FC = () => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   const [current, setCurrent] = useState(0);
   const navigate = useNavigate();
@@ -53,7 +52,7 @@ const VehicleDetailFastback: React.FC = () => {
         <button onClick={next} className="absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-white hover:bg-red-600 hover:text-white text-4xl font-bold rounded-full w-12 h-12 flex items-center justify-center shadow transition" aria-label="Siguiente">{'>'}</button>
         {/* Título superpuesto */}
         <div className="absolute left-8 bottom-8 z-30 bg-white/80 px-4 py-2 rounded-xl shadow">
-          <h1 className="text-2xl md:text-3xl font-extrabold text-gray-900 drop-shadow-none">Fiat <span className="text-red-600">Fastback</span></h1>
+          <h1 className="text-2xl md:text-3xl font-extrabold text-gray-900 drop-shadow-none">Fiat <span className="text-red-600">Toro 270 Vulcano</span></h1>
         </div>
       </div>
       {/* Especificaciones técnicas */}
@@ -72,4 +71,4 @@ const VehicleDetailFastback: React.FC = () => {
   );
 };
 
-export default VehicleDetailFastback; 
+export default VehicleDetailFiatToro270Vulcano; 
