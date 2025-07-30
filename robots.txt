@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ferradasautomotores.com/sitemap.xml 
