@@ -57,7 +57,7 @@ const ContactSection: React.FC = () => {
               <MapPin className="h-8 w-8 text-red-600 mr-4 flex-shrink-0" />
               <div>
                 <h3 className="text-xl  text-gray-300 font-semibold mb-2">Nuestra Ubicación</h3>
-                <p className="text-gray-300 leading-relaxed">415 Av. Libertad, Laguna Alsina<br />Rauch y Av. Stroeder Este, Salliqueló</p>
+                <p className="text-gray-300 leading-relaxed"> Acceso Libertad 570, Laguna Alsina<br />Rauch y Av. Stroeder Este, Salliqueló</p>
               </div>
             </div>
             <div className="flex items-center">
