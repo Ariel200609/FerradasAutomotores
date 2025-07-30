@@ -6,16 +6,16 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const tCrossBitonoImages = [
-  "/FerradasAutomotores/t-cross bitono/IMG-20250720-WA0078.jpg",
-  "/FerradasAutomotores/t-cross bitono/IMG-20250720-WA0079.jpg",
-  "/FerradasAutomotores/t-cross bitono/IMG-20250720-WA0080.jpg",
-  "/FerradasAutomotores/t-cross bitono/IMG-20250720-WA0081.jpg",
-  "/FerradasAutomotores/t-cross bitono/IMG-20250720-WA0082.jpg",
-  "/FerradasAutomotores/t-cross bitono/IMG-20250720-WA0083.jpg",
-  "/FerradasAutomotores/t-cross bitono/IMG-20250720-WA0084.jpg",
-  "/FerradasAutomotores/t-cross bitono/IMG-20250720-WA0085.jpg",
-  "/FerradasAutomotores/t-cross bitono/IMG-20250720-WA0086.jpg",
-  "/FerradasAutomotores/t-cross bitono/IMG-20250720-WA0087.jpg"
+  "/t-cross bitono/IMG-20250720-WA0078.jpg",
+  "/t-cross bitono/IMG-20250720-WA0079.jpg",
+  "/t-cross bitono/IMG-20250720-WA0080.jpg",
+  "/t-cross bitono/IMG-20250720-WA0081.jpg",
+  "/t-cross bitono/IMG-20250720-WA0082.jpg",
+  "/t-cross bitono/IMG-20250720-WA0083.jpg",
+  "/t-cross bitono/IMG-20250720-WA0084.jpg",
+  "/t-cross bitono/IMG-20250720-WA0085.jpg",
+  "/t-cross bitono/IMG-20250720-WA0086.jpg",
+  "/t-cross bitono/IMG-20250720-WA0087.jpg"
 ];
 
 const tCrossBitonoSpecs = [

@@ -6,13 +6,13 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const HiluxImages = [
-  "/FerradasAutomotores/ToyotaHiluxDXcs/c(1).jpg",
-  "/FerradasAutomotores/ToyotaHiluxDXcs/c(2).jpg",
-  "/FerradasAutomotores/ToyotaHiluxDXcs/c(3).jpg",
-  "/FerradasAutomotores/ToyotaHiluxDXcs/c(4).jpg",
-  "/FerradasAutomotores/ToyotaHiluxDXcs/c(5).jpg",
-  "/FerradasAutomotores/ToyotaHiluxDXcs/c(6).jpg",
-  "/FerradasAutomotores/ToyotaHiluxDXcs/c(7).jpg",
+  "/ToyotaHiluxDXcs/c(1).jpg",
+  "/ToyotaHiluxDXcs/c(2).jpg",
+  "/ToyotaHiluxDXcs/c(3).jpg",
+  "/ToyotaHiluxDXcs/c(4).jpg",
+  "/ToyotaHiluxDXcs/c(5).jpg",
+  "/ToyotaHiluxDXcs/c(6).jpg",
+  "/ToyotaHiluxDXcs/c(7).jpg",
 ];
 
 const HiluxSpecs = [

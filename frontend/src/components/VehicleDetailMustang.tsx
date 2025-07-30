@@ -6,21 +6,21 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const mustangImages = [
-  "/FerradasAutomotores/mustang/IMG-20250719-WA0073.jpg",
-  "/FerradasAutomotores/mustang/IMG-20250719-WA0072.jpg",
-  "/FerradasAutomotores/mustang/IMG-20250719-WA0071.jpg",
-  "/FerradasAutomotores/mustang/IMG-20250719-WA0070.jpg",
-  "/FerradasAutomotores/mustang/IMG-20250719-WA0069.jpg",
-  "/FerradasAutomotores/mustang/IMG-20250719-WA0068.jpg",
-  "/FerradasAutomotores/mustang/IMG-20250719-WA0067.jpg",
-  "/FerradasAutomotores/mustang/IMG-20250719-WA0066.jpg",
-  "/FerradasAutomotores/mustang/IMG-20250719-WA0065.jpg",
-  "/FerradasAutomotores/mustang/IMG-20250719-WA0064.jpg",
-  "/FerradasAutomotores/mustang/IMG-20250719-WA0063.jpg",
-  "/FerradasAutomotores/mustang/IMG-20250719-WA0062.jpg",
-  "/FerradasAutomotores/mustang/IMG-20250719-WA0061.jpg",
-  "/FerradasAutomotores/mustang/IMG-20250719-WA0060.jpg",
-  "/FerradasAutomotores/mustang/IMG-20250718-WA0096.jpg"
+  "/mustang/IMG-20250719-WA0073.jpg",
+  "/mustang/IMG-20250719-WA0072.jpg",
+  "/mustang/IMG-20250719-WA0071.jpg",
+  "/mustang/IMG-20250719-WA0070.jpg",
+  "/mustang/IMG-20250719-WA0069.jpg",
+  "/mustang/IMG-20250719-WA0068.jpg",
+  "/mustang/IMG-20250719-WA0067.jpg",
+  "/mustang/IMG-20250719-WA0066.jpg",
+  "/mustang/IMG-20250719-WA0065.jpg",
+  "/mustang/IMG-20250719-WA0064.jpg",
+  "/mustang/IMG-20250719-WA0063.jpg",
+  "/mustang/IMG-20250719-WA0062.jpg",
+  "/mustang/IMG-20250719-WA0061.jpg",
+  "/mustang/IMG-20250719-WA0060.jpg",
+  "/mustang/IMG-20250718-WA0096.jpg"
 ];
 
 const mustangSpecs = [

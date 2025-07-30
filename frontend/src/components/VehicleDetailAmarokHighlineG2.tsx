@@ -6,13 +6,13 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const amarokHighlineG2Images = [
-  "/FerradasAutomotores/higlineG2/IMG-20250720-WA0050.jpg",
-  "/FerradasAutomotores/higlineG2/IMG-20250720-WA0051.jpg",
-  "/FerradasAutomotores/higlineG2/IMG-20250720-WA0052.jpg",
-  "/FerradasAutomotores/higlineG2/IMG-20250720-WA0053.jpg",
-  "/FerradasAutomotores/higlineG2/IMG-20250720-WA0054.jpg",
-  "/FerradasAutomotores/higlineG2/IMG-20250720-WA0055.jpg",
-  "/FerradasAutomotores/higlineG2/IMG-20250720-WA0056.jpg"
+  "/higlineG2/IMG-20250720-WA0050.jpg",
+  "/higlineG2/IMG-20250720-WA0051.jpg",
+  "/higlineG2/IMG-20250720-WA0052.jpg",
+  "/higlineG2/IMG-20250720-WA0053.jpg",
+  "/higlineG2/IMG-20250720-WA0054.jpg",
+  "/higlineG2/IMG-20250720-WA0055.jpg",
+  "/higlineG2/IMG-20250720-WA0056.jpg"
 ];
 
 const amarokHighlineG2Specs = [

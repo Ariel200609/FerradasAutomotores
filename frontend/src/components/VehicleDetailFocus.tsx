@@ -7,13 +7,13 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const focusImages = [
-  "/FerradasAutomotores/focus/IMG-20250718-WA0112.jpg",
-  "/FerradasAutomotores/focus/IMG-20250718-WA0113.jpg",
-  "/FerradasAutomotores/focus/IMG-20250718-WA0114.jpg",
-  "/FerradasAutomotores/focus/IMG-20250718-WA0115.jpg",
-  "/FerradasAutomotores/focus/IMG-20250718-WA0116.jpg",
-  "/FerradasAutomotores/focus/IMG-20250718-WA0117.jpg",
-  "/FerradasAutomotores/focus/IMG-20250718-WA0118.jpg"
+  "/focus/IMG-20250718-WA0112.jpg",
+  "/focus/IMG-20250718-WA0113.jpg",
+  "/focus/IMG-20250718-WA0114.jpg",
+  "/focus/IMG-20250718-WA0115.jpg",
+  "/focus/IMG-20250718-WA0116.jpg",
+  "/focus/IMG-20250718-WA0117.jpg",
+  "/focus/IMG-20250718-WA0118.jpg"
 ];
 
 const focusSpecs = [

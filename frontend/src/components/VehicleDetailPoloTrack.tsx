@@ -6,15 +6,15 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const poloTrackImages = [
-  "/FerradasAutomotores/polo track/IMG-20250720-WA0098.jpg",
-  "/FerradasAutomotores/polo track/IMG-20250720-WA0099.jpg",
-  "/FerradasAutomotores/polo track/IMG-20250720-WA0100.jpg",
-  "/FerradasAutomotores/polo track/IMG-20250720-WA0101.jpg",
-  "/FerradasAutomotores/polo track/IMG-20250720-WA0102.jpg",
-  "/FerradasAutomotores/polo track/IMG-20250720-WA0103.jpg",
-  "/FerradasAutomotores/polo track/IMG-20250720-WA0104.jpg",
-  "/FerradasAutomotores/polo track/IMG-20250720-WA0105.jpg",
-  "/FerradasAutomotores/polo track/IMG-20250720-WA0106.jpg"
+  "/polo track/IMG-20250720-WA0098.jpg",
+  "/polo track/IMG-20250720-WA0099.jpg",
+  "/polo track/IMG-20250720-WA0100.jpg",
+  "/polo track/IMG-20250720-WA0101.jpg",
+  "/polo track/IMG-20250720-WA0102.jpg",
+  "/polo track/IMG-20250720-WA0103.jpg",
+  "/polo track/IMG-20250720-WA0104.jpg",
+  "/polo track/IMG-20250720-WA0105.jpg",
+  "/polo track/IMG-20250720-WA0106.jpg"
 ];
 
 const poloTrackSpecs = [

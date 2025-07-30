@@ -6,17 +6,17 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const amarokBlackStyleG2Images = [
-  "/FerradasAutomotores/higline black style G2/IMG-20250720-WA0057.jpg",
-  "/FerradasAutomotores/higline black style G2/IMG-20250720-WA0058.jpg",
-  "/FerradasAutomotores/higline black style G2/IMG-20250720-WA0059.jpg",
-  "/FerradasAutomotores/higline black style G2/IMG-20250720-WA0060.jpg",
-  "/FerradasAutomotores/higline black style G2/IMG-20250720-WA0061.jpg",
-  "/FerradasAutomotores/higline black style G2/IMG-20250720-WA0062.jpg",
-  "/FerradasAutomotores/higline black style G2/IMG-20250720-WA0063.jpg",
-  "/FerradasAutomotores/higline black style G2/IMG-20250720-WA0064.jpg",
-  "/FerradasAutomotores/higline black style G2/IMG-20250720-WA0065.jpg",
-  "/FerradasAutomotores/higline black style G2/IMG-20250720-WA0066.jpg",
-  "/FerradasAutomotores/higline black style G2/IMG-20250720-WA0067.jpg"
+  "/higline black style G2/IMG-20250720-WA0057.jpg",
+  "/higline black style G2/IMG-20250720-WA0058.jpg",
+  "/higline black style G2/IMG-20250720-WA0059.jpg",
+  "/higline black style G2/IMG-20250720-WA0060.jpg",
+  "/higline black style G2/IMG-20250720-WA0061.jpg",
+  "/higline black style G2/IMG-20250720-WA0062.jpg",
+  "/higline black style G2/IMG-20250720-WA0063.jpg",
+  "/higline black style G2/IMG-20250720-WA0064.jpg",
+  "/higline black style G2/IMG-20250720-WA0065.jpg",
+  "/higline black style G2/IMG-20250720-WA0066.jpg",
+  "/higline black style G2/IMG-20250720-WA0067.jpg"
 ];
 
 const amarokBlackStyleG2Specs = [

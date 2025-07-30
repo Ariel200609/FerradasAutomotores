@@ -6,15 +6,15 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const HiluxImages = [
-  "/FerradasAutomotores/ToyotaHiluxDX/d(1).jpg",
-  "/FerradasAutomotores/ToyotaHiluxDX/d(2).jpg",
-  "/FerradasAutomotores/ToyotaHiluxDX/d(3).jpg",
-  "/FerradasAutomotores/ToyotaHiluxDX/d(4).jpg",
-  "/FerradasAutomotores/ToyotaHiluxDX/d(5).jpg",
-  "/FerradasAutomotores/ToyotaHiluxDX/d(6).jpg",
-  "/FerradasAutomotores/ToyotaHiluxDX/d(7).jpg",
-  "/FerradasAutomotores/ToyotaHiluxDX/d(8).jpg",
-  "/FerradasAutomotores/ToyotaHiluxDX/d(9).jpg",
+  "/ToyotaHiluxDX/d(1).jpg",
+  "/ToyotaHiluxDX/d(2).jpg",
+  "/ToyotaHiluxDX/d(3).jpg",
+  "/ToyotaHiluxDX/d(4).jpg",
+  "/ToyotaHiluxDX/d(5).jpg",
+  "/ToyotaHiluxDX/d(6).jpg",
+  "/ToyotaHiluxDX/d(7).jpg",
+  "/ToyotaHiluxDX/d(8).jpg",
+  "/ToyotaHiluxDX/d(9).jpg",
 ];
 
 const HiluxSpecs = [

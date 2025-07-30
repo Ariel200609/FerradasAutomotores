@@ -6,20 +6,20 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const upImages = [
-  "/FerradasAutomotores/up/up(1).jpg",
-  "/FerradasAutomotores/up/up(2).jpg",
-  "/FerradasAutomotores/up/up(3).jpg",
-  "/FerradasAutomotores/up/up(4).jpg",
-  "/FerradasAutomotores/up/up(5).jpg",
-  "/FerradasAutomotores/up/up(6).jpg",
-  "/FerradasAutomotores/up/up(7).jpg",
-  "/FerradasAutomotores/up/up(8).jpg",
-  "/FerradasAutomotores/up/up(9).jpg",
-  "/FerradasAutomotores/up/up(10).jpg",
-  "/FerradasAutomotores/up/up(11).jpg",
-  "/FerradasAutomotores/up/up(12).jpg",
-  "/FerradasAutomotores/up/up(13).jpg",
-  "/FerradasAutomotores/up/up(14).jpg"
+  "/up/up(1).jpg",
+  "/up/up(2).jpg",
+  "/up/up(3).jpg",
+  "/up/up(4).jpg",
+  "/up/up(5).jpg",
+  "/up/up(6).jpg",
+  "/up/up(7).jpg",
+  "/up/up(8).jpg",
+  "/up/up(9).jpg",
+  "/up/up(10).jpg",
+  "/up/up(11).jpg",
+  "/up/up(12).jpg",
+  "/up/up(13).jpg",
+  "/up/up(14).jpg"
 ];
 
 const upSpecs = [

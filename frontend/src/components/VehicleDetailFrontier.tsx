@@ -6,13 +6,13 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const frontierImages = [
-  "/FerradasAutomotores/frontier/IMG-20250719-WA0020.jpg",
-  "/FerradasAutomotores/frontier/IMG-20250719-WA0021.jpg",
-  "/FerradasAutomotores/frontier/IMG-20250719-WA0022.jpg",
-  "/FerradasAutomotores/frontier/IMG-20250719-WA0023.jpg",
-  "/FerradasAutomotores/frontier/IMG-20250719-WA0024.jpg",
-  "/FerradasAutomotores/frontier/IMG-20250719-WA0027.jpg",
-  "/FerradasAutomotores/frontier/IMG-20250719-WA0028.jpg"
+  "/frontier/IMG-20250719-WA0020.jpg",
+  "/frontier/IMG-20250719-WA0021.jpg",
+  "/frontier/IMG-20250719-WA0022.jpg",
+  "/frontier/IMG-20250719-WA0023.jpg",
+  "/frontier/IMG-20250719-WA0024.jpg",
+  "/frontier/IMG-20250719-WA0027.jpg",
+  "/frontier/IMG-20250719-WA0028.jpg"
 ];
 
 const frontierSpecs = [

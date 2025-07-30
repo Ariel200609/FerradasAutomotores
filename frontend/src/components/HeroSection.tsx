@@ -8,17 +8,17 @@ import React, { useEffect, useRef, useState } from "react";
 // Array de imágenes y textos del carrusel principal
 const carouselItems = [
   {
-    image: "/FerradasAutomotores/InicioPrincipal1.jpg",
+    image: "/InicioPrincipal1.jpg",
     slogan: true,
     text: "Descubre nuestra amplia selección de vehículos nuevos y usados. Calidad garantizada, precios competitivos y financiamiento personalizado."
   },
   {
-    image: "/FerradasAutomotores/imagenprincipal3.jpg",
+    image: "/imagenprincipal3.jpg",
     slogan: false,
     text: "Innovación y estilo para tu próxima aventura."
   },
   {
-    image: "/FerradasAutomotores/imagenprincipal4.jpg",
+    image: "/imagenprincipal4.jpg",
     slogan: false,
     text: "Brindamos comodidad al cliente"
   }

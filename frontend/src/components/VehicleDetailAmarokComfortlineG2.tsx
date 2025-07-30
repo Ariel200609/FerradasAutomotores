@@ -6,15 +6,15 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const amarokComfortlineG2Images = [
-  "/FerradasAutomotores/comfortline G2/IMG-20250720-WA0068.jpg",
-  "/FerradasAutomotores/comfortline G2/IMG-20250720-WA0069.jpg",
-  "/FerradasAutomotores/comfortline G2/IMG-20250720-WA0070.jpg",
-  "/FerradasAutomotores/comfortline G2/IMG-20250720-WA0071.jpg",
-  "/FerradasAutomotores/comfortline G2/IMG-20250720-WA0072.jpg",
-  "/FerradasAutomotores/comfortline G2/IMG-20250720-WA0073.jpg",
-  "/FerradasAutomotores/comfortline G2/IMG-20250720-WA0074.jpg",
-  "/FerradasAutomotores/comfortline G2/IMG-20250720-WA0075.jpg",
-  "/FerradasAutomotores/comfortline G2/IMG-20250720-WA0076.jpg"
+  "/comfortline G2/IMG-20250720-WA0068.jpg",
+  "/comfortline G2/IMG-20250720-WA0069.jpg",
+  "/comfortline G2/IMG-20250720-WA0070.jpg",
+  "/comfortline G2/IMG-20250720-WA0071.jpg",
+  "/comfortline G2/IMG-20250720-WA0072.jpg",
+  "/comfortline G2/IMG-20250720-WA0073.jpg",
+  "/comfortline G2/IMG-20250720-WA0074.jpg",
+  "/comfortline G2/IMG-20250720-WA0075.jpg",
+  "/comfortline G2/IMG-20250720-WA0076.jpg"
 ];
 
 const amarokComfortlineG2Specs = [

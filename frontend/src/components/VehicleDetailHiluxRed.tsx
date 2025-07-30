@@ -5,12 +5,12 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const HiluxRed = [
-    "/FerradasAutomotores/hiluxsrvred/red(1).jpg",
-    "/FerradasAutomotores/hiluxsrvred/red(2).jpg",
-    "/FerradasAutomotores/hiluxsrvred/red(3).jpg",
-    "/FerradasAutomotores/hiluxsrvred/red(4).jpg",
-    "/FerradasAutomotores/hiluxsrvred/red(5).jpg",
-    "/FerradasAutomotores/hiluxsrvred/red(6).jpg",
+    "/hiluxsrvred/red(1).jpg",
+    "/hiluxsrvred/red(2).jpg",
+    "/hiluxsrvred/red(3).jpg",
+    "/hiluxsrvred/red(4).jpg",
+    "/hiluxsrvred/red(5).jpg",
+    "/hiluxsrvred/red(6).jpg",
 ];
 
 const srvredSpecs = [

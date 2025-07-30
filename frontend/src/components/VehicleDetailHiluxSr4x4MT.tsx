@@ -5,15 +5,15 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const HiluxSr4x4MT = [
-    "/FerradasAutomotores/ToyotaHiluxSr4x4MT/b(1).jpg",
-    "/FerradasAutomotores/ToyotaHiluxSr4x4MT/b(2).jpg",
-    "/FerradasAutomotores/ToyotaHiluxSr4x4MT/b(3).jpg",
-    "/FerradasAutomotores/ToyotaHiluxSr4x4MT/b(4).jpg",
-    "/FerradasAutomotores/ToyotaHiluxSr4x4MT/b(5).jpg",
-    "/FerradasAutomotores/ToyotaHiluxSr4x4MT/b(6).jpg",
-    "/FerradasAutomotores/ToyotaHiluxSr4x4MT/b(7).jpg",
-    "/FerradasAutomotores/ToyotaHiluxSr4x4MT/b(8).jpg",
-    "/FerradasAutomotores/ToyotaHiluxSr4x4MT/b(9).jpg",
+    "/ToyotaHiluxSr4x4MT/b(1).jpg",
+    "/ToyotaHiluxSr4x4MT/b(2).jpg",
+    "/ToyotaHiluxSr4x4MT/b(3).jpg",
+    "/ToyotaHiluxSr4x4MT/b(4).jpg",
+    "/ToyotaHiluxSr4x4MT/b(5).jpg",
+    "/ToyotaHiluxSr4x4MT/b(6).jpg",
+    "/ToyotaHiluxSr4x4MT/b(7).jpg",
+    "/ToyotaHiluxSr4x4MT/b(8).jpg",
+    "/ToyotaHiluxSr4x4MT/b(9).jpg",
 ];
 
 const srMTSpecs = [

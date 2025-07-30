@@ -6,18 +6,18 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const frontierImages = [
-    "/FerradasAutomotores/FordRangerLimitedV6/l(1).jpg",
-    "/FerradasAutomotores/FordRangerLimitedV6/l(2).jpg",
-    "/FerradasAutomotores/FordRangerLimitedV6/l(3).jpg",
-    "/FerradasAutomotores/FordRangerLimitedV6/l(4).jpg",
-    "/FerradasAutomotores/FordRangerLimitedV6/l(5).jpg",
-    "/FerradasAutomotores/FordRangerLimitedV6/l(6).jpg",
-    "/FerradasAutomotores/FordRangerLimitedV6/l(7).jpg",
-    "/FerradasAutomotores/FordRangerLimitedV6/l(8).jpg",
-    "/FerradasAutomotores/FordRangerLimitedV6/l(9).jpg",
-    "/FerradasAutomotores/FordRangerLimitedV6/l(10).jpg",
-    "/FerradasAutomotores/FordRangerLimitedV6/l(11).jpg",
-    "/FerradasAutomotores/FordRangerLimitedV6/l(12).jpg",
+    "/FordRangerLimitedV6/l(1).jpg",
+    "/FordRangerLimitedV6/l(2).jpg",
+    "/FordRangerLimitedV6/l(3).jpg",
+    "/FordRangerLimitedV6/l(4).jpg",
+    "/FordRangerLimitedV6/l(5).jpg",
+    "/FordRangerLimitedV6/l(6).jpg",
+    "/FordRangerLimitedV6/l(7).jpg",
+    "/FordRangerLimitedV6/l(8).jpg",
+    "/FordRangerLimitedV6/l(9).jpg",
+    "/FordRangerLimitedV6/l(10).jpg",
+    "/FordRangerLimitedV6/l(11).jpg",
+    "/FordRangerLimitedV6/l(12).jpg",
 ];
 
 const frontierSpecs = [

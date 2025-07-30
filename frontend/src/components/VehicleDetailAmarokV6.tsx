@@ -6,25 +6,25 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const amarokV6Images = [
-  "/FerradasAutomotores/amarokv6/IMG-20250719-WA0001.jpg",
-  "/FerradasAutomotores/amarokv6/IMG-20250719-WA0002.jpg",
-  "/FerradasAutomotores/amarokv6/IMG-20250719-WA0003.jpg",
-  "/FerradasAutomotores/amarokv6/IMG-20250719-WA0004.jpg",
-  "/FerradasAutomotores/amarokv6/IMG-20250719-WA0005.jpg",
-  "/FerradasAutomotores/amarokv6/IMG-20250719-WA0006.jpg",
-  "/FerradasAutomotores/amarokv6/IMG-20250719-WA0007.jpg",
-  "/FerradasAutomotores/amarokv6/IMG-20250719-WA0008.jpg",
-  "/FerradasAutomotores/amarokv6/IMG-20250719-WA0009.jpg",
-  "/FerradasAutomotores/amarokv6/IMG-20250719-WA0010.jpg",
-  "/FerradasAutomotores/amarokv6/IMG-20250719-WA0011.jpg",
-  "/FerradasAutomotores/amarokv6/IMG-20250719-WA0012.jpg",
-  "/FerradasAutomotores/amarokv6/IMG-20250719-WA0013.jpg",
-  "/FerradasAutomotores/amarokv6/IMG-20250719-WA0014.jpg",
-  "/FerradasAutomotores/amarokv6/IMG-20250719-WA0015.jpg",
-  "/FerradasAutomotores/amarokv6/IMG-20250719-WA0016.jpg",
-  "/FerradasAutomotores/amarokv6/IMG-20250719-WA0017.jpg",
-  "/FerradasAutomotores/amarokv6/IMG-20250719-WA0018.jpg",
-  "/FerradasAutomotores/amarokv6/IMG-20250719-WA0019.jpg"
+  "/amarokv6/IMG-20250719-WA0001.jpg",
+  "/amarokv6/IMG-20250719-WA0002.jpg",
+  "/amarokv6/IMG-20250719-WA0003.jpg",
+  "/amarokv6/IMG-20250719-WA0004.jpg",
+  "/amarokv6/IMG-20250719-WA0005.jpg",
+  "/amarokv6/IMG-20250719-WA0006.jpg",
+  "/amarokv6/IMG-20250719-WA0007.jpg",
+  "/amarokv6/IMG-20250719-WA0008.jpg",
+  "/amarokv6/IMG-20250719-WA0009.jpg",
+  "/amarokv6/IMG-20250719-WA0010.jpg",
+  "/amarokv6/IMG-20250719-WA0011.jpg",
+  "/amarokv6/IMG-20250719-WA0012.jpg",
+  "/amarokv6/IMG-20250719-WA0013.jpg",
+  "/amarokv6/IMG-20250719-WA0014.jpg",
+  "/amarokv6/IMG-20250719-WA0015.jpg",
+  "/amarokv6/IMG-20250719-WA0016.jpg",
+  "/amarokv6/IMG-20250719-WA0017.jpg",
+  "/amarokv6/IMG-20250719-WA0018.jpg",
+  "/amarokv6/IMG-20250719-WA0019.jpg"
 ];
 
 const amarokV6Specs = [

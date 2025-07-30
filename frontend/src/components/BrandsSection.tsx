@@ -1,14 +1,14 @@
 import React from "react";
 
 const brands = [
-  { name: "Toyota", src: "/FerradasAutomotores/logos/toyota.png" },
-  { name: "Volkswagen", src: "/FerradasAutomotores/logos/vw.png" },
-  { name: "Ford", src: "/FerradasAutomotores/logos/ford.png" },
-  { name: "Chevrolet", src: "/FerradasAutomotores/logos/chevrolet.png" },
-  { name: "Fiat", src: "/FerradasAutomotores/logos/fiat.png" },
-  { name: "Renault", src: "/FerradasAutomotores/logos/renault.png" },
-  { name: "Peugeot", src: "/FerradasAutomotores/logos/peugeot.png" },
-  { name: "Audi", src: "/FerradasAutomotores/logos/audi.png" },
+  { name: "Toyota", src: "/logos/toyota.png" },
+  { name: "Volkswagen", src: "/logos/vw.png" },
+  { name: "Ford", src: "/logos/ford.png" },
+  { name: "Chevrolet", src: "/logos/chevrolet.png" },
+  { name: "Fiat", src: "/logos/fiat.png" },
+  { name: "Renault", src: "/logos/renault.png" },
+  { name: "Peugeot", src: "/logos/peugeot.png" },
+  { name: "Audi", src: "/logos/audi.png" },
 ];
 
 // Duplicar para animación infinita

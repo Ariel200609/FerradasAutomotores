@@ -7,12 +7,12 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const tCrossImages = [
-  "/FerradasAutomotores/t-cross/dalanteT-cross.jpg",
-  "/FerradasAutomotores/t-cross/costadoT-cross.jpg",
-  "/FerradasAutomotores/t-cross/atrasT-cross.jpg",
-  "/FerradasAutomotores/t-cross/interiorT-cross.jpg",
-  "/FerradasAutomotores/t-cross/costadotT-cross.jpg",
-  "/FerradasAutomotores/t-cross/interior2T-cross.jpg"
+  "/t-cross/dalanteT-cross.jpg",
+  "/t-cross/costadoT-cross.jpg",
+  "/t-cross/atrasT-cross.jpg",
+  "/t-cross/interiorT-cross.jpg",
+  "/t-cross/costadotT-cross.jpg",
+  "/t-cross/interior2T-cross.jpg"
 ];
 
 const tCrossSpecs = [

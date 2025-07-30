@@ -6,16 +6,16 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const ecosportImages = [
-    "/FerradasAutomotores/DodgeRamRampage/r(1).jpg",
-    "/FerradasAutomotores/DodgeRamRampage/r(2).jpg",
-    "/FerradasAutomotores/DodgeRamRampage/r(3).jpg",
-    "/FerradasAutomotores/DodgeRamRampage/r(4).jpg",
-    "/FerradasAutomotores/DodgeRamRampage/r(5).jpg",
-    "/FerradasAutomotores/DodgeRamRampage/r(6).jpg",
-    "/FerradasAutomotores/DodgeRamRampage/r(7).jpg",
-    "/FerradasAutomotores/DodgeRamRampage/r(8).jpg",
-    "/FerradasAutomotores/DodgeRamRampage/r(9).jpg",
-    "/FerradasAutomotores/DodgeRamRampage/r(10).jpg",
+    "/DodgeRamRampage/r(1).jpg",
+    "/DodgeRamRampage/r(2).jpg",
+    "/DodgeRamRampage/r(3).jpg",
+    "/DodgeRamRampage/r(4).jpg",
+    "/DodgeRamRampage/r(5).jpg",
+    "/DodgeRamRampage/r(6).jpg",
+    "/DodgeRamRampage/r(7).jpg",
+    "/DodgeRamRampage/r(8).jpg",
+    "/DodgeRamRampage/r(9).jpg",
+    "/DodgeRamRampage/r(10).jpg",
 ];
 
 const ecosportSpecs = [

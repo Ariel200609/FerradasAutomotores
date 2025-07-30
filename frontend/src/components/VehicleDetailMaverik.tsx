@@ -7,10 +7,10 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const maverikImages = [
-  "/FerradasAutomotores/Maverik/PortadaMaverik.jpg",
-  "/FerradasAutomotores/Maverik/AtrasMaverik.jpg",
-  "/FerradasAutomotores/Maverik/DelanteMaverik.jpg",
-  "/FerradasAutomotores/Maverik/InteriorMaverik.jpg"  
+  "/Maverik/PortadaMaverik.jpg",
+  "/Maverik/AtrasMaverik.jpg",
+  "/Maverik/DelanteMaverik.jpg",
+  "/Maverik/InteriorMaverik.jpg"  
 ];
 
 const maverikSpecs = [

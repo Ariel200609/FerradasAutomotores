@@ -6,16 +6,16 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const frontierImages = [
-    "/FerradasAutomotores/FordRangerXS/r(1).jpg",
-    "/FerradasAutomotores/FordRangerXS/r(2).jpg",
-    "/FerradasAutomotores/FordRangerXS/r(3).jpg",
-    "/FerradasAutomotores/FordRangerXS/r(4).jpg",
-    "/FerradasAutomotores/FordRangerXS/r(5).jpg",
-    "/FerradasAutomotores/FordRangerXS/r(6).jpg",
-    "/FerradasAutomotores/FordRangerXS/r(7).jpg",
-    "/FerradasAutomotores/FordRangerXS/r(8).jpg",
-    "/FerradasAutomotores/FordRangerXS/r(9).jpg",
-    "/FerradasAutomotores/FordRangerXS/r(10).jpg",
+    "/FordRangerXS/r(1).jpg",
+    "/FordRangerXS/r(2).jpg",
+    "/FordRangerXS/r(3).jpg",
+    "/FordRangerXS/r(4).jpg",
+    "/FordRangerXS/r(5).jpg",
+    "/FordRangerXS/r(6).jpg",
+    "/FordRangerXS/r(7).jpg",
+    "/FordRangerXS/r(8).jpg",
+    "/FordRangerXS/r(9).jpg",
+    "/FordRangerXS/r(10).jpg",
 ];
 
 const frontierSpecs = [

@@ -5,15 +5,15 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const ToyotaHiluxsrx4x4AT = [
-  "/FerradasAutomotores/ToyotaHiluxsrx4x4AT/t(1).jpg",
-    "/FerradasAutomotores/ToyotaHiluxsrx4x4AT/t(2).jpg",
-    "/FerradasAutomotores/ToyotaHiluxsrx4x4AT/t(3).jpg",
-    "/FerradasAutomotores/ToyotaHiluxsrx4x4AT/t(4).jpg",
-    "/FerradasAutomotores/ToyotaHiluxsrx4x4AT/t(5).jpg",
-    "/FerradasAutomotores/ToyotaHiluxsrx4x4AT/t(6).jpg",
-    "/FerradasAutomotores/ToyotaHiluxsrx4x4AT/t(7).jpg",
-    "/FerradasAutomotores/ToyotaHiluxsrx4x4AT/t(8).jpg",
-    "/FerradasAutomotores/ToyotaHiluxsrx4x4AT/t(9).jpg",
+  "/ToyotaHiluxsrx4x4AT/t(1).jpg",
+    "/ToyotaHiluxsrx4x4AT/t(2).jpg",
+    "/ToyotaHiluxsrx4x4AT/t(3).jpg",
+    "/ToyotaHiluxsrx4x4AT/t(4).jpg",
+    "/ToyotaHiluxsrx4x4AT/t(5).jpg",
+    "/ToyotaHiluxsrx4x4AT/t(6).jpg",
+    "/ToyotaHiluxsrx4x4AT/t(7).jpg",
+    "/ToyotaHiluxsrx4x4AT/t(8).jpg",
+    "/ToyotaHiluxsrx4x4AT/t(9).jpg",
 ];
 
 const srx4x4ATSpecs = [

@@ -6,15 +6,15 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const orochImages = [
-  "/FerradasAutomotores/oroch/IMG-20250719-WA0039.jpg",
-  "/FerradasAutomotores/oroch/IMG-20250719-WA0041.jpg",
-  "/FerradasAutomotores/oroch/IMG-20250719-WA0042.jpg",
-  "/FerradasAutomotores/oroch/IMG-20250719-WA0043.jpg",
-  "/FerradasAutomotores/oroch/IMG-20250719-WA0044.jpg",
-  "/FerradasAutomotores/oroch/IMG-20250719-WA0045.jpg",
-  "/FerradasAutomotores/oroch/IMG-20250719-WA0046.jpg",
-  "/FerradasAutomotores/oroch/IMG-20250719-WA0047.jpg",
-  "/FerradasAutomotores/oroch/IMG-20250719-WA0048.jpg"
+  "/oroch/IMG-20250719-WA0039.jpg",
+  "/oroch/IMG-20250719-WA0041.jpg",
+  "/oroch/IMG-20250719-WA0042.jpg",
+  "/oroch/IMG-20250719-WA0043.jpg",
+  "/oroch/IMG-20250719-WA0044.jpg",
+  "/oroch/IMG-20250719-WA0045.jpg",
+  "/oroch/IMG-20250719-WA0046.jpg",
+  "/oroch/IMG-20250719-WA0047.jpg",
+  "/oroch/IMG-20250719-WA0048.jpg"
 ];
 
 const orochSpecs = [

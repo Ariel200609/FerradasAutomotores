@@ -6,14 +6,14 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const images307 = [
-  "/FerradasAutomotores/307/IMG-20250719-WA0049.jpg",
-  "/FerradasAutomotores/307/IMG-20250719-WA0050.jpg",
-  "/FerradasAutomotores/307/IMG-20250719-WA0051.jpg",
-  "/FerradasAutomotores/307/IMG-20250719-WA0052.jpg",
-  "/FerradasAutomotores/307/IMG-20250719-WA0053.jpg",
-  "/FerradasAutomotores/307/IMG-20250719-WA0054.jpg",
-  "/FerradasAutomotores/307/IMG-20250719-WA0055.jpg",
-  "/FerradasAutomotores/307/IMG-20250719-WA0056.jpg"
+  "/307/IMG-20250719-WA0049.jpg",
+  "/307/IMG-20250719-WA0050.jpg",
+  "/307/IMG-20250719-WA0051.jpg",
+  "/307/IMG-20250719-WA0052.jpg",
+  "/307/IMG-20250719-WA0053.jpg",
+  "/307/IMG-20250719-WA0054.jpg",
+  "/307/IMG-20250719-WA0055.jpg",
+  "/307/IMG-20250719-WA0056.jpg"
 ];
 
 const specs307 = [

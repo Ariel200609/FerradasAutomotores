@@ -6,16 +6,16 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const taosImages = [
-  "/FerradasAutomotores/taos/IMG-20250720-WA0088.jpg",
-  "/FerradasAutomotores/taos/IMG-20250720-WA0089.jpg",
-  "/FerradasAutomotores/taos/IMG-20250720-WA0090.jpg",
-  "/FerradasAutomotores/taos/IMG-20250720-WA0091.jpg",
-  "/FerradasAutomotores/taos/IMG-20250720-WA0092.jpg",
-  "/FerradasAutomotores/taos/IMG-20250720-WA0093.jpg",
-  "/FerradasAutomotores/taos/IMG-20250720-WA0094.jpg",
-  "/FerradasAutomotores/taos/IMG-20250720-WA0095.jpg",
-  "/FerradasAutomotores/taos/IMG-20250720-WA0096.jpg",
-  "/FerradasAutomotores/taos/IMG-20250720-WA0097.jpg"
+  "/taos/IMG-20250720-WA0088.jpg",
+  "/taos/IMG-20250720-WA0089.jpg",
+  "/taos/IMG-20250720-WA0090.jpg",
+  "/taos/IMG-20250720-WA0091.jpg",
+  "/taos/IMG-20250720-WA0092.jpg",
+  "/taos/IMG-20250720-WA0093.jpg",
+  "/taos/IMG-20250720-WA0094.jpg",
+  "/taos/IMG-20250720-WA0095.jpg",
+  "/taos/IMG-20250720-WA0096.jpg",
+  "/taos/IMG-20250720-WA0097.jpg"
 ];
 
 const taosSpecs = [

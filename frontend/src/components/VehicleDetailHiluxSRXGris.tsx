@@ -6,19 +6,19 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const hiluxSRXGrisImages = [
-  "/FerradasAutomotores/srxgris/IMG-20250719-WA0025.jpg",
-  "/FerradasAutomotores/srxgris/IMG-20250719-WA0026.jpg",
-  "/FerradasAutomotores/srxgris/IMG-20250719-WA0029.jpg",
-  "/FerradasAutomotores/srxgris/IMG-20250719-WA0030.jpg",
-  "/FerradasAutomotores/srxgris/IMG-20250719-WA0031.jpg",
-  "/FerradasAutomotores/srxgris/IMG-20250719-WA0032.jpg",
-  "/FerradasAutomotores/srxgris/IMG-20250719-WA0033.jpg",
-  "/FerradasAutomotores/srxgris/IMG-20250719-WA0034.jpg",
-  "/FerradasAutomotores/srxgris/IMG-20250719-WA0035.jpg",
-  "/FerradasAutomotores/srxgris/IMG-20250719-WA0036.jpg",
-  "/FerradasAutomotores/srxgris/IMG-20250719-WA0037.jpg",
-  "/FerradasAutomotores/srxgris/IMG-20250719-WA0038.jpg",
-  "/FerradasAutomotores/srxgris/IMG-20250719-WA0040.jpg"
+  "/srxgris/IMG-20250719-WA0025.jpg",
+  "/srxgris/IMG-20250719-WA0026.jpg",
+  "/srxgris/IMG-20250719-WA0029.jpg",
+  "/srxgris/IMG-20250719-WA0030.jpg",
+  "/srxgris/IMG-20250719-WA0031.jpg",
+  "/srxgris/IMG-20250719-WA0032.jpg",
+  "/srxgris/IMG-20250719-WA0033.jpg",
+  "/srxgris/IMG-20250719-WA0034.jpg",
+  "/srxgris/IMG-20250719-WA0035.jpg",
+  "/srxgris/IMG-20250719-WA0036.jpg",
+  "/srxgris/IMG-20250719-WA0037.jpg",
+  "/srxgris/IMG-20250719-WA0038.jpg",
+  "/srxgris/IMG-20250719-WA0040.jpg"
 ];
 
 const hiluxSRXGrisSpecs = [

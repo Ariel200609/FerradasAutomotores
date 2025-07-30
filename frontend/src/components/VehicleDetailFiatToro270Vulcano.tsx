@@ -7,14 +7,14 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const fastbackImages = [
-  "/FerradasAutomotores/FiatToro270Vulcano/t(1).jpg",
-  "/FerradasAutomotores/FiatToro270Vulcano/t(2).jpg",
-  "/FerradasAutomotores/FiatToro270Vulcano/t(3).jpg",
-  "/FerradasAutomotores/FiatToro270Vulcano/t(4).jpg",
-  "/FerradasAutomotores/FiatToro270Vulcano/t(5).jpg",
-  "/FerradasAutomotores/FiatToro270Vulcano/t(6).jpg",
-  "/FerradasAutomotores/FiatToro270Vulcano/t(7).jpg",
-  "/FerradasAutomotores/FiatToro270Vulcano/t(8).jpg",
+  "/FiatToro270Vulcano/t(1).jpg",
+  "/FiatToro270Vulcano/t(2).jpg",
+  "/FiatToro270Vulcano/t(3).jpg",
+  "/FiatToro270Vulcano/t(4).jpg",
+  "/FiatToro270Vulcano/t(5).jpg",
+  "/FiatToro270Vulcano/t(6).jpg",
+  "/FiatToro270Vulcano/t(7).jpg",
+  "/FiatToro270Vulcano/t(8).jpg",
   // Agrega más imágenes si tienes
 ];
 

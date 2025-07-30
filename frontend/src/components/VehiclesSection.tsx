@@ -27,7 +27,7 @@ const vehicles: Vehicle[] = [
     model: "Amarok V6",
     year: 2025,
     images: [
-      "/FerradasAutomotores/AmarokV6.jpg"
+      "/AmarokV6.jpg"
     ],
     condition: "new",
     fuel: "Diesel",
@@ -39,7 +39,7 @@ const vehicles: Vehicle[] = [
     model: "Focus Guia",
     year: 2013,
     images: [
-      "/FerradasAutomotores/focus/IMG-20250718-WA0113.jpg",
+      "/focus/IMG-20250718-WA0113.jpg",
     ],
     condition: "used",
     mileage: 200000,
@@ -51,7 +51,7 @@ const vehicles: Vehicle[] = [
     model: "Onix",
     year: 2024,
     images: [
-      "/FerradasAutomotores/Onix-RS.jpg"
+      "/Onix-RS.jpg"
     ],
     condition: "new",
     fuel: "Flex",
@@ -62,7 +62,7 @@ const vehicles: Vehicle[] = [
     model: "Fastback 270",
     year: 2025,
     images: [
-      "/FerradasAutomotores/Fastback/PortadaFiat.jpg"
+      "/Fastback/PortadaFiat.jpg"
     ],
     condition: "new",
     fuel: "Gasolina",
@@ -74,7 +74,7 @@ const vehicles: Vehicle[] = [
     year: 2024,
     mileage: 25000,
     images: [
-      "/FerradasAutomotores/Maverik/PortadaMaverik.jpg", 
+      "/Maverik/PortadaMaverik.jpg", 
     ],
     condition: "used",
     fuel: "Naftera-Eléctrica",
@@ -87,7 +87,7 @@ const vehicles: Vehicle[] = [
     year: 2020,
     mileage: 70000,
     images: [
-      "/FerradasAutomotores/t-cross/dalanteT-cross.jpg",
+      "/t-cross/dalanteT-cross.jpg",
     ],
     condition: "used",
     fuel: "Naftero",
@@ -99,7 +99,7 @@ const vehicles: Vehicle[] = [
     model: "Hilux SRX",
     year: 2019,
     images: [
-      "/FerradasAutomotores/HiluxBlack/Hilux(1).jpg",
+      "/HiluxBlack/Hilux(1).jpg",
     ],
     condition: "used",
     mileage: 130000,
@@ -112,7 +112,7 @@ const vehicles: Vehicle[] = [
     model: "Amarok Highline",
     year: 2021,
     images: [
-      "/FerradasAutomotores/AmarokGris/Amarok(2).jpg",
+      "/AmarokGris/Amarok(2).jpg",
     ],
     condition: "used",
     mileage: 100000,
@@ -125,7 +125,7 @@ const vehicles: Vehicle[] = [
     model: "Hilux SRV",
     year: 2021,
     images: [
-      "/FerradasAutomotores/HiluxSRV/srv(7).jpg",
+      "/HiluxSRV/srv(7).jpg",
     ],
     condition: "used",
     mileage: 180000,
@@ -138,7 +138,7 @@ const vehicles: Vehicle[] = [
     model: "Ranger Raptor",
     year: 2024,
     images: [
-      "/FerradasAutomotores/Raptor/raptor(1).jpg",
+      "/Raptor/raptor(1).jpg",
     ],
     condition: "used",
     mileage: 25000,
@@ -151,7 +151,7 @@ const vehicles: Vehicle[] = [
     model: "Ecosport XLS",
     year: 2010,
     images: [
-      "/FerradasAutomotores/ecosport/ecosport(1).jpg",
+      "/ecosport/ecosport(1).jpg",
     ],
     condition: "used",
     mileage: 200000,
@@ -164,7 +164,7 @@ const vehicles: Vehicle[] = [
     model: "UP",
     year: 2017,
     images: [
-      "/FerradasAutomotores/up/up(1).jpg",
+      "/up/up(1).jpg",
     ],
     condition: "used",
     mileage: 100,
@@ -177,7 +177,7 @@ const vehicles: Vehicle[] = [
     model: "Amarok V6",
     year: 2022,
     images: [
-      "/FerradasAutomotores/amarokv6/IMG-20250719-WA0002.jpg",
+      "/amarokv6/IMG-20250719-WA0002.jpg",
     ],
     condition: "used",
     mileage: 90000,
@@ -190,7 +190,7 @@ const vehicles: Vehicle[] = [
     model: "Frontier",
     year: 2021,
     images: [
-      "/FerradasAutomotores/frontier/IMG-20250719-WA0020.jpg",
+      "/frontier/IMG-20250719-WA0020.jpg",
     ],
     condition: "used",
     mileage: 180000,
@@ -203,7 +203,7 @@ const vehicles: Vehicle[] = [
     model: "Hilux SRX Gris",
     year: 2017,
     images: [
-      "/FerradasAutomotores/srxgris/IMG-20250719-WA0025.jpg",
+      "/srxgris/IMG-20250719-WA0025.jpg",
     ],
     condition: "used",
     mileage: 230000,
@@ -216,7 +216,7 @@ const vehicles: Vehicle[] = [
     model: "Duster Oroch Outsider",
     year: 2017,
     images: [
-      "/FerradasAutomotores/oroch/IMG-20250719-WA0039.jpg",
+      "/oroch/IMG-20250719-WA0039.jpg",
 
     ],
     condition: "used",
@@ -230,7 +230,7 @@ const vehicles: Vehicle[] = [
     model: "307 XS Cuero",
     year: 2011,
     images: [
-      "/FerradasAutomotores/307/IMG-20250719-WA0049.jpg",
+      "/307/IMG-20250719-WA0049.jpg",
 
     ],
     condition: "used",
@@ -244,7 +244,7 @@ const vehicles: Vehicle[] = [
     model: "Mustang GT",
     year: 2023,
     images: [
-      "/FerradasAutomotores/mustang/IMG-20250719-WA0073.jpg",
+      "/mustang/IMG-20250719-WA0073.jpg",
     ],
     condition: "used",
     mileage: 15000,
@@ -257,7 +257,7 @@ const vehicles: Vehicle[] = [
     model: "Amarok Highline G2",
     year: 2025,
     images: [
-      "/FerradasAutomotores/higlineG2/IMG-20250720-WA0053.jpg",
+      "/higlineG2/IMG-20250720-WA0053.jpg",
     ],
     condition: "new",
     mileage: 0,
@@ -270,7 +270,7 @@ const vehicles: Vehicle[] = [
     model: "Amarok Black Style G2",
     year: 2025,
     images: [
-      "/FerradasAutomotores/higline black style G2/IMG-20250720-WA0057.jpg",
+      "/higline black style G2/IMG-20250720-WA0057.jpg",
     ],
     condition: "new",
     mileage: 0,
@@ -283,7 +283,7 @@ const vehicles: Vehicle[] = [
     model: "Amarok Comfortline G2",
     year: 2025,
     images: [
-      "/FerradasAutomotores/comfortline G2/IMG-20250720-WA0068.jpg",
+      "/comfortline G2/IMG-20250720-WA0068.jpg",
      
     ],
     condition: "new",
@@ -297,7 +297,7 @@ const vehicles: Vehicle[] = [
     model: "T-Cross Bitono",
     year: 2025,
     images: [
-      "/FerradasAutomotores/t-cross bitono/IMG-20250720-WA0078.jpg",
+      "/t-cross bitono/IMG-20250720-WA0078.jpg",
       
     ],
     condition: "new",
@@ -311,7 +311,7 @@ const vehicles: Vehicle[] = [
     model: "Taos",
     year: 2025,
     images: [
-      "/FerradasAutomotores/taos/IMG-20250720-WA0088.jpg",
+      "/taos/IMG-20250720-WA0088.jpg",
       
     ],
     condition: "new",
@@ -325,7 +325,7 @@ const vehicles: Vehicle[] = [
     model: "Polo Track",
     year: 2025,
     images: [
-      "/FerradasAutomotores/polo track/IMG-20250720-WA0098.jpg",
+      "/polo track/IMG-20250720-WA0098.jpg",
       
     ],
     condition: "new",
@@ -339,7 +339,7 @@ const vehicles: Vehicle[] = [
     model: "Hilux SRX 4x4 AT",
     year: 2025,
     images: [
-      "/FerradasAutomotores/ToyotaHiluxsrx4x4AT/t(2).jpg",
+      "/ToyotaHiluxsrx4x4AT/t(2).jpg",
     ],
     condition: "new",
     mileage: 0,
@@ -352,7 +352,7 @@ const vehicles: Vehicle[] = [
     model: "Hilux SRV Roja",
     year: 2025,
     images: [
-      "/FerradasAutomotores/hiluxsrvred/red(1).jpg",
+      "/hiluxsrvred/red(1).jpg",
     ],
     condition: "new",
     mileage: 0,
@@ -365,7 +365,7 @@ const vehicles: Vehicle[] = [
     model: "hilux sr 4x4 mt",
     year: 2025,
     images: [
-      "/FerradasAutomotores/ToyotaHiluxSr4x4MT/b(1).jpg",
+      "/ToyotaHiluxSr4x4MT/b(1).jpg",
     ],
     condition: "new",
     mileage: 0,
@@ -378,7 +378,7 @@ const vehicles: Vehicle[] = [
     model: "Hilux DX",
     year: 2025,
     images: [
-      "/FerradasAutomotores/ToyotaHiluxDX/d(1).jpg",
+      "/ToyotaHiluxDX/d(1).jpg",
     ],
     condition: "new",
     mileage: 0,
@@ -391,7 +391,7 @@ const vehicles: Vehicle[] = [
     model: "hilux dx cs",
     year: 2025,
     images: [
-      "/FerradasAutomotores/ToyotaHiluxDXcs/c(1).jpg",
+      "/ToyotaHiluxDXcs/c(1).jpg",
     ],
     condition: "new",
     mileage: 0,
@@ -404,7 +404,7 @@ const vehicles: Vehicle[] = [
     model: "hilux srx 0km",
     year: 2025,
     images: [
-      "/FerradasAutomotores/ToyotaHiluxSRX0km/g(1).jpg",
+      "/ToyotaHiluxSRX0km/g(1).jpg",
     ],
     condition: "new",
     mileage: 0,
@@ -417,7 +417,7 @@ const vehicles: Vehicle[] = [
     model: "bronco",
     year: 2025,
     images: [
-      "/FerradasAutomotores/FordBronco/f(1).jpg",
+      "/FordBronco/f(1).jpg",
     ],
     condition: "new",
     mileage: 0,
@@ -430,7 +430,7 @@ const vehicles: Vehicle[] = [
     model: "ranger xs",
     year: 2025,
     images: [
-      "/FerradasAutomotores/FordRangerXS/r(1).jpg",
+      "/FordRangerXS/r(1).jpg",
     ],
     condition: "new",
     mileage: 0,
@@ -443,7 +443,7 @@ const vehicles: Vehicle[] = [
     model: "ranger black edition",
     year: 2025,
     images: [
-      "/FerradasAutomotores/FordRangerBlackEdition/b(1).jpg",
+      "/FordRangerBlackEdition/b(1).jpg",
     ],
     condition: "new",
     mileage: 0,
@@ -456,7 +456,7 @@ const vehicles: Vehicle[] = [
     model: "ranger limited v6",
     year: 2025,
     images: [
-      "/FerradasAutomotores/FordRangerLimitedV6/l(3).jpg",
+      "/FordRangerLimitedV6/l(3).jpg",
     ],
     condition: "new",
     mileage: 0,
@@ -469,7 +469,7 @@ const vehicles: Vehicle[] = [
     model: "toro 270 vulcano",
     year: 2025,
     images: [
-      "/FerradasAutomotores/FiatToro270Vulcano/t(3).jpg",
+      "/FiatToro270Vulcano/t(3).jpg",
     ],
     condition: "new",
     mileage: 0,
@@ -482,7 +482,7 @@ const vehicles: Vehicle[] = [
     model: "ram rampage",
     year: 2025,
     images: [
-      "/FerradasAutomotores/DodgeRamRampage/r(5).jpg",
+      "/DodgeRamRampage/r(5).jpg",
     ],
     condition: "new",
     mileage: 0,

@@ -6,16 +6,16 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const hiluxSRVImages = [
-  "/FerradasAutomotores/HiluxSRV/srv(1).jpg",
-  "/FerradasAutomotores/HiluxSRV/srv(2).jpg",
-  "/FerradasAutomotores/HiluxSRV/srv(3).jpg",
-  "/FerradasAutomotores/HiluxSRV/srv(4).jpg",
-  "/FerradasAutomotores/HiluxSRV/srv(5).jpg",
-  "/FerradasAutomotores/HiluxSRV/srv(6).jpg",
-  "/FerradasAutomotores/HiluxSRV/srv(7).jpg",
-  "/FerradasAutomotores/HiluxSRV/srv(8).jpg",
-  "/FerradasAutomotores/HiluxSRV/srv(9).jpg",
-  "/FerradasAutomotores/HiluxSRV/srv(10).jpg"
+  "/HiluxSRV/srv(1).jpg",
+  "/HiluxSRV/srv(2).jpg",
+  "/HiluxSRV/srv(3).jpg",
+  "/HiluxSRV/srv(4).jpg",
+  "/HiluxSRV/srv(5).jpg",
+  "/HiluxSRV/srv(6).jpg",
+  "/HiluxSRV/srv(7).jpg",
+  "/HiluxSRV/srv(8).jpg",
+  "/HiluxSRV/srv(9).jpg",
+  "/HiluxSRV/srv(10).jpg"
 ];
 
 const hiluxSRVSpecs = [

@@ -6,16 +6,16 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const amarokHighlineImages = [
-  "/FerradasAutomotores/AmarokGris/Amarok(2).jpg",
-  "/FerradasAutomotores/AmarokGris/Amarok(1).jpg",
-  "/FerradasAutomotores/AmarokGris/Amarok(3).jpg",
-  "/FerradasAutomotores/AmarokGris/Amarok(4).jpg",
-  "/FerradasAutomotores/AmarokGris/Amarok(5).jpg",
-  "/FerradasAutomotores/AmarokGris/Amarok(6).jpg",
-  "/FerradasAutomotores/AmarokGris/Amarok(7).jpg",
-  "/FerradasAutomotores/AmarokGris/Amarok(8).jpg",
-  "/FerradasAutomotores/AmarokGris/Amarok(9).jpg",
-  "/FerradasAutomotores/AmarokGris/Amarok(10).jpg"
+  "/AmarokGris/Amarok(2).jpg",
+  "/AmarokGris/Amarok(1).jpg",
+  "/AmarokGris/Amarok(3).jpg",
+  "/AmarokGris/Amarok(4).jpg",
+  "/AmarokGris/Amarok(5).jpg",
+  "/AmarokGris/Amarok(6).jpg",
+  "/AmarokGris/Amarok(7).jpg",
+  "/AmarokGris/Amarok(8).jpg",
+  "/AmarokGris/Amarok(9).jpg",
+  "/AmarokGris/Amarok(10).jpg"
 ];
 
 const amarokHighlineSpecs = [

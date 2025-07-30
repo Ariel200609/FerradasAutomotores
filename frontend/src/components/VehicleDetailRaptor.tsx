@@ -6,17 +6,17 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const raptorImages = [
-  "/FerradasAutomotores/Raptor/raptor(1).jpg",
-  "/FerradasAutomotores/Raptor/raptor(2).jpg",
-  "/FerradasAutomotores/Raptor/raptor(3).jpg",
-  "/FerradasAutomotores/Raptor/raptor(4).jpg",
-  "/FerradasAutomotores/Raptor/raptor(5).jpg",
-  "/FerradasAutomotores/Raptor/raptor(6).jpg",
-  "/FerradasAutomotores/Raptor/raptor(7).jpg",
-  "/FerradasAutomotores/Raptor/raptor(8).jpg",
-  "/FerradasAutomotores/Raptor/raptor(9).jpg",
-  "/FerradasAutomotores/Raptor/raptor(10).jpg",
-  "/FerradasAutomotores/Raptor/raptor(11).jpg"
+  "/Raptor/raptor(1).jpg",
+  "/Raptor/raptor(2).jpg",
+  "/Raptor/raptor(3).jpg",
+  "/Raptor/raptor(4).jpg",
+  "/Raptor/raptor(5).jpg",
+  "/Raptor/raptor(6).jpg",
+  "/Raptor/raptor(7).jpg",
+  "/Raptor/raptor(8).jpg",
+  "/Raptor/raptor(9).jpg",
+  "/Raptor/raptor(10).jpg",
+  "/Raptor/raptor(11).jpg"
 ];
 
 const raptorSpecs = [

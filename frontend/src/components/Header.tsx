@@ -64,7 +64,7 @@ const Header: React.FC = () => {
           <div className="flex items-center">
             <a href="#HeroSection" aria-label="Go to Home">
               <img
-                src="/FerradasAutomotores/LogoFerradas.jpg"
+                src="/LogoFerradas.jpg"
                 alt="Ferradas Automotores Logo"
                 className="h-8 w-auto mr-3 cursor-pointer"
               />

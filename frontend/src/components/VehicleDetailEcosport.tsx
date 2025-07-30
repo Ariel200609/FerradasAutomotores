@@ -6,15 +6,15 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const ecosportImages = [
-  "/FerradasAutomotores/ecosport/ecosport(1).jpg",
-  "/FerradasAutomotores/ecosport/ecosport(2).jpg",
-  "/FerradasAutomotores/ecosport/ecosport(3).jpg",
-  "/FerradasAutomotores/ecosport/ecosport(4).jpg",
-  "/FerradasAutomotores/ecosport/ecosport(5).jpg",
-  "/FerradasAutomotores/ecosport/ecosport(6).jpg",
-  "/FerradasAutomotores/ecosport/ecosport(7).jpg",
-  "/FerradasAutomotores/ecosport/ecosport(8).jpg",
-  "/FerradasAutomotores/ecosport/ecosport(9).jpg"
+  "/ecosport/ecosport(1).jpg",
+  "/ecosport/ecosport(2).jpg",
+  "/ecosport/ecosport(3).jpg",
+  "/ecosport/ecosport(4).jpg",
+  "/ecosport/ecosport(5).jpg",
+  "/ecosport/ecosport(6).jpg",
+  "/ecosport/ecosport(7).jpg",
+  "/ecosport/ecosport(8).jpg",
+  "/ecosport/ecosport(9).jpg"
 ];
 
 const ecosportSpecs = [

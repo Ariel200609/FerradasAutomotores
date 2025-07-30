@@ -7,18 +7,18 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const hiluxImages = [
-  "/FerradasAutomotores/HiluxBlack/Hilux(1).jpg",
-  "/FerradasAutomotores/HiluxBlack/Hilux(2).jpg",
-  "/FerradasAutomotores/HiluxBlack/Hilux(3).jpg",
-  "/FerradasAutomotores/HiluxBlack/Hilux(4).jpg",
-  "/FerradasAutomotores/HiluxBlack/Hilux(5).jpg",
-  "/FerradasAutomotores/HiluxBlack/Hilux(6).jpg",
-  "/FerradasAutomotores/HiluxBlack/Hilux(7).jpg",
-  "/FerradasAutomotores/HiluxBlack/Hilux(8).jpg",
-  "/FerradasAutomotores/HiluxBlack/Hilux(9).jpg",
-  "/FerradasAutomotores/HiluxBlack/Hilux(10).jpg",
-  "/FerradasAutomotores/HiluxBlack/Hilux(11).jpg",
-  "/FerradasAutomotores/HiluxBlack/Hilux(12).jpg",
+  "/HiluxBlack/Hilux(1).jpg",
+  "/HiluxBlack/Hilux(2).jpg",
+  "/HiluxBlack/Hilux(3).jpg",
+  "/HiluxBlack/Hilux(4).jpg",
+  "/HiluxBlack/Hilux(5).jpg",
+  "/HiluxBlack/Hilux(6).jpg",
+  "/HiluxBlack/Hilux(7).jpg",
+  "/HiluxBlack/Hilux(8).jpg",
+  "/HiluxBlack/Hilux(9).jpg",
+  "/HiluxBlack/Hilux(10).jpg",
+  "/HiluxBlack/Hilux(11).jpg",
+  "/HiluxBlack/Hilux(12).jpg",
 ];
 
 const hiluxSpecs = [
