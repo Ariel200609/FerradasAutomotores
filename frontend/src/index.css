@@ -17,3 +17,23 @@ html, body {
 html {
   scroll-behavior: smooth;
 }
+
+/* Splash specific effects */
+@keyframes shineSweep {
+  0% { transform: translateX(-120%) skewX(-10deg); opacity: 0; }
+  35% { opacity: 1; }
+  70% { opacity: 1; }
+  100% { transform: translateX(140%) skewX(-10deg); opacity: 0; }
+}
+
+.splash-shine {
+  background: linear-gradient(120deg, transparent 10%, rgba(255,255,255,0.65) 45%, transparent 60%);
+  mix-blend-mode: screen;
+  animation: shineSweep 1.4s ease-in-out 0.4s 1 both;
+}
+
+/* Subtle film grain texture */
+.splash-noise {
+  background-image: url("data:image/svg+xml;utf8, %3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cfilter id='n' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='table' tableValues='0 0.8'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.45'/%3E%3C/svg%3E");
+  background-size: 160px 160px;
+}

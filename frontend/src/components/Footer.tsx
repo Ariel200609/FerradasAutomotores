@@ -40,6 +40,18 @@ const Footer: React.FC = () => (
       {/* Derechos de autor y leyenda final */}
       <div className="border-t border-gray-800 mt-8 pt-8 text-center">
         <p className="text-gray-400">© 2024 Ferradas Automotores. Todos los derechos reservados.</p>
+        <p className="mt-2 text-gray-500/80 text-sm">
+          Creado por :{' '}
+          <a
+            href="https://instagram.com/developerariel_"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:text-red-500 transition-colors"
+            aria-label="Ir al Instagram de developerariel_"
+          >
+            {"<byAriel>"}
+          </a>
+        </p>
       </div>
     </div>
   </footer>
