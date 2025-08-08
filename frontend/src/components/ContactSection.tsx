@@ -23,7 +23,7 @@ const ContactSection: React.FC = () => {
   const [showMapSalliquelo, setShowMapSalliquelo] = useState(false);
 
   // Manejar el envío del formulario de contacto
- /* const handleSubmit = async (e: React.FormEvent) => {
+  /* const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setEnviando(true);
     setExito("");
@@ -38,6 +38,45 @@ const ContactSection: React.FC = () => {
       setEnviando(false);
     }
   };*/
+
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Ofrecen financiación?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí, contamos con planes de financiación flexibles y tasas competitivas. Podés consultarnos por WhatsApp para recibir una propuesta personalizada."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Toman vehículos usados como parte de pago?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí, tomamos tu usado para facilitar el cambio. Evaluamos el vehículo y te ofrecemos una cotización justa."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Dónde están ubicados?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Atendemos en Bonifacio (Laguna Alsina) y Salliqueló. Encontrás direcciones y mapas en esta sección."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuál es el horario de atención?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Lunes a Viernes de 8 a 20 hs, sábados de 8 a 15 hs."
+        }
+      }
+    ]
+  };
 
   return (
     <section id="contact" className="py-20 bg-black">
@@ -154,6 +193,7 @@ const ContactSection: React.FC = () => {
           </div>
         </div>
       </div>
+      <script type="application/ld+json">{JSON.stringify(faqJsonLd)}</script>
     </section>
   );
 };

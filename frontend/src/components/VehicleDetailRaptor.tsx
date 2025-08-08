@@ -4,6 +4,7 @@
 
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import VehicleSEO from "./VehicleSEO";
 
 const raptorImages = [
   "/Raptor/raptor(1).jpg",
@@ -38,6 +39,16 @@ const VehicleDetailRaptor: React.FC = () => {
   const next = () => setCurrent((c) => (c === raptorImages.length - 1 ? 0 : c + 1));
   return (
     <section className="relative min-h-screen w-full bg-white flex flex-col justify-center items-center overflow-x-hidden">
+      <VehicleSEO
+        brand="Ford"
+        model="Ranger Raptor"
+        year={2024}
+        fuelType="Nafta"
+        mileageKm={25000}
+        condition="used"
+        images={raptorImages}
+        canonicalPath="/vehiculo/raptor"
+      />
       {/* Imagen de fondo en desktop */}
       <div className="hidden lg:block fixed inset-0 z-0">
         <img
