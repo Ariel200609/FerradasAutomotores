@@ -1,119 +1,119 @@
 export const testimonios = [
   {
     name: "Jorge Marzilio",
-    image: "clientes/cliente1.jpg",
+    image: "clientes/cliente1.webp",
     text: "Gracias por elegirnos que disfrutes de esta hermosa amarok v6 Higline 0km 🚀🥂👏 V6 que se va para la ciudad de 25 de Mayo",
   
   },
   {
     name: "Julián Pollini",
-    image: "clientes/cliente2.jpg",
+    image: "clientes/cliente2.webp",
     text: " Gracias por elegirnos nuevamente que disfrutes de este hermoso Toyota Yaris 0km 🥂👏 se va para BS AS",
     
   },
   {
     name: "María Alicia",
-    image: "clientes/cliente3.jpg",
+    image: "clientes/cliente3.webp",
     text: "gracias por confiar ahora a estrenar este hermoso Polo 0km 🥂👏 Salliquelo 📍.",
     
   },
   {
     name: "Cristian Garcia y familia",
-    image: "clientes/cliente4.jpg",
+    image: "clientes/cliente4.webp",
     text: "Gracias por elegirnos. que disfruten de este hermoso Ford Focus 🥂👏",
   },
   {
     name: "Juan Carlos",
-    image: "clientes/cliente7.png",
+    image: "clientes/cliente7.webp",
     text: "gracias Dario Bonjour de la ciudad de Medanos.",
     
   },
   {
     name: "José Cortarello",
-    image: "clientes/c (1).png",
+    image: "clientes/c (1).webp",
     text: "Gracias por elegirnos. José Cortarello y sra de la ciudad de Salliquelo📍.",
     
   },
   {
     name: "Silvina y Carlitos",
-    image: "clientes/c (2).png",
+    image: "clientes/c (2).webp",
     text: "Gracias por elegirnos que disfruten de esta impecable kia Sportage 🥂📍Bonifacio",
     
   },
   {
     name: " Lucas ",
-    image: "clientes/c (3).png",
+    image: "clientes/c (3).webp",
     text: "Gracias por volvernos a elegir que disfrutes de esta Suran impecable 🥂📍salliquelo",
      
 },
   {
     name: "Daina",
-    image: "clientes/c (4).png",
+    image: "clientes/c (4).webp",
     text: "Gracias por elegirnos nuevamente que disfrutes de este hermoso corolla 🥂 📍Salliqueló",
   },
   {
     name: "Edgar",
-    image: "clientes/c (5).png",
+    image: "clientes/c (5).webp",
     text: "Gracias Edgar por elegirnos que disfrutes de esta hermosa Ford ecosport 📍Salliqueló",
   },
   {
     name: "Sandra y Braian",
-    image: "clientes/c (6).png",
+    image: "clientes/c (6).webp",
     text: "Gracias por elegirnos se llevan este hermoso Fiat Fastback 0km que lo disfruten 🥂📍Salliqueló.",
   },
   {
     name: "Jorge Hernández",
-    image: "clientes/c (7).png",
+    image: "clientes/c (7).webp",
     text: "Gracias por elegirnos se llevaron esta hermosa v6 Higline 0km que la disfruten 🥂📍Salliqueló",
   },
     {
         name: "Gracias Manuel Genjo",
-        image: "clientes/c (8).png",
+        image: "clientes/c (8).webp",
         text: "Gracias por elegirnos,se fue la Fiat Toro vulcano 270 nafta 0km que la disfruten 🥂 📍Salliquelo",
     },
     {
         name: "Emiliano",
-        image: "clientes/c (9).png",
+        image: "clientes/c (9).webp",
         text: "Gracias por elegirnos felicitaciones por tu F100 que la disfrutes 🫂🥂 📍Salliqueló",
     },
     {
         name: "Luis",
-        image: "clientes/c (10).png",
+        image: "clientes/c (10).webp",
         text: "Gracias Luisito por volvernos a elegirnos tremenda Black Style te llevaste que la súper disfrutes 🫂🥂 se fue a Espartillar 📍",
     },
     {
         name: "Santiago y familia",
-        image: "clientes/c (11).png",
+        image: "clientes/c (11).webp",
         text: "gracias por volvernos a elegir que disfruten de este gol impecable 🥂",
     },
     {
         name: "Eloy Caro",
-        image: "clientes/c (13).png",
+        image: "clientes/c (13).webp",
         text: "gracias por elegirnos, de la ciudad de 📍Carhue que disfrutes de esta hermosa Fiat Strada 🥂",
     },
     {
         name: "Ale Domínguez",
-        image: "clientes/c (14).png",
+        image: "clientes/c (14).webp",
         text: "Gracias por elegirnos por segunda vez 🥂 por muchas más 💪 que disfrutes de esta tremenda Hilux 0km 📍Salliquelo",
     },
     {
         name: "Juan Pablo y Gustavo Specht",
-        image: "clientes/c (15).png",
+        image: "clientes/c (15).webp",
         text: "Gracias por elegirnos 🥂 de la ciudad de Trenque Lauquen 📍 que disfruten de esta hermosa Toyota Hilux 0km",
     },
     {
         name: "Isaías Cabrera y familia",
-        image: "clientes/c (16).png",
+        image: "clientes/c (16).webp",
         text: "gracias por elegirnos.se llevan este hermoso Fiat Uno🥂📍Salliqueló",
     },
     {
         name: "Esteban Herrera",
-        image: "clientes/c (17).png",
+        image: "clientes/c (17).webp",
         text: "Gracias por confiar 🥂 que disfrutes esta hermosa S10 📍 Bonifacio",
     },
     {
         name: "Familia Cataneo ",
-        image: "clientes/c (18).png",
+        image: "clientes/c (18).webp",
         text: "Gracias por elegirnos 🥂 que disfruten esta hermosa Amarok 📍Bonifacio",
     },
     {
