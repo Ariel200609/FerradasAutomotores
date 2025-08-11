@@ -75,7 +75,7 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ onFinish, minimumDurationMs
           >
             <div className="relative rounded-full overflow-hidden w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 ring-1 ring-white/10 shadow-[0_0_60px_rgba(0,155,255,0.25)]">
               <img
-                src="/inicioPrincipal4.jpg"
+                src="/inicioPrincipal4.webp"
                 alt="Ferradas Automotores"
                 className="w-full h-full object-cover select-none"
                 draggable={false}

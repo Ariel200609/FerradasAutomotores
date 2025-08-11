@@ -11,7 +11,7 @@ const ServicesSection: React.FC = () => (
     id="services"
     className="border-y border-gray-200 relative bg-cover bg-center"
     style={{
-      backgroundImage: 'url(/inicioPrincipal4.jpg)',
+              backgroundImage: 'url(/inicioPrincipal4.webp)',
       backgroundAttachment: 'fixed',
     }}
   >
@@ -81,7 +81,7 @@ const ServicesSection: React.FC = () => (
           background-attachment: scroll !important;
           background-size: cover !important;
           background-position: center top !important;
-          background-image: url('/inicioPrincipal4-mobile.jpg') !important;
+          background-image: url('/inicioPrincipal4-mobile.webp') !important;
         }
       }
     `}</style>

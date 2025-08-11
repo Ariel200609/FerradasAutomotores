@@ -43,7 +43,7 @@ const AboutSection: React.FC = () => (
         </div>
         <div className="relative">
           <img
-            src="/InicioPrincipal1.jpg"
+            src="/InicioPrincipal1.webp"
             alt="Ferradas Automotores Showroom"
             className="rounded-xl shadow-2xl"
           />
