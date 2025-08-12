@@ -11,13 +11,15 @@ import Layout from "./components/Layout";
 const HomeView = React.lazy(() => import("./views/HomeView"));
 const ContactView = React.lazy(() => import("./views/ContactView"));
 const AuthView = React.lazy(() => import("./views/AuthView"));
+const CompareView = React.lazy(() => import("./views/CompareView"));
+const InquiryView = React.lazy(() => import("./views/InquiryView"));
+const VehiclesView = React.lazy(() => import("./views/VehiclesView"));
 
 // Import de componentes de detalle de vehículos
 import VehicleDetailTCross from "./components/VehicleDetailTCross";
 import VehicleDetailMaverik from "./components/VehicleDetailMaverik";
 import VehicleDetailAmarok from "./components/VehicleDetailAmarok";
 import VehicleDetailFocus from "./components/VehicleDetailFocus";
-import VehicleDetailOnix from "./components/VehicleDetailOnix";
 import VehicleDetailFastback from "./components/VehicleDetailFastback";
 import VehicleDetailHilux from "./components/VehicleDetailHilux";
 import VehicleDetailAmarokHighline from "./components/VehicleDetailAmarokHighline";
@@ -60,6 +62,9 @@ const AppRoutes: React.FC = () => (
         <Route path="/" element={<HomeView />} />
         <Route path="/contact" element={<ContactView />} />
         <Route path="/auth" element={<AuthView />} />
+        <Route path="/comparar" element={<CompareView />} />
+        <Route path="/consultar" element={<InquiryView />} />
+        <Route path="/vehiculos" element={<VehiclesView />} />
         {/* Rutas individuales para cada modelo de vehículo */}
         <Route path="/vehiculo/t-cross" element={<VehicleDetailTCross />} />
         <Route path="/vehiculo/maverik" element={<VehicleDetailMaverik />} />
@@ -69,7 +74,6 @@ const AppRoutes: React.FC = () => (
         <Route path="/vehiculo/amarok-black-style-g2" element={<VehicleDetailAmarokBlackStyleG2 />} />
         <Route path="/vehiculo/amarok-comfortline-g2" element={<VehicleDetailAmarokComfortlineG2 />} />
         <Route path="/vehiculo/focus" element={<VehicleDetailFocus />} />
-        <Route path="/vehiculo/onix" element={<VehicleDetailOnix />} />
         <Route path="/vehiculo/fastback" element={<VehicleDetailFastback />} />
         <Route path="/vehiculo/hilux" element={<VehicleDetailHilux />} />
         <Route path="/vehiculo/hiluxsrv" element={<VehicleDetailHiluxSRV />} />

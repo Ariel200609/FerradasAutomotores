@@ -17,8 +17,8 @@ const HomeView: React.FC = () => {
   return (
     <>
       <SEO
-        title="Ferradas Automotores | Autos 0km y Usados en Bahía Blanca"
-        description="Concesionaria en Bahía Blanca: 0km, usados, financiación, toma de usados y atención personalizada. ¡Conocé nuestros vehículos!"
+        title="Ferradas Automotores | Autos 0km y Usados en Laguna Alsina (Bonifacio)"
+        description="Concesionaria en Laguna Alsina (Bonifacio): 0km, usados, financiación, permuta y atención personalizada. ¡Conocé nuestros vehículos!"
         canonical="https://ferradasautomotores.com/"
       />
       <HeroSection />

@@ -3,7 +3,7 @@
 // Muestra un carrusel de imágenes con eslogan animado y texto destacado.
 // Utiliza hooks para animaciones y cambio automático de imagen.
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useCallback, useMemo } from "react";
 
 // Array de imágenes y textos del carrusel principal
 const carouselItems = [
@@ -33,49 +33,64 @@ const HeroSection: React.FC = () => {
   // Estado para el índice de la imagen actual del carrusel
   const [currentImage, setCurrentImage] = useState(0);
   const [fade, setFade] = useState(true); // Para animación fade
+  const [isMobile, setIsMobile] = useState(false);
   const imageCount = carouselItems.length;
   const timeoutRef = useRef<number | null>(null);
   const dragStartX = useRef<number | null>(null);
   const dragDelta = useRef<number>(0);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Swipe handlers
-  const handleTouchStart = (e: React.TouchEvent) => {
+  // Pre-cargar imágenes para evitar que falte la 3ra en móviles
+  useEffect(() => {
+    carouselItems.forEach((item) => {
+      const img = new Image();
+      img.src = item.image;
+    });
+  }, []);
+
+  // Swipe handlers mejorados para móvil - optimizados con useCallback
+  const handleTouchStart = useCallback((e: React.TouchEvent) => {
     dragStartX.current = e.touches[0].clientX;
     dragDelta.current = 0;
+    // Pausar el carrusel automático al tocar
     if (timeoutRef.current !== null) clearTimeout(timeoutRef.current);
-  };
-  const handleTouchMove = (e: React.TouchEvent) => {
+  }, []);
+  
+  const handleTouchMove = useCallback((e: React.TouchEvent) => {
     if (dragStartX.current !== null) {
       dragDelta.current = e.touches[0].clientX - dragStartX.current;
       if (Math.abs(dragDelta.current) > 10) {
         e.preventDefault();
       }
     }
-  };
-  const handleTouchEnd = () => {
-    if (dragDelta.current > 50) {
+  }, []);
+  
+  const handleTouchEnd = useCallback(() => {
+    const threshold = isMobile ? 30 : 50; // Umbral más bajo en móvil
+    if (dragDelta.current > threshold) {
       triggerFade((prev) => (prev - 1 + imageCount) % imageCount);
-    } else if (dragDelta.current < -50) {
+    } else if (dragDelta.current < -threshold) {
       triggerFade((prev) => (prev + 1) % imageCount);
     }
     dragStartX.current = null;
     dragDelta.current = 0;
-  };
-  // Mouse drag for desktop
-  const handleMouseDown = (e: React.MouseEvent) => {
+  }, [isMobile, imageCount]);
+  // Mouse drag for desktop - optimizados con useCallback
+  const handleMouseDown = useCallback((e: React.MouseEvent) => {
     dragStartX.current = e.clientX;
     dragDelta.current = 0;
     if (timeoutRef.current !== null) clearTimeout(timeoutRef.current);
     window.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('mouseup', handleMouseUp);
-  };
-  const handleMouseMove = (e: MouseEvent) => {
+  }, []);
+  
+  const handleMouseMove = useCallback((e: MouseEvent) => {
     if (dragStartX.current !== null) {
       dragDelta.current = e.clientX - dragStartX.current;
     }
-  };
-  const handleMouseUp = () => {
+  }, []);
+  
+  const handleMouseUp = useCallback(() => {
     if (dragDelta.current > 50) {
       triggerFade((prev) => (prev - 1 + imageCount) % imageCount);
     } else if (dragDelta.current < -50) {
@@ -85,10 +100,19 @@ const HeroSection: React.FC = () => {
     dragDelta.current = 0;
     window.removeEventListener('mousemove', handleMouseMove);
     window.removeEventListener('mouseup', handleMouseUp);
-  };
+  }, [imageCount]);
 
+  // Detectar si es móvil
   useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
     return () => {
+      window.removeEventListener('resize', checkMobile);
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('mouseup', handleMouseUp);
     };
@@ -114,7 +138,10 @@ const HeroSection: React.FC = () => {
   // Carrusel automático con fade
   useEffect(() => {
     if (timeoutRef.current !== null) clearTimeout(timeoutRef.current);
-    const duration = currentImage === 0 ? 7000 : 5000;
+    // Duración más larga para mejor visualización
+    const duration = isMobile 
+      ? (currentImage === 0 ? 6000 : 5000)  // Móvil: 6s primera, 5s otras
+      : (currentImage === 0 ? 8000 : 6000); // Desktop: 8s primera, 6s otras
     timeoutRef.current = window.setTimeout(() => {
       triggerFade((prev) => (prev + 1) % imageCount);
     }, duration);
@@ -122,18 +149,27 @@ const HeroSection: React.FC = () => {
       if (timeoutRef.current !== null) clearTimeout(timeoutRef.current);
     };
     // eslint-disable-next-line
-  }, [currentImage, imageCount]);
+  }, [currentImage, imageCount, isMobile]);
 
-  // Función para animar el fade
-  const triggerFade = (getNextIndex: (prev: number) => number) => {
+  // Función para animar el fade - optimizada con useCallback
+  const triggerFade = useCallback((getNextIndex: (prev: number) => number) => {
     setFade(false);
+    const fadeDuration = isMobile ? 300 : 500; // Más rápido en móvil
     setTimeout(() => {
       setCurrentImage(getNextIndex);
       setFade(true);
-    }, 350); // Duración del fade-out
-  };
+    }, fadeDuration);
+  }, [isMobile]);
 
-  const currentItem = carouselItems[currentImage];
+  const currentItem = useMemo(() => carouselItems[currentImage], [currentImage]);
+  
+  // Debug: verificar que se estén cargando las 3 imágenes
+  console.log('HeroSection Debug:', {
+    currentImage,
+    imageCount,
+    currentItemImage: currentItem.image,
+    allImages: carouselItems.map(item => item.image)
+  });
 
   return (
     <section id="HeroSection" className="pt-16 relative overflow-hidden bg-white">
@@ -151,7 +187,36 @@ const HeroSection: React.FC = () => {
           src={currentItem.image}
           alt="Luxury Cars"
           className={`w-full h-full object-cover absolute inset-0 transition-opacity duration-500 ${fade ? 'opacity-100' : 'opacity-0'}`}
+          loading="eager"
+          decoding="async"
+          onError={(e) => {
+            // Fallback por si alguna imagen falla en móviles
+            const fallbackMap: Record<string, string> = {
+              '/imagenprincipal4.webp': '/inicioPrincipal4.webp'
+            };
+            const currentSrc = currentItem.image;
+            const fallback = fallbackMap[currentSrc];
+            if (fallback && e.currentTarget.src.indexOf(fallback) === -1) {
+              e.currentTarget.src = fallback;
+            }
+          }}
         />
+        
+        {/* Preload de la siguiente imagen para mejor rendimiento */}
+        {carouselItems.map((item, idx) => {
+          if (idx !== currentImage) {
+            return (
+              <link
+                key={idx}
+                rel="preload"
+                as="image"
+                href={item.image}
+                type="image/webp"
+              />
+            );
+          }
+          return null;
+        })}
         {/* Overlay gradiente sutil para mejorar contraste del texto */}
         <div className="absolute inset-0 z-10 pointer-events-none bg-[linear-gradient(to_right,rgba(0,0,0,0.7)_0%,rgba(0,0,0,0.5)_50%,rgba(0,0,0,0)_80%)]"></div>
         {/* Contenido centrado verticalmente */}
@@ -207,6 +272,20 @@ const HeroSection: React.FC = () => {
             />
           ))}
         </div>
+        
+        {/* Indicador de imagen actual */}
+        <div className="absolute top-6 right-6 z-40 bg-black/50 text-white px-3 py-1 rounded-full text-sm font-medium">
+          {currentImage + 1} / {imageCount}
+        </div>
+        
+        {/* Indicador de swipe para móvil */}
+        {isMobile && (
+          <div className="absolute top-6 left-6 z-40 bg-black/50 text-white px-3 py-1 rounded-full text-xs">
+            ← Desliza →
+          </div>
+        )}
+        
+
       </div>
     </section>
   );

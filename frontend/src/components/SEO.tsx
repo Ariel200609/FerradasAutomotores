@@ -7,8 +7,8 @@ type SEOProps = {
   canonical?: string;
 };
 
-const defaultTitle = 'Ferradas Automotores | Autos 0km y Usados en Bahía Blanca';
-const defaultDescription = 'Concesionaria líder en Bahía Blanca. Venta de autos 0km y usados, financiación, toma de usados y atención personalizada.';
+const defaultTitle = 'Ferradas Automotores | Autos 0km y Usados en Laguna Alsina (Bonifacio)';
+const defaultDescription = 'Concesionaria en Laguna Alsina (Bonifacio). Venta de 0km y usados, financiación, permuta y atención personalizada.';
 const siteUrl = 'https://ferradasautomotores.com';
 
 const SEO: React.FC<SEOProps> = ({ title, description, canonical }) => {

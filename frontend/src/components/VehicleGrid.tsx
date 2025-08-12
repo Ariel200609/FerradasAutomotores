@@ -26,7 +26,6 @@ const VehicleCard: React.FC<{ vehicle: Vehicle }> = ({ vehicle }) => {
   const isMaverik = vehicle.model.toLowerCase().includes("maverik");
   const isAmarok = vehicle.model.toLowerCase().includes("amarok");
   const isFocus = vehicle.model.toLowerCase().includes("focus");
-  const isOnix = vehicle.model.toLowerCase().includes("onix");
   const isGolf = vehicle.model.toLowerCase().includes("golf");
   const isFastback = vehicle.model.toLowerCase().includes("fastback");
   const isHilux = vehicle.model.toLowerCase().includes("hilux");
@@ -112,7 +111,6 @@ const VehicleCard: React.FC<{ vehicle: Vehicle }> = ({ vehicle }) => {
               else if (isAmarokHighline) navigate('/vehiculo/amarok-highline');
               else if (isAmarok) navigate('/vehiculo/amarok');
               else if (isFocus) navigate('/vehiculo/focus');
-              else if (isOnix) navigate('/vehiculo/onix');
               else if (isGolf) navigate('/vehiculo/golf');
               else if (isFastback) navigate('/vehiculo/fastback');
               else if (isRaptor) navigate('/vehiculo/raptor');
@@ -128,6 +126,12 @@ const VehicleCard: React.FC<{ vehicle: Vehicle }> = ({ vehicle }) => {
           }}
         >
           Ver modelo
+        </button>
+        <button
+          className="mt-3 px-6 py-2 rounded-lg font-semibold transition-all duration-200 shadow-md bg-green-600 text-white hover:bg-green-700"
+          onClick={() => navigate(`/consultar?vehiculoId=${vehicle.id}`)}
+        >
+          Consultar
         </button>
       </div>
     </div>

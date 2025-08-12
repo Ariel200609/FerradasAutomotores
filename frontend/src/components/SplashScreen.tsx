@@ -7,7 +7,7 @@ type SplashScreenProps = {
 };
 
 // Fullscreen splash with brand-centric reveal animation
-const SplashScreen: React.FC<SplashScreenProps> = ({ onFinish, minimumDurationMs = 2200 }) => {
+const SplashScreen: React.FC<SplashScreenProps> = ({ onFinish, minimumDurationMs = 1500 }) => {
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
@@ -79,6 +79,8 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ onFinish, minimumDurationMs
                 alt="Ferradas Automotores"
                 className="w-full h-full object-cover select-none"
                 draggable={false}
+                loading="eager"
+                decoding="async"
               />
               {/* Shine sweep over circular reveal */}
               <span className="pointer-events-none absolute inset-0 block splash-shine" />
