@@ -162,12 +162,13 @@ const HeroSection: React.FC = () => {
   }, [isMobile]);
 
   const currentItem = useMemo(() => carouselItems[currentImage], [currentImage]);
+  const currentSrc = currentItem.image;
   
   // Debug: verificar que se estén cargando las 3 imágenes
   console.log('HeroSection Debug:', {
     currentImage,
     imageCount,
-    currentItemImage: currentItem.image,
+    currentItemImage: currentSrc,
     allImages: carouselItems.map(item => item.image)
   });
 
@@ -184,7 +185,7 @@ const HeroSection: React.FC = () => {
       >
         {/* Imagen de fondo del carrusel con fade */}
         <img
-          src={currentItem.image}
+          src={currentSrc}
           alt="Luxury Cars"
           className={`w-full h-full object-cover absolute inset-0 transition-opacity duration-500 ${fade ? 'opacity-100' : 'opacity-0'}`}
           loading="eager"
@@ -194,7 +195,6 @@ const HeroSection: React.FC = () => {
             const fallbackMap: Record<string, string> = {
               '/imagenprincipal4.webp': '/inicioPrincipal4.webp'
             };
-            const currentSrc = currentItem.image;
             const fallback = fallbackMap[currentSrc];
             if (fallback && e.currentTarget.src.indexOf(fallback) === -1) {
               e.currentTarget.src = fallback;

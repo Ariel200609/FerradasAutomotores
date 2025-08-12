@@ -144,25 +144,48 @@ const VehicleGrid: React.FC<{ vehicles: Vehicle[] }> = ({ vehicles }) => {
 
   // Función para hacer scroll horizontal
   const scroll = (direction: "left" | "right") => {
-    if (scrollRef.current) {
-      const { scrollLeft, clientWidth } = scrollRef.current;
-      const scrollAmount = clientWidth * 0.7;
-      scrollRef.current.scrollTo({
-        left: direction === "left" ? scrollLeft - scrollAmount : scrollLeft + scrollAmount,
-        behavior: "smooth",
-      });
-    }
+    const container = scrollRef.current;
+    if (!container) return;
+    const cards = Array.from(container.children) as HTMLElement[];
+    if (cards.length === 0) return;
+
+    // Ancho visible y posición actual
+    const viewport = container.clientWidth;
+    const currentLeft = container.scrollLeft;
+
+    // Calcular el índice del card que está más centrado
+    const centerX = currentLeft + viewport / 2;
+    let closestIdx = 0;
+    let closestDist = Infinity;
+    cards.forEach((card, idx) => {
+      const rectLeft = card.offsetLeft;
+      const rectWidth = card.clientWidth;
+      const cardCenter = rectLeft + rectWidth / 2;
+      const dist = Math.abs(cardCenter - centerX);
+      if (dist < closestDist) {
+        closestDist = dist;
+        closestIdx = idx;
+      }
+    });
+
+    // Siguiente índice según dirección
+    const nextIdx = direction === "left" ? Math.max(closestIdx - 1, 0) : Math.min(closestIdx + 1, cards.length - 1);
+    const targetCard = cards[nextIdx];
+    const targetCenter = targetCard.offsetLeft + targetCard.clientWidth / 2;
+    const newScrollLeft = targetCenter - viewport / 2;
+
+    container.scrollTo({ left: newScrollLeft, behavior: "smooth" });
   };
 
   return (
     <div className="relative flex items-center w-full">
       <button
         onClick={() => scroll("left")}
-        className="z-20 bg-transparent focus:outline-none text-gray-800 text-3xl font-bold flex items-center justify-center mr-2"
+        className="z-20 bg-white/90 rounded-full border border-gray-200 shadow focus:outline-none text-gray-800 text-xl font-bold flex items-center justify-center mr-2"
         aria-label="Anterior"
-        style={{ width: 26, height: 26 }}
+        style={{ width: 32, height: 32 }}
       >
-        {'<'}
+        ‹
       </button>
       <div
         ref={scrollRef}
@@ -175,11 +198,11 @@ const VehicleGrid: React.FC<{ vehicles: Vehicle[] }> = ({ vehicles }) => {
       </div>
       <button
         onClick={() => scroll("right")}
-        className="z-20 bg-transparent focus:outline-none text-gray-800 text-3xl font-bold flex items-center justify-center ml-2"
+        className="z-20 bg-white/90 rounded-full border border-gray-200 shadow focus:outline-none text-gray-800 text-xl font-bold flex items-center justify-center ml-2"
         aria-label="Siguiente"
         style={{ width: 36, height: 36 }}
       >
-        {'>'}
+        ›
       </button>
     </div>
   );
