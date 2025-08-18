@@ -14,6 +14,7 @@ const AuthView = React.lazy(() => import("./views/AuthView"));
 const CompareView = React.lazy(() => import("./views/CompareView"));
 const InquiryView = React.lazy(() => import("./views/InquiryView"));
 const VehiclesView = React.lazy(() => import("./views/VehiclesView"));
+const AdminView = React.lazy(() => import("./views/AdminView"));
 
 // Import de componentes de detalle de vehículos
 import VehicleDetailTCross from "./components/VehicleDetailTCross";
@@ -65,6 +66,7 @@ const AppRoutes: React.FC = () => (
         <Route path="/comparar" element={<CompareView />} />
         <Route path="/consultar" element={<InquiryView />} />
         <Route path="/vehiculos" element={<VehiclesView />} />
+        <Route path="/admin" element={<AdminView />} />
         {/* Rutas individuales para cada modelo de vehículo */}
         <Route path="/vehiculo/t-cross" element={<VehicleDetailTCross />} />
         <Route path="/vehiculo/maverik" element={<VehicleDetailMaverik />} />

@@ -404,6 +404,7 @@ export const vehicles: Vehicle[] = [
     mileage: 0,
     fuel: "Nafta",
   },
+  
 ];
 
 
