@@ -14,11 +14,11 @@ const Header: React.FC = () => {
 
   // Enlaces de navegación principales
   const links = [
-    { href: "#HeroSection", label: "Home" },
-    { href: "#VehiclesSection", label: "Vehicles" },
-    { href: "#services", label: "Services" },
-    { href: "#about", label: "About Us" },
-    { href: "#contact", label: "Contact" },
+    { href: "#HeroSection", label: "Inicio" },
+    { href: "#VehiclesSection", label: "Vehículos" },
+    { href: "#services", label: "Servicios" },
+    { href: "#about", label: "Sobre Nosotros" },
+    { href: "#contact", label: "Contacto" },
   ];
 
   // Cerrar menú al hacer clic fuera del menú hamburguesa
