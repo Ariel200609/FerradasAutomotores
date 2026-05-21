@@ -44,7 +44,7 @@ const VehicleCard: React.FC<{ vehicle: Vehicle }> = ({ vehicle }) => {
       <div className="relative w-full h-44 sm:h-56 overflow-hidden">
         <img
           src={imageUrl}
-          alt={`${vehicle.brand} ${vehicle.model}`}
+          alt={`Vehículo ${vehicle.condition === "new" ? "0km" : "usado"} ${vehicle.brand} ${vehicle.model} ${vehicle.year} en venta`}
           className="card-image object-cover w-full h-full"
           loading="lazy"
         />

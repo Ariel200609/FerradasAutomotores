@@ -107,6 +107,40 @@ const VehicleDetailDynamic: React.FC = () => {
     vehicle.doors ? { label: 'Puertas', value: `${vehicle.doors}` } : null,
   ].filter(Boolean) as { label: string; value: string }[]
 
+  /* ───────── Structured Data (JSON-LD) ───────── */
+  const vehicleSchema = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": `${vehicle.brand} ${vehicle.model} ${vehicle.year}`,
+    "image": imageUrls,
+    "description": vehicle.description || `Vehículo ${vehicle.brand} ${vehicle.model} año ${vehicle.year}. ${vehicle.condition === 'new' ? '0 KM' : `${vehicle.mileage} km`}`,
+    "brand": {
+      "@type": "Brand",
+      "name": vehicle.brand
+    },
+    "model": vehicle.model,
+    "vehicleModelDate": vehicle.year,
+    "itemCondition": vehicle.condition === 'new' ? "https://schema.org/NewCondition" : "https://schema.org/UsedCondition",
+    "mileageFromOdometer": vehicle.mileage ? {
+      "@type": "QuantitativeValue",
+      "value": vehicle.mileage,
+      "unitCode": "KMT"
+    } : undefined,
+    "fuelType": vehicle.fuel,
+    "vehicleTransmission": vehicle.transmission,
+    "offers": vehicle.priceUsd ? {
+      "@type": "Offer",
+      "priceCurrency": "USD",
+      "price": vehicle.priceUsd,
+      "itemCondition": vehicle.condition === 'new' ? "https://schema.org/NewCondition" : "https://schema.org/UsedCondition",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "AutoDealer",
+        "name": "Ferradas Automotores"
+      }
+    } : undefined
+  });
+
   return (
     <div className="min-h-screen bg-vehicles-page pt-20 pb-16">
       <SEO
@@ -118,6 +152,8 @@ const VehicleDetailDynamic: React.FC = () => {
           }. Consultá en Ferradas Automotores.`
         }
         canonical={`https://ferradasautomotores.com/vehiculo/${slug}`}
+        image={imageUrls[0]}
+        schema={vehicleSchema}
       />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">

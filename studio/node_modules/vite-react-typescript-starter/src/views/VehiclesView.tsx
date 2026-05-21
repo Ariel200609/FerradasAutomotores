@@ -158,7 +158,7 @@ const VehiclesView: React.FC = () => {
               <Link to={getVehicleRoute(vehicle)} className="block relative w-full h-44 sm:h-52 overflow-hidden bg-gray-100">
                 <img
                   src={vehicle.images?.[0] ? urlFor(vehicle.images[0]).width(600).url() : '/placeholder-car.jpg'}
-                  alt={`${vehicle.brand} ${vehicle.model}`}
+                  alt={`Vehículo ${vehicle.condition === 'new' ? '0km' : 'usado'} ${vehicle.brand} ${vehicle.model} ${vehicle.year} en venta`}
                   className="card-image w-full h-full object-cover"
                   loading="lazy"
                 />
