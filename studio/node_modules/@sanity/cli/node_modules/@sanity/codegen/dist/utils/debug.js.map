@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/utils/debug.ts"],"sourcesContent":["import {subdebug} from '@sanity/cli-core'\n\nexport const debug = subdebug('typegen:generate')\n"],"names":["subdebug","debug"],"mappings":"AAAA,SAAQA,QAAQ,QAAO,mBAAkB;AAEzC,OAAO,MAAMC,QAAQD,SAAS,oBAAmB"}

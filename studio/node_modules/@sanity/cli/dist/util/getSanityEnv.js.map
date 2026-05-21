@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/util/getSanityEnv.ts"],"sourcesContent":["export const getSanityEnv = () => process.env.SANITY_INTERNAL_ENV || 'production'\n"],"names":["getSanityEnv","process","env","SANITY_INTERNAL_ENV"],"mappings":"AAAA,OAAO,MAAMA,eAAe,IAAMC,QAAQC,GAAG,CAACC,mBAAmB,IAAI,aAAY"}

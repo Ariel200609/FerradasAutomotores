@@ -1,0 +1,3 @@
+export { sanityImport } from '../import.js';
+
+//# sourceMappingURL=index.js.map

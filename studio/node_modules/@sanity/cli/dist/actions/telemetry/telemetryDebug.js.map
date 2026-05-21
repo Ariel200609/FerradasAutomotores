@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../src/actions/telemetry/telemetryDebug.ts"],"sourcesContent":["import debugIt from 'debug'\n\nexport const telemetryDebug = debugIt('telemetry:sanity:cli')\n"],"names":["debugIt","telemetryDebug"],"mappings":"AAAA,OAAOA,aAAa,QAAO;AAE3B,OAAO,MAAMC,iBAAiBD,QAAQ,wBAAuB"}

@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/util/suffixTag.ts"],"sourcesContent":["export const suffixTag = (tag: string, suffix: string): string =>\n  `${tag.replace(/\\.+$/, '')}.${suffix}`\n"],"names":["suffixTag","tag","suffix","replace"],"mappings":"AAAA,OAAO,MAAMA,YAAY,CAACC,KAAaC,SACrC,GAAGD,IAAIE,OAAO,CAAC,QAAQ,IAAI,CAAC,EAAED,QAAQ,CAAA"}

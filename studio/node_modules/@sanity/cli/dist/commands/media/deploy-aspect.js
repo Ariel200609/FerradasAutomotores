@@ -1,0 +1,164 @@
+import { styleText } from 'node:util';
+import { Args, Flags } from '@oclif/core';
+import { ProjectRootNotFoundError, SanityCommand, subdebug } from '@sanity/cli-core';
+import { spinner } from '@sanity/cli-core/ux';
+import { isAssetAspect } from '@sanity/types';
+import { getMediaLibraryConfig } from '../../actions/media/getMediaLibraryConfig.js';
+import { importAspects } from '../../actions/media/importAspects.js';
+import { promptForProject } from '../../prompts/promptForProject.js';
+import { selectMediaLibrary } from '../../prompts/selectMediaLibrary.js';
+import { deployAspects } from '../../services/mediaLibraries.js';
+import { NO_MEDIA_LIBRARY_ASPECTS_PATH } from '../../util/errorMessages.js';
+import { pluralize } from '../../util/pluralize.js';
+import { getProjectIdFlag } from '../../util/sharedFlags.js';
+const deployAspectDebug = subdebug('media:deploy-aspect');
+export class MediaDeployAspectCommand extends SanityCommand {
+    static args = {
+        aspectName: Args.string({
+            description: 'Name of the aspect to deploy',
+            required: false
+        })
+    };
+    static description = 'Deploy an aspect';
+    static examples = [
+        {
+            command: '<%= config.bin %> <%= command.id %> someAspect',
+            description: 'Deploy the aspect named "someAspect"'
+        },
+        {
+            command: '<%= config.bin %> <%= command.id %> --all',
+            description: 'Deploy all aspects'
+        }
+    ];
+    static flags = {
+        ...getProjectIdFlag({
+            description: 'Project ID to deploy media aspect to',
+            semantics: 'override'
+        }),
+        all: Flags.boolean({
+            description: 'Deploy all aspects',
+            required: false
+        }),
+        'media-library-id': Flags.string({
+            description: 'The id of the target media library',
+            required: false
+        })
+    };
+    async run() {
+        const { aspectName } = this.args;
+        const { all, 'media-library-id': mediaLibraryIdFlag } = this.flags;
+        // Validation: must provide either aspect name or --all flag
+        if (!all && !aspectName) {
+            this.error('Specify an aspect name, or use the `--all` option to deploy all aspect definitions.', {
+                exit: 1
+            });
+        }
+        // Validation: cannot provide both aspect name and --all flag
+        if (all && aspectName) {
+            this.error('Specified both an aspect name and `--all`.', {
+                exit: 1
+            });
+        }
+        let cliConfig;
+        try {
+            cliConfig = await this.getCliConfig();
+        } catch (err) {
+            if (err instanceof ProjectRootNotFoundError) {
+                this.error('This command must be run from within a Sanity project directory (requires media library configuration)', {
+                    exit: 1
+                });
+            }
+            throw err;
+        }
+        const mediaLibrary = getMediaLibraryConfig(cliConfig);
+        if (!mediaLibrary?.aspectsPath) {
+            this.error(NO_MEDIA_LIBRARY_ASPECTS_PATH, {
+                exit: 1
+            });
+        }
+        const projectId = await this.getProjectId({
+            fallback: ()=>promptForProject({})
+        });
+        try {
+            // Determine target media library
+            let mediaLibraryId = mediaLibraryIdFlag;
+            if (!mediaLibraryId) {
+                mediaLibraryId = await selectMediaLibrary(projectId);
+            }
+            // Import and validate aspects
+            const spin = spinner('Loading aspect definitions').start();
+            const result = await importAspects({
+                aspectsPath: mediaLibrary.aspectsPath,
+                filterAspects: (aspect)=>{
+                    if (all) {
+                        return true;
+                    }
+                    if (typeof aspect === 'object' && aspect !== null && '_id' in aspect) {
+                        return aspect._id === aspectName;
+                    }
+                    return false;
+                }
+            });
+            spin.stop();
+            // Handle invalid aspects
+            if (result.invalid.length > 0) {
+                this.logToStderr('');
+                this.warn(styleText('bold', `Skipped ${result.invalid.length} invalid ${pluralize('aspect', result.invalid.length)}`));
+                this.logToStderr(this.formatAspectList(result.invalid));
+            }
+            // Check if we found the requested aspect (when not using --all)
+            if (!all && result.valid.length === 0 && result.invalid.length === 0) {
+                this.log();
+                this.error(`Could not find aspect: ${styleText('bold', aspectName ?? '')}`, {
+                    exit: 1
+                });
+            }
+            // Deploy valid aspects
+            if (result.valid.length === 0) {
+                this.logToStderr('');
+                this.warn('No valid aspects to deploy');
+                return;
+            }
+            const deploySpin = spinner(`Deploying ${result.valid.length} ${pluralize('aspect', result.valid.length)}`).start();
+            const deployResponse = await deployAspects({
+                aspects: result.valid.map((a)=>a.aspect),
+                mediaLibraryId
+            });
+            deploySpin.succeed();
+            // Display success message
+            this.log();
+            this.log(`${styleText('green', '✓')} ${styleText('bold', `Deployed ${result.valid.length} ${pluralize('aspect', result.valid.length)}`)}`);
+            this.log(this.formatAspectList(result.valid));
+            deployAspectDebug('Deployed aspects', {
+                count: result.valid.length,
+                results: deployResponse.results
+            });
+        } catch (error) {
+            const err = error;
+            deployAspectDebug('Failed to deploy aspects', {
+                all,
+                aspectName,
+                error: err,
+                mediaLibraryId: mediaLibraryIdFlag
+            });
+            this.error(styleText('bold', 'Failed to deploy aspects') + `\n\n${styleText('red', err.message)}`, {
+                exit: 1
+            });
+        }
+    }
+    /**
+   * Format a list of aspects for display
+   */ formatAspectList(aspects) {
+        return aspects.map(({ aspect, filename, validationErrors = [] })=>{
+            const label = isAssetAspect(aspect) ? aspect._id : 'Unnamed aspect';
+            // Flatten the nested validation errors and extract messages
+            const simplifiedErrors = validationErrors.flatMap((group)=>group.map(({ message })=>message));
+            const errorLabel = simplifiedErrors.length > 0 ? ` ${styleText('bgRed', simplifiedErrors[0])}` : '';
+            const remainingErrorsCount = simplifiedErrors.length - 1;
+            const remainingErrorsLabel = remainingErrorsCount > 0 ? styleText('italic', ` and ${remainingErrorsCount} other ${pluralize('error', remainingErrorsCount)}`) : '';
+            return `  - ${label} ${styleText('dim', filename)}${errorLabel}${remainingErrorsLabel}`;
+        }).join('\n');
+    }
+}
+
+//# sourceMappingURL=deploy-aspect.js.map

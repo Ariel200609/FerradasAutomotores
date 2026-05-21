@@ -1,0 +1,3 @@
+export const suffixTag = (tag, suffix)=>`${tag.replace(/\.+$/, '')}.${suffix}`;
+
+//# sourceMappingURL=suffixTag.js.map

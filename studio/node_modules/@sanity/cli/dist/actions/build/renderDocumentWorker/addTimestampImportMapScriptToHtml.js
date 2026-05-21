@@ -1,0 +1,79 @@
+import { parse as parseHtml } from 'node-html-parser';
+/**
+ * This script takes the import map from the `#__imports` script tag,
+ * modifies relevant URLs that match the sanity-cdn hostname by replacing
+ * the existing timestamp in the sanity-cdn URLs with a new runtime timestamp,
+ * and injects the modified import map back into the HTML.
+ *
+ * It also synchronously creates `<link rel="stylesheet">` tags for each CDN
+ * CSS URL with a fresh timestamp.
+ *
+ * This will be injected into the HTML of the user's bundle.
+ *
+ * Note that this is in a separate constants file to prevent "Cannot access
+ * before initialization" errors.
+ */ const TIMESTAMPED_IMPORTMAP_INJECTOR_SCRIPT = `<script>
+  // auto-generated script to add import map with timestamp
+  const importsJson = document.getElementById('__imports')?.textContent;
+  const { imports = {}, css = [], ...rest } = importsJson ? JSON.parse(importsJson) : {};
+  const importMapEl = document.createElement('script');
+  importMapEl.type = 'importmap';
+  const newTimestamp = \`/t\${Math.floor(Date.now() / 1000)}\`;
+
+  function replaceTimestamp(urlStr) {
+    try {
+      const url = new URL(urlStr);
+      if (/^sanity-cdn\\.[a-zA-Z]+$/.test(url.hostname)) {
+        url.pathname = url.pathname.replace(/\\/t\\d+/, newTimestamp);
+      }
+      return url.toString();
+    } catch {
+      return urlStr;
+    }
+  }
+
+  importMapEl.textContent = JSON.stringify({
+    imports: Object.fromEntries(
+      Object.entries(imports).map(([specifier, path]) => [specifier, replaceTimestamp(path)])
+    ),
+    ...rest,
+  });
+  document.head.appendChild(importMapEl);
+
+  // Creates <link rel="stylesheet"> tags with fresh timestamps.
+  for (const cssUrl of css) {
+    const linkEl = document.createElement('link');
+    linkEl.rel = 'stylesheet';
+    linkEl.href = replaceTimestamp(cssUrl);
+    document.head.appendChild(linkEl);
+  }
+</script>`;
+/**
+ * @internal
+ */ export function addTimestampedImportMapScriptToHtml(html, importMap, autoUpdatesCssUrls) {
+    if (!importMap) return html;
+    let root = parseHtml(html);
+    let htmlEl = root.querySelector('html');
+    if (!htmlEl) {
+        const oldRoot = root;
+        root = parseHtml('<html></html>');
+        htmlEl = root.querySelector('html');
+        htmlEl.append(oldRoot);
+    }
+    let headEl = htmlEl.querySelector('head');
+    if (!headEl) {
+        htmlEl.insertAdjacentHTML('afterbegin', '<head></head>');
+        headEl = root.querySelector('head');
+    }
+    // Include CSS URLs in the __imports JSON so the runtime script can create
+    // <link> tags with fresh timestamps synchronously during head parsing.
+    const importMapWithCss = autoUpdatesCssUrls && autoUpdatesCssUrls.length > 0 ? {
+        ...importMap,
+        css: autoUpdatesCssUrls
+    } : importMap;
+    headEl.insertAdjacentHTML('beforeend', `<script type="application/json" id="__imports">${JSON.stringify(importMapWithCss)}</script>`);
+    headEl.insertAdjacentHTML('beforeend', TIMESTAMPED_IMPORTMAP_INJECTOR_SCRIPT);
+    return root.outerHTML;
+}
+
+//# sourceMappingURL=addTimestampImportMapScriptToHtml.js.map

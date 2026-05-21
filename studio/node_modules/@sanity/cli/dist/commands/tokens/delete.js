@@ -1,0 +1,123 @@
+import { Args, Flags } from '@oclif/core';
+import { SanityCommand, subdebug } from '@sanity/cli-core';
+import { confirm, select } from '@sanity/cli-core/ux';
+import { ClientError } from '@sanity/client';
+import { promptForProject } from '../../prompts/promptForProject.js';
+import { deleteToken, getTokens } from '../../services/tokens.js';
+import { getProjectIdFlag } from '../../util/sharedFlags.js';
+const deleteTokenDebug = subdebug('tokens:delete');
+export class DeleteTokensCommand extends SanityCommand {
+    static args = {
+        tokenId: Args.string({
+            description: 'Token ID to delete (will prompt if not provided)',
+            required: false
+        })
+    };
+    static description = 'Delete an API token from the project';
+    static examples = [
+        {
+            command: '<%= config.bin %> <%= command.id %>',
+            description: 'Interactively select and delete a token'
+        },
+        {
+            command: '<%= config.bin %> <%= command.id %> silJ2lFmK6dONB',
+            description: 'Delete a specific token by ID'
+        },
+        {
+            command: '<%= config.bin %> <%= command.id %> silJ2lFmK6dONB --yes',
+            description: 'Delete a specific token without confirmation prompt'
+        },
+        {
+            command: '<%= config.bin %> <%= command.id %> --project-id abc123',
+            description: 'Delete a token from a specific project'
+        }
+    ];
+    static flags = {
+        ...getProjectIdFlag({
+            description: 'Project ID to delete token from',
+            semantics: 'override'
+        }),
+        yes: Flags.boolean({
+            aliases: [
+                'y'
+            ],
+            description: 'Skip confirmation prompt (unattended mode)',
+            required: false
+        })
+    };
+    static hiddenAliases = [
+        'token:delete'
+    ];
+    projectId;
+    async run() {
+        const { args, flags } = await this.parse(DeleteTokensCommand);
+        const unattended = flags.yes;
+        const { tokenId: givenTokenId } = args;
+        if (unattended && !givenTokenId) {
+            this.error('Token ID is required in non-interactive mode. Provide a token ID as an argument.', {
+                exit: 1
+            });
+        }
+        // Ensure we have project context
+        const projectId = await this.getProjectId({
+            fallback: ()=>promptForProject({
+                    requiredPermissions: [
+                        {
+                            grant: 'delete',
+                            permission: 'sanity.project.tokens'
+                        }
+                    ]
+                })
+        });
+        this.projectId = projectId;
+        let tokenId;
+        try {
+            tokenId = givenTokenId || await this.getTokenIdFromList();
+            if (!unattended) {
+                const confirmed = await confirm({
+                    default: false,
+                    message: `Are you sure you want to delete the token with ID "${tokenId}"?`
+                });
+                if (!confirmed) {
+                    this.error('Operation cancelled', {
+                        exit: 1
+                    });
+                }
+            }
+            await deleteToken({
+                projectId: this.projectId,
+                tokenId
+            });
+            this.log('Token deleted successfully');
+        } catch (error) {
+            if (error instanceof ClientError && error.response.statusCode === 404) {
+                this.error(`Token with ID "${tokenId}" not found`, {
+                    exit: 1
+                });
+            }
+            const err = error;
+            deleteTokenDebug(`Error deleting token`, err);
+            this.error(`Token deletion failed:\n${err.message}`, {
+                exit: 1
+            });
+        }
+    }
+    async getTokenIdFromList() {
+        const tokens = await getTokens(this.projectId);
+        if (tokens.length === 0) {
+            this.error('No tokens found', {
+                exit: 1
+            });
+        }
+        const choices = tokens.map((token)=>({
+                name: `${token.label} (${(token.roles || []).map((r)=>r.title).join(', ')})`,
+                value: token.id
+            }));
+        return select({
+            choices,
+            message: 'Select token to delete:'
+        });
+    }
+}
+
+//# sourceMappingURL=delete.js.map

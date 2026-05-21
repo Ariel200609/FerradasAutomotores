@@ -1,0 +1,1 @@
+{"version":3,"sourceRoot":null,"mappings":"ACAA","sources":["bundle.css","src/core/studio/styles.css.ts.vanilla.css"],"sourcesContent":["#sanity {\n  --static-css-file-loaded-studio: true;\n}","#sanity {\n  --static-css-file-loaded-studio: true;\n}"],"names":[]}

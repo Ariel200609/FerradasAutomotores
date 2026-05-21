@@ -1,0 +1,49 @@
+const configTemplate = `
+import {shopifyAssets} from 'sanity-plugin-shopify-assets'
+import {defineConfig, isDev} from 'sanity'
+import {structureTool} from 'sanity/structure'
+import {visionTool} from '@sanity/vision'
+import {shopifyDocumentActions} from './plugins/shopifyDocumentActions'
+import {schemaTypes} from './schemaTypes'
+import {structure} from './structure'
+import {SHOPIFY_STORE_ID} from './constants'
+
+const devOnlyPlugins = [visionTool()]
+
+export default defineConfig({
+  name: '%sourceName%',
+  title: '%projectName%',
+
+  projectId: '%projectId%',
+  dataset: '%dataset%',
+
+  plugins: [
+    structureTool({structure}),
+    shopifyDocumentActions(),
+    shopifyAssets({
+      shopifyDomain: SHOPIFY_STORE_ID,
+    }),
+    ...(isDev ? devOnlyPlugins : []),
+  ],
+
+  schema: {
+    types: schemaTypes,
+  },
+})
+`;
+const shopifyTemplate = {
+    configTemplate,
+    dependencies: {
+        '@portabletext/toolkit': '^2.0.1',
+        '@sanity/icons': '^3.7.4',
+        '@sanity/ui': '^3.1.14',
+        '@types/lodash.get': '^4.4.7',
+        'lodash.get': '^4.4.2',
+        'pluralize-esm': '^9.0.4',
+        'sanity-plugin-shopify-assets': '^1.1.0'
+    },
+    typescriptOnly: true
+};
+export default shopifyTemplate;
+
+//# sourceMappingURL=shopifyOnline.js.map

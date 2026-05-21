@@ -1,0 +1,7 @@
+import { readFile } from 'node:fs/promises';
+export async function readJson(filePath) {
+    const file = await readFile(filePath, 'utf8');
+    return JSON.parse(file);
+}
+
+//# sourceMappingURL=readJson.js.map

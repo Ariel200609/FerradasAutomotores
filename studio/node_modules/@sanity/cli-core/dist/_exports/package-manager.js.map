@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/_exports/package-manager.ts"],"sourcesContent":["export {\n  type DetectedPackageManager,\n  getBinCommand,\n  getRunningPackageManager,\n  getYarnMajorVersion,\n} from '../util/packageManager.js'\n"],"names":["getBinCommand","getRunningPackageManager","getYarnMajorVersion"],"mappings":"AAAA,SAEEA,aAAa,EACbC,wBAAwB,EACxBC,mBAAmB,QACd,4BAA2B"}

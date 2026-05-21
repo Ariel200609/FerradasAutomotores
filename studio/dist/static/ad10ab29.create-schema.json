@@ -1,0 +1,346 @@
+[
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "message": "La marca es obligatoria"
+          }
+        ],
+        "name": "brand",
+        "type": "string",
+        "title": "Marca"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "message": "El modelo es obligatorio"
+          }
+        ],
+        "name": "model",
+        "type": "string",
+        "title": "Modelo"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "min",
+                "constraint": 1990
+              },
+              {
+                "flag": "max",
+                "constraint": 2030
+              }
+            ],
+            "message": "Año entre 1990 y 2030"
+          }
+        ],
+        "name": "year",
+        "type": "number",
+        "title": "Año"
+      },
+      {
+        "options": {
+          "maxLength": 96
+        },
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "custom"
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "description": "Se genera automáticamente. Usalo para la URL de la página.",
+        "name": "slug",
+        "type": "slug",
+        "title": "URL del vehículo"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "0 KM (Nuevo)",
+              "value": "new"
+            },
+            {
+              "title": "Usado",
+              "value": "used"
+            }
+          ],
+          "layout": "radio"
+        },
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "valid",
+                "constraint": [
+                  "new",
+                  "used"
+                ]
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "name": "condition",
+        "type": "string",
+        "title": "Condición"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Nafta",
+              "value": "Nafta"
+            },
+            {
+              "title": "Diesel",
+              "value": "Diesel"
+            },
+            {
+              "title": "Gasolina",
+              "value": "Gasolina"
+            },
+            {
+              "title": "Nafta-Eléctrico (Híbrido)",
+              "value": "Híbrido"
+            },
+            {
+              "title": "Eléctrico",
+              "value": "Eléctrico"
+            },
+            {
+              "title": "GNC",
+              "value": "GNC"
+            }
+          ]
+        },
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "valid",
+                "constraint": [
+                  "Nafta",
+                  "Diesel",
+                  "Gasolina",
+                  "Híbrido",
+                  "Eléctrico",
+                  "GNC"
+                ]
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "name": "fuel",
+        "type": "string",
+        "title": "Combustible"
+      },
+      {
+        "description": "Solo para vehículos usados. Dejá en 0 si es 0KM.",
+        "name": "mileage",
+        "type": "number",
+        "title": "Kilometraje"
+      },
+      {
+        "description": "Opcional. Si no querés mostrarlo, dejalo vacío.",
+        "name": "priceUsd",
+        "type": "number",
+        "title": "Precio en USD"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "min",
+                "constraint": 1
+              }
+            ],
+            "message": "Necesitás al menos 1 foto"
+          }
+        ],
+        "description": "Subí todas las fotos del vehículo aquí. La primera foto es la principal.",
+        "of": [
+          {
+            "options": {
+              "hotspot": true
+            },
+            "fields": [
+              {
+                "name": "alt",
+                "type": "string",
+                "title": "Descripción de la foto"
+              }
+            ],
+            "type": "image"
+          }
+        ],
+        "name": "images",
+        "type": "array",
+        "title": "Fotos del vehículo"
+      },
+      {
+        "rows": 4,
+        "description": "Texto libre sobre el vehículo: estado, extras, financiación, etc.",
+        "name": "description",
+        "type": "text",
+        "title": "Descripción"
+      },
+      {
+        "description": "Ej: 2.8L Turbo Diesel, V6 3.0, etc.",
+        "name": "engine",
+        "type": "string",
+        "title": "Motor"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Manual",
+              "value": "Manual"
+            },
+            {
+              "title": "Automática",
+              "value": "Automática"
+            },
+            {
+              "title": "CVT",
+              "value": "CVT"
+            }
+          ]
+        },
+        "name": "transmission",
+        "type": "string",
+        "title": "Transmisión"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "4x2",
+              "value": "4x2"
+            },
+            {
+              "title": "4x4",
+              "value": "4x4"
+            },
+            {
+              "title": "AWD",
+              "value": "AWD"
+            },
+            {
+              "title": "FWD",
+              "value": "FWD"
+            },
+            {
+              "title": "RWD",
+              "value": "RWD"
+            }
+          ]
+        },
+        "name": "drivetrain",
+        "type": "string",
+        "title": "Tracción"
+      },
+      {
+        "name": "powerHp",
+        "type": "number",
+        "title": "Potencia (HP)"
+      },
+      {
+        "name": "torqueNm",
+        "type": "number",
+        "title": "Torque (Nm)"
+      },
+      {
+        "name": "doors",
+        "type": "number",
+        "title": "Puertas"
+      },
+      {
+        "name": "color",
+        "type": "string"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Pick-up",
+              "value": "Pick-up"
+            },
+            {
+              "title": "SUV",
+              "value": "SUV"
+            },
+            {
+              "title": "Sedán",
+              "value": "Sedán"
+            },
+            {
+              "title": "Hatchback",
+              "value": "Hatchback"
+            },
+            {
+              "title": "Coupé",
+              "value": "Coupé"
+            },
+            {
+              "title": "Utilitario",
+              "value": "Utilitario"
+            },
+            {
+              "title": "Camioneta",
+              "value": "Camioneta"
+            }
+          ]
+        },
+        "name": "bodyType",
+        "type": "string",
+        "title": "Tipo de carrocería"
+      }
+    ],
+    "name": "vehicle",
+    "type": "document",
+    "title": "Vehículo"
+  }
+]

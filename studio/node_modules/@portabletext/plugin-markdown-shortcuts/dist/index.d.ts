@@ -1,0 +1,159 @@
+import type {EditorContext} from '@portabletext/editor'
+import {JSX} from 'react'
+
+declare type MarkdownBehaviorsConfig = {
+  horizontalRuleObject?: ({
+    context,
+  }: {
+    context: Pick<EditorContext, 'schema' | 'keyGenerator'>
+  }) => ObjectWithOptionalKey | undefined
+  defaultStyle?: ({
+    context,
+    schema,
+  }: {
+    context: Pick<EditorContext, 'schema'>
+    /**
+     * @deprecated Use `context.schema` instead
+     */
+    schema: EditorContext['schema']
+  }) => string | undefined
+}
+
+/**
+ * @public
+ */
+export declare function MarkdownShortcutsPlugin({
+  blockquoteStyle,
+  boldDecorator,
+  codeDecorator,
+  defaultStyle,
+  headingStyle,
+  horizontalRuleObject,
+  linkObject,
+  italicDecorator,
+  orderedList,
+  strikeThroughDecorator,
+  unorderedList,
+}: MarkdownShortcutsPluginProps): JSX.Element
+
+/**
+ * @public
+ */
+export declare type MarkdownShortcutsPluginProps = MarkdownBehaviorsConfig & {
+  blockquoteStyle?: ({
+    context,
+    schema,
+  }: {
+    context: Pick<EditorContext, 'schema'>
+    /**
+     * @deprecated Use `context.schema` instead
+     */
+    schema: EditorContext['schema']
+  }) => string | undefined
+  defaultStyle?: ({
+    context,
+    schema,
+  }: {
+    context: Pick<EditorContext, 'schema'>
+    /**
+     * @deprecated Use `context.schema` instead
+     */
+    schema: EditorContext['schema']
+  }) => string | undefined
+  headingStyle?: ({
+    context,
+    schema,
+    props,
+    level,
+  }: {
+    context: Pick<EditorContext, 'schema'>
+    /**
+     * @deprecated Use `context.schema` instead
+     */
+    schema: EditorContext['schema']
+    props: {
+      level: number
+    }
+    /**
+     * @deprecated Use `props.level` instead
+     */
+    level: number
+  }) => string | undefined
+  linkObject?: ({
+    context,
+    props,
+  }: {
+    context: Pick<EditorContext, 'schema' | 'keyGenerator'>
+    props: {
+      href: string
+    }
+  }) => ObjectWithOptionalKey | undefined
+  unorderedList?: ({
+    context,
+    schema,
+  }: {
+    context: Pick<EditorContext, 'schema'>
+    /**
+     * @deprecated Use `context.schema` instead
+     */
+    schema: EditorContext['schema']
+  }) => string | undefined
+  orderedList?: ({
+    context,
+    schema,
+  }: {
+    context: Pick<EditorContext, 'schema'>
+    /**
+     * @deprecated Use `context.schema` instead
+     */
+    schema: EditorContext['schema']
+  }) => string | undefined
+  boldDecorator?: ({
+    context,
+    schema,
+  }: {
+    context: Pick<EditorContext, 'schema'>
+    /**
+     * @deprecated Use `context.schema` instead
+     */
+    schema: EditorContext['schema']
+  }) => string | undefined
+  codeDecorator?: ({
+    context,
+    schema,
+  }: {
+    context: Pick<EditorContext, 'schema'>
+    /**
+     * @deprecated Use `context.schema` instead
+     */
+    schema: EditorContext['schema']
+  }) => string | undefined
+  italicDecorator?: ({
+    context,
+    schema,
+  }: {
+    context: Pick<EditorContext, 'schema'>
+    /**
+     * @deprecated Use `context.schema` instead
+     */
+    schema: EditorContext['schema']
+  }) => string | undefined
+  strikeThroughDecorator?: ({
+    context,
+    schema,
+  }: {
+    context: Pick<EditorContext, 'schema'>
+    /**
+     * @deprecated Use `context.schema` instead
+     */
+    schema: EditorContext['schema']
+  }) => string | undefined
+}
+
+declare type ObjectWithOptionalKey = {
+  _type: string
+  _key?: string
+  [other: string]: unknown
+}
+
+export {}
