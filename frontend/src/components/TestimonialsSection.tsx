@@ -1,58 +1,131 @@
-import React from "react";
-import { Star } from "lucide-react";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCoverflow, FreeMode, Navigation } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/effect-coverflow';
-import 'swiper/css/navigation';
-import { useState, useEffect } from "react";
-import { testimonios } from '../data/testimonios';
+import React, { useCallback, useEffect, useRef, useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { testimonios } from "../data/testimonios";
 
-const clients = testimonios.map(t => ({
+const clients = testimonios.map((t) => ({
   ...t,
   image: `${import.meta.env.BASE_URL}${t.image}`,
 }));
 
-const ClientCard: React.FC<{ client: typeof clients[0] }> = ({ client }) => {
+const ClientCard: React.FC<{ client: (typeof clients)[0] }> = ({ client }) => {
   if (!client.text) {
     return (
-      <div className="w-full min-w-0 max-w-full md:min-w-[300px] md:max-w-[300px] bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 flex items-center justify-center mx-auto" style={{ minHeight: 320 }}>
+      <div className="card-premium bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200 flex items-center justify-center flex-shrink-0 min-w-[85vw] sm:min-w-[320px] sm:max-w-[340px] h-[320px]">
         <img
           src={client.image}
           alt={client.name}
           className="object-cover w-full h-full"
-          onError={e => (e.currentTarget.style.opacity = '0.3')}
+          onError={(e) => (e.currentTarget.style.opacity = "0.3")}
           loading="lazy"
         />
       </div>
     );
   }
+
   return (
-    <div className="w-full min-w-0 max-w-full md:min-w-[300px] md:max-w-[300px] bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 flex flex-col items-center p-6 mx-auto" style={{ minHeight: 320 }}>
-      <div className="relative w-full h-40 flex items-end justify-center mb-3">
+    <div className="card-premium bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200 flex flex-col items-center p-6 flex-shrink-0 min-w-[85vw] sm:min-w-[320px] sm:max-w-[340px] h-[320px]">
+      <div className="relative w-full h-36 flex items-end justify-center mb-3 shrink-0">
         <img
           src={client.image}
           alt={client.name}
           className="object-contain w-full h-full"
-          onError={e => (e.currentTarget.style.opacity = '0.3')}
+          onError={(e) => (e.currentTarget.style.opacity = "0.3")}
           loading="lazy"
         />
       </div>
-      <div className="font-semibold text-gray-900 text-lg mb-2 text-center w-full truncate">{client.name}</div>
-      {/* Se eliminó el rating y las estrellas */}
-      <p className="text-gray-700 leading-relaxed text-center text-base">"{client.text}"</p>
+      <div className="font-semibold text-gray-900 text-lg mb-2 text-center w-full truncate">
+        {client.name}
+      </div>
+      <p className="text-gray-700 leading-relaxed text-center text-sm sm:text-base line-clamp-4">
+        "{client.text}"
+      </p>
     </div>
   );
 };
 
 const TestimonialsSection: React.FC = () => {
-  const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 768);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handleScroll = useCallback(() => {
+    const container = scrollRef.current;
+    if (!container) return;
+
+    const cards = Array.from(container.children) as HTMLElement[];
+    if (cards.length === 0) return;
+
+    const viewport = container.clientWidth;
+    const centerX = container.scrollLeft + viewport / 2;
+
+    let closestIdx = 0;
+    let closestDist = Infinity;
+
+    cards.forEach((card, idx) => {
+      const cardCenter = card.offsetLeft + card.clientWidth / 2;
+      const dist = Math.abs(cardCenter - centerX);
+      if (dist < closestDist) {
+        closestDist = dist;
+        closestIdx = idx;
+      }
+    });
+
+    setActiveIndex(closestIdx);
+  }, []);
 
   useEffect(() => {
-    const handleResize = () => setIsDesktop(window.innerWidth >= 768);
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    const container = scrollRef.current;
+    if (!container) return;
+    container.addEventListener("scroll", handleScroll, { passive: true });
+    return () => container.removeEventListener("scroll", handleScroll);
+  }, [handleScroll]);
+
+  const scrollToIndex = useCallback((index: number) => {
+    const container = scrollRef.current;
+    if (!container) return;
+
+    const cards = Array.from(container.children) as HTMLElement[];
+    if (index < 0 || index >= cards.length) return;
+
+    const targetCard = cards[index];
+    const viewport = container.clientWidth;
+    const targetCenter = targetCard.offsetLeft + targetCard.clientWidth / 2;
+    const newScrollLeft = targetCenter - viewport / 2;
+
+    container.scrollTo({ left: newScrollLeft, behavior: "smooth" });
   }, []);
+
+  const scroll = useCallback(
+    (direction: "left" | "right") => {
+      const container = scrollRef.current;
+      if (!container) return;
+
+      const cards = Array.from(container.children) as HTMLElement[];
+      if (cards.length === 0) return;
+
+      const viewport = container.clientWidth;
+      const centerX = container.scrollLeft + viewport / 2;
+
+      let closestIdx = 0;
+      let closestDist = Infinity;
+
+      cards.forEach((card, idx) => {
+        const cardCenter = card.offsetLeft + card.clientWidth / 2;
+        const dist = Math.abs(cardCenter - centerX);
+        if (dist < closestDist) {
+          closestDist = dist;
+          closestIdx = idx;
+        }
+      });
+
+      const nextIdx =
+        direction === "left"
+          ? Math.max(closestIdx - 1, 0)
+          : Math.min(closestIdx + 1, cards.length - 1);
+
+      scrollToIndex(nextIdx);
+    },
+    [scrollToIndex]
+  );
 
   return (
     <section className="py-16 bg-gray-50">
@@ -65,46 +138,54 @@ const TestimonialsSection: React.FC = () => {
             La satisfacción de nuestros clientes es nuestra mayor recompensa.
           </p>
         </div>
-        {/* Flechas de navegación SIEMPRE visibles */}
-        <div className="relative">
-          <div className="swiper-button-prev !text-black !left-0" />
-          <div className="swiper-button-next !text-black !right-0" />
-          <Swiper
-            modules={[EffectCoverflow, FreeMode, Navigation]}
-            navigation={{
-              nextEl: '.swiper-button-next',
-              prevEl: '.swiper-button-prev',
-            }}
-            effect={isDesktop ? "coverflow" : "slide"}
-            grabCursor={true}
-            centeredSlides={isDesktop}
-            slidesPerView={1}
-            coverflowEffect={isDesktop ? {
-              rotate: 30,
-              stretch: 0,
-              depth: 400,
-              modifier: 2.5,
-              slideShadows: true,
-            } : {}}
-            breakpoints={{
-              0: { slidesPerView: 1 }, // Móvil chico: solo 1 slide
-              640: { slidesPerView: 1.3 }, // Móvil grande: bordes
-              768: { slidesPerView: 2.2 }, // Tablet
-              1024: { slidesPerView: 3 }, // Desktop: 3 slides visibles
-            }}
-            className="w-full max-w-[95vw] px-2"
-            style={window.innerWidth < 640 ? { paddingLeft: 0, paddingRight: 0 } : { paddingLeft: '5vw', paddingRight: '5vw' }}
+
+        <div className="relative w-full">
+          <div
+            ref={scrollRef}
+            className="flex scroll-snap-x scrollbar-none carousel-fade-edges gap-6 py-4 px-4 overflow-x-auto"
           >
             {clients.map((client, idx) => (
-              <SwiperSlide key={idx} className="flex justify-center">
+              <div key={idx} className="snap-center">
                 <ClientCard client={client} />
-              </SwiperSlide>
+              </div>
             ))}
-          </Swiper>
+          </div>
+
+          <button
+            onClick={() => scroll("left")}
+            className="hidden sm:flex absolute left-2 top-1/2 -translate-y-1/2 z-20 w-11 h-11 glass-card rounded-full shadow-lg items-center justify-center hover:scale-110 transition-transform duration-200 focus:outline-none"
+            aria-label="Anterior"
+          >
+            <ChevronLeft className="w-5 h-5 text-gray-800" />
+          </button>
+
+          <button
+            onClick={() => scroll("right")}
+            className="hidden sm:flex absolute right-2 top-1/2 -translate-y-1/2 z-20 w-11 h-11 glass-card rounded-full shadow-lg items-center justify-center hover:scale-110 transition-transform duration-200 focus:outline-none"
+            aria-label="Siguiente"
+          >
+            <ChevronRight className="w-5 h-5 text-gray-800" />
+          </button>
+
+          {clients.length > 1 && (
+            <div className="flex justify-center items-center gap-2 pb-2 px-4">
+              <span className="text-xs text-gray-400 font-medium tabular-nums">
+                {activeIndex + 1}/{clients.length}
+              </span>
+              <div className="flex-1 max-w-[200px] h-1 bg-gray-200 rounded-full overflow-hidden">
+                <div
+                  className="h-full bg-red-600 rounded-full transition-all duration-300"
+                  style={{
+                    width: `${((activeIndex + 1) / clients.length) * 100}%`,
+                  }}
+                />
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </section>
   );
 };
 
-export default TestimonialsSection; 
+export default TestimonialsSection;
